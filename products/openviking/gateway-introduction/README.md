@@ -2,7 +2,7 @@
 
 中文产品介绍视频的可重建工程，包含 9 个镜头、旁白和字幕。通过 HTML/CSS、GSAP、Playwright 与 FFmpeg 生成 1920×1080、30 fps 视频。
 
-- 内容版本：V7（2026-10-26），对应脚本 V2.1；成片约 117.8 秒。
+- 内容版本：V7（2026-10-26），画面修订 V8（2026-11-09），对应脚本 V2.1；成片约 117.8 秒。
 - 状态：待视频 review；未在本仓库发布成片，发布日期待定。
 - 来源：OpenViking 网关介绍片制作工程，由项目维护者提供。
 - 素材：原始旁白及 TTS 时间戳保留；OV 标志为几何重建，第三方 Agent Logo 来源于 [OpenViking Integrations](https://openviking.ai/integrations)。第三方商标归各自权利人所有，本目录不额外授予转载或商标使用许可。
@@ -16,12 +16,12 @@
 cd products/openviking/gateway-introduction/project
 npm ci
 npx playwright install chromium --only-shell
-OUT=OV-Gateway-full-v7.mp4 sh tools/build-film.sh
+OUT=OV-Gateway-preview-v8.mp4 sh tools/build-film.sh
 ```
 
 Linux 如缺少浏览器系统依赖，可在构建环境中使用 `npx playwright install --with-deps chromium --only-shell`。
 
-输出位于 `project/renders/OV-Gateway-full-v7.mp4`，只在本地生成，不入库。构建包含字幕生成、音效合成、旁白混音、逐帧截图、分段编码和全片拼接。无需 TTS 服务凭证；直接使用保存的原始音频。
+输出位于 `project/renders/OV-Gateway-preview-v8.mp4`，只在本地生成，不入库。构建包含字幕生成、音效合成、旁白混音、逐帧截图、分段编码和全片拼接。无需 TTS 服务凭证；直接使用保存的原始音频。
 
 ## 文件
 
@@ -42,3 +42,15 @@ Linux 如缺少浏览器系统依赖，可在构建环境中使用 `npx playwrig
 提交源码、配置、原始旁白、时间戳、素材和依赖锁文件。不提交 `node_modules/`、`project/renders/`、任何 MP4、可重建的音效/混音 WAV、拼接旁白预览以及运行缓存；规则见 [.gitignore](.gitignore)。
 
 只看静帧可运行 `npm run frames`；动画检查可运行 `sh tools/check-stills.sh`。生成文件仍留在本地供 review。
+
+## 画面修订与回归检查
+
+V8 保留原旁白、字幕和时间线，修复连续运镜时模型纹理在右侧闪现，以及标题遮罩在模型表面形成硬边的问题。模型使用独立合成图层；标题遮罩在自身边缘衰减至透明。
+
+完整构建后运行：
+
+```sh
+python3 tools/check-render-artifacts.py renders/OV-Gateway-preview-v8.mp4
+```
+
+该检查针对当前全片 45.4–46.5 秒、50.9–53.1 秒的右侧异常黑块和 108 秒的遮罩接缝。检测坐标和时间依赖当前剪辑，调整布局或节奏后需同步更新；它不能替代全片人工 review。旧预览在三个检查点均失败。

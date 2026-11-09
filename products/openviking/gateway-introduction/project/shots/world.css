@@ -37,7 +37,9 @@
   .steps i { font-style: normal; color: #C3CAD0; }
 
   /* model node that opens into a reasoning panel */
-  #model { place-items: initial; display: block; }
+  /* Keep the clipped model texture on its own compositor layer during camera zooms.
+     Without this, sequential Chromium captures can duplicate texture tiles outside the node. */
+  #model { place-items: initial; display: block; transform: translateZ(0); }
   #model .compact { position: absolute; inset: 0; display: grid; place-items: center; }
   .pc { position: absolute; left: 0; top: 0; width: 1180px; padding: 34px 40px; color: #E8EDF1; opacity: 0; }
   .ph { display: flex; align-items: center; gap: 16px; }

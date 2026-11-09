@@ -4,7 +4,8 @@
 <style>
   .scrim { position: absolute; left: 0; top: 0; width: 1500px; height: 360px; opacity: 0; backdrop-filter: blur(12px);
     background: linear-gradient(180deg, rgba(244,247,249,.92), rgba(244,247,249,.75) 55%, rgba(244,247,249,0));
-    -webkit-mask-image: radial-gradient(120% 100% at 0% 0%, #000 55%, transparent 100%); }
+    /* Fade to zero at the scrim bounds so the backdrop blur has no hard edge. */
+    -webkit-mask-image: radial-gradient(100% 100% at 0% 0%, #000 55%, transparent 100%); }
   .ov-big { position: absolute; left: 110px; top: 118px; font: 700 92px/1.12 var(--sans); letter-spacing: -.02em; color: var(--ink); opacity: 0; }
   .ov-big em { font-style: normal; color: var(--cyan-type); }
   .lockup { position: absolute; left: 110px; bottom: 120px; opacity: 0; }
