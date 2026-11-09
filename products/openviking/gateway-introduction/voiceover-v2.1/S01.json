@@ -1,0 +1,174 @@
+{
+  "provider": "volcengine",
+  "resource_id": "seed-tts-2.0",
+  "speaker": "zh_male_gaolengchenwen_uranus_bigtts",
+  "audio_params": {
+    "format": "mp3",
+    "sample_rate": 48000,
+    "bit_rate": 160000,
+    "speech_rate": 5,
+    "enable_subtitle": true
+  },
+  "request_id": "5336518c-4906-492b-8076-6bfd04ee24cc",
+  "log_id": "20261025130414B31E030F613DAD3AF19F",
+  "text_sha256": "28c200e1f9fd00ad3dab9de6f39b8e30b3bbacc866fa99fbaf045d7f6f4c8de5",
+  "input_characters": 49,
+  "usage": {
+    "text_words": 49
+  },
+  "bytes": 129645,
+  "final_code": 20000000,
+  "terminal_success_seen": true,
+  "stream_end": "terminal_success",
+  "sentences": [
+    {
+      "phonemes": [],
+      "text": "主流 Agent 装上 OpenViking 插件，召回和沉淀全自动，换个 Agent，记忆还在。",
+      "words": []
+    },
+    {
+      "phonemes": [],
+      "text": "主流 Agent 装上 OpenViking 插件，召回和沉淀全自动，换个 Agent，记忆还在。",
+      "words": [
+        {
+          "confidence": 0.9550078,
+          "endTime": 0.175,
+          "startTime": 0,
+          "word": "主"
+        },
+        {
+          "confidence": 0.920238,
+          "endTime": 0.345,
+          "startTime": 0.175,
+          "word": "流"
+        },
+        {
+          "confidence": 0.8646943,
+          "endTime": 0.755,
+          "startTime": 0.345,
+          "word": "Agent"
+        },
+        {
+          "confidence": 0.84325135,
+          "endTime": 0.905,
+          "startTime": 0.755,
+          "word": "装"
+        },
+        {
+          "confidence": 0.78940886,
+          "endTime": 1.035,
+          "startTime": 0.905,
+          "word": "上"
+        },
+        {
+          "confidence": 0.20139629,
+          "endTime": 1.615,
+          "startTime": 1.585,
+          "word": "OpenViking"
+        },
+        {
+          "confidence": 0.82374597,
+          "endTime": 1.805,
+          "startTime": 1.615,
+          "word": "插"
+        },
+        {
+          "confidence": 0.92065287,
+          "endTime": 2.025,
+          "startTime": 1.805,
+          "word": "件，"
+        },
+        {
+          "confidence": 0.91173387,
+          "endTime": 2.615,
+          "startTime": 2.395,
+          "word": "召"
+        },
+        {
+          "confidence": 0.9657871,
+          "endTime": 2.745,
+          "startTime": 2.615,
+          "word": "回"
+        },
+        {
+          "confidence": 0.92131877,
+          "endTime": 2.875,
+          "startTime": 2.745,
+          "word": "和"
+        },
+        {
+          "confidence": 0.8777336,
+          "endTime": 3.065,
+          "startTime": 2.875,
+          "word": "沉"
+        },
+        {
+          "confidence": 0.88386303,
+          "endTime": 3.255,
+          "startTime": 3.065,
+          "word": "淀"
+        },
+        {
+          "confidence": 0.9500237,
+          "endTime": 3.445,
+          "startTime": 3.255,
+          "word": "全"
+        },
+        {
+          "confidence": 0.8571054,
+          "endTime": 3.585,
+          "startTime": 3.445,
+          "word": "自"
+        },
+        {
+          "confidence": 0.9325367,
+          "endTime": 3.755,
+          "startTime": 3.585,
+          "word": "动，"
+        },
+        {
+          "confidence": 0.9408799,
+          "endTime": 4.525,
+          "startTime": 4.275,
+          "word": "换"
+        },
+        {
+          "confidence": 0.9035594,
+          "endTime": 4.625,
+          "startTime": 4.525,
+          "word": "个"
+        },
+        {
+          "confidence": 0.7822128,
+          "endTime": 5.045,
+          "startTime": 4.625,
+          "word": "Agent，"
+        },
+        {
+          "confidence": 0.8710869,
+          "endTime": 5.595,
+          "startTime": 5.415,
+          "word": "记"
+        },
+        {
+          "confidence": 0.8365871,
+          "endTime": 5.705,
+          "startTime": 5.595,
+          "word": "忆"
+        },
+        {
+          "confidence": 0.8531711,
+          "endTime": 5.875,
+          "startTime": 5.705,
+          "word": "还"
+        },
+        {
+          "confidence": 0.9299305,
+          "endTime": 6.055,
+          "startTime": 5.875,
+          "word": "在。"
+        }
+      ]
+    }
+  ]
+}

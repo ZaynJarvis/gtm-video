@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><link rel="stylesheet" href="apps.css">
+<style>
+  svg.paths { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+  .mini { position: absolute; width: 330px; background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); overflow: hidden; }
+  .mini .mb { height: 46px; display: flex; align-items: center; gap: 10px; padding: 0 16px; border-bottom: 1px solid var(--line); font-size: 19px; font-weight: 500; }
+  .mini .mb .org { width: 24px; height: 24px; font-size: 13px; border-radius: 6px; }
+  .mini .mb small { font-size: 16px; color: var(--text-3); font-weight: 400; }
+  .mini .mc { padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; }
+  .mini .bar1 { height: 12px; border-radius: 6px; background: #EEF1F4; }
+  .capsule.sm { height: 48px; }
+  .capsule.sm .seg { font-size: 19px; padding: 0 18px; }
+  .floor-mask { position: absolute; left: 0; right: 0; top: 760px; bottom: 0;
+    -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent 100%); }
+  .ovproj { position: absolute; opacity: .12; }
+  .beam { position: absolute; width: 4px; border-radius: 4px; }
+</style></head>
+<body>
+  <div class="glow" style="left:600px;top:150px;width:1000px;height:900px;opacity:1.1"></div>
+  <div class="hud-l">OpenViking · <b>网关是什么</b></div>
+  <div class="hud-r">gateway.openviking.<b>volcengine.com</b></div>
+
+  <div class="big" style="left:110px;top:96px;font-size:84px">守在通往<em>模型的路上</em></div>
+
+  <!-- Far left: the plugin constellation; plugins live inside each agent -->
+  <div class="near" style="opacity:.7">
+    <div class="lnode" style="left:90px;top:420px;transform:translate(-50%,-50%) scale(.62)"><div class="disc"><img src="../assets/logos/claude-code.svg"><div class="ovbadge"><img src="../assets/ov-mark-small.svg"></div></div></div>
+    <div class="lnode" style="left:210px;top:520px;transform:translate(-50%,-50%) scale(.62)"><div class="disc"><img src="../assets/logos/codex.svg"><div class="ovbadge"><img src="../assets/ov-mark-small.svg"></div></div></div>
+    <div class="lnode" style="left:70px;top:620px;transform:translate(-50%,-50%) scale(.62)"><div class="disc"><img src="../assets/logos/cursor.svg"><div class="ovbadge"><img src="../assets/ov-mark-small.svg"></div></div></div>
+    <div class="lnode" style="left:190px;top:330px;transform:translate(-50%,-50%) scale(.62)"><div class="disc"><img src="../assets/logos/trae.svg"><div class="ovbadge"><img src="../assets/ov-mark-small.svg"></div></div></div>
+  </div>
+
+  <!-- The OpenViking library floor -->
+  <div class="floor-mask" style="top:830px">
+    <div class="floor-wrap" style="left:0;top:0;width:1920px;height:400px">
+      <div class="floor" style="left:330px;top:0;width:1480px;height:560px">
+        <div class="abs" style="left:600px;top:40px;width:280px;height:280px;border-radius:50%;border:3px solid rgba(79,214,240,.5);box-shadow:0 0 30px rgba(79,214,240,.3), inset 0 0 40px rgba(79,214,240,.18)"></div>
+        <div class="abs" style="left:540px;top:-20px;width:400px;height:400px;border-radius:50%;border:2px solid rgba(79,214,240,.18)"></div>
+        <div class="zone" style="left:50px;top:30px;font-size:26px">memories/events</div>
+        <div class="zone" style="left:1040px;top:30px;font-size:26px">resources</div>
+        <div class="fcard" style="left:50px;top:84px;width:240px;height:96px"><div class="n">release-plan.md</div><div class="l"></div></div>
+        <div class="fcard" style="left:320px;top:84px;width:240px;height:96px"><div class="n">review-1028.md</div><div class="l"></div></div>
+        <div class="fcard" style="left:50px;top:210px;width:240px;height:96px"><div class="n">pilot-scope.md</div><div class="l"></div></div>
+        <div class="fcard" style="left:1040px;top:84px;width:240px;height:96px"><div class="n">checklist.md</div><div class="l"></div></div>
+        <div class="fcard" style="left:1040px;top:210px;width:240px;height:96px"><div class="n">runbook.md</div><div class="l"></div></div>
+        <div class="fcard" style="left:620px;top:360px;width:240px;height:96px"><div class="n">deploy.md</div><div class="l"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <svg class="paths">
+    <defs>
+      <linearGradient id="beam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4FD6F0" stop-opacity=".9"/><stop offset="1" stop-color="#4FD6F0" stop-opacity="0"/></linearGradient>
+    </defs>
+    <!-- every app's model call converges on the gate -->
+    <path d="M770 405 C 860 405, 900 470, 990 480" stroke="rgba(14,154,182,.45)" stroke-width="2" fill="none"/>
+    <path d="M770 575 C 860 575, 900 520, 990 510" stroke="rgba(14,154,182,.45)" stroke-width="2" fill="none"/>
+    <path d="M770 745 C 870 745, 900 560, 990 540" stroke="rgba(14,154,182,.3)" stroke-width="2" fill="none"/>
+    <!-- gate ⇄ model -->
+    <path d="M1150 488 L 1420 488" stroke="rgba(7,9,13,.35)" stroke-width="2" fill="none"/>
+    <path d="M1420 528 L 1150 528" stroke="rgba(7,9,13,.18)" stroke-width="2" fill="none" stroke-dasharray="6 6"/>
+    <!-- recall / save beams into the library -->
+    <path d="M944 798 Q 960 860 1030 905" stroke="rgba(79,214,240,.85)" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M944 798 Q 960 860 1030 905" stroke="rgba(79,214,240,.22)" stroke-width="16" fill="none" stroke-linecap="round"/>
+    <path d="M1126 798 Q 1110 860 1110 905" stroke="rgba(79,214,240,.6)" stroke-width="3" fill="none" stroke-dasharray="3 9" stroke-linecap="round"/>
+  </svg>
+
+  <!-- Enterprise apps -->
+  <div class="mini" style="left:440px;top:330px"><div class="mb"><div class="org">内</div>研发助手 <small>自研 Agent</small></div><div class="mc"><div class="bar1" style="width:70%;margin-left:auto"></div><div class="bar1" style="width:85%"></div></div></div>
+  <div class="mini" style="left:440px;top:500px"><div class="mb"><div class="org">客</div>客服 Bot <small>工作流</small></div><div class="mc"><div class="bar1" style="width:60%;margin-left:auto"></div><div class="bar1" style="width:80%"></div></div></div>
+  <div class="mini near" style="left:440px;top:670px"><div class="mb"><div class="org">运</div>运维 Bot <small>工作流</small></div><div class="mc"><div class="bar1" style="width:65%;margin-left:auto"></div><div class="bar1" style="width:75%"></div></div></div>
+
+  <!-- Requests travelling to the gate -->
+  <div class="capsule sm" style="left:800px;top:396px;transform:scale(.92)"><div class="seg user">上次定的发布日期…</div></div>
+  <div class="capsule sm near" style="left:812px;top:556px;transform:scale(.85)"><div class="seg user">新服务怎么部署？</div></div>
+
+  <!-- Gateway -->
+  <div class="gate" style="left:990px;top:300px;height:400px;width:160px">
+    <div class="addr" style="left:-120px;right:-120px">gateway.openviking.volcengine.com</div>
+  </div>
+  <div class="abs" style="left:900px;top:714px;width:340px;text-align:center;font:600 24px var(--sans);color:var(--text)">OpenViking 网关</div>
+  <div class="port on" style="left:930px;top:768px"><i></i>召回</div>
+  <div class="port on" style="left:1112px;top:768px"><i></i>存回</div>
+  <div class="port" style="left:1170px;top:540px"><i></i>工具</div>
+
+  <!-- Upstream model -->
+  <div class="model" style="left:1430px;top:380px;width:250px;height:250px;border-radius:40px">
+    <div class="sheen"></div><div class="lbl">模型</div>
+    <div class="vendors" style="left:0;right:0;text-align:center;font-size:16px">Anthropic · OpenAI · DeepSeek · 方舟</div>
+  </div>
+  <div class="abs" style="left:1430px;top:650px;width:250px;text-align:center;font-size:21px;color:var(--text-3)">你原来的模型</div>
+  <img src="../assets/ov-mark.svg" class="abs" style="left:1022px;top:870px;width:110px;height:110px;filter:drop-shadow(0 10px 14px rgba(7,9,13,.18))">
+</body></html>

@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../styleframes/base.css"><link rel="stylesheet" href="../styleframes/apps.css"><link rel="stylesheet" href="world.css">
+<style>
+  .scrim { position: absolute; left: 0; top: 0; width: 1500px; height: 300px; opacity: 0; backdrop-filter: blur(12px);
+    background: linear-gradient(180deg, rgba(244,247,249,.92), rgba(244,247,249,.75) 55%, rgba(244,247,249,0));
+    -webkit-mask-image: radial-gradient(120% 100% at 0% 0%, #000 55%, transparent 100%); }
+  .ov-big { position: absolute; left: 110px; font: 700 96px/1.14 var(--sans); letter-spacing: -.02em; color: var(--ink); opacity: 0; }
+  .ov-big em { font-style: normal; color: var(--cyan-type); }
+  .hudswap { position: absolute; left: 64px; top: 44px; font-size: 22px; color: var(--text-3); }
+  .hudswap b { color: var(--cyan-deep); font-weight: 500; }
+  .hud-r2 { position: absolute; right: 64px; top: 44px; font: 500 20px var(--mono); color: var(--text-3); letter-spacing: .08em; text-transform: uppercase; }
+  .ccore { position: absolute; display: flex; flex-direction: column; align-items: center; gap: 16px; transform: translate(-50%, -50%); }
+  .ccore .halo { position: absolute; width: 440px; height: 440px; left: 50%; top: 42%; transform: translate(-50%, -50%); border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(79,214,240,.24), rgba(79,214,240,0)); }
+  .ccore img { width: 140px; height: 140px; position: relative; }
+  .ccore .wm { font: 600 36px var(--latin); letter-spacing: -.025em; color: var(--ink); position: relative; text-shadow: 0 0 10px #EEF7FA, 0 0 18px #EEF7FA; }
+  .term { position: absolute; width: max-content; min-width: 420px; background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow-lift); padding: 14px 18px; font: 400 20px/1.8 var(--mono); color: var(--text-2); opacity: 0; }
+  .term .tl { opacity: 0; white-space: nowrap; }
+  .term b { color: var(--cyan-deep); font-weight: 500; }
+  .term .hd { font: 500 17px var(--latin); color: var(--text-3); margin-bottom: 4px; }
+  .count { position: absolute; display: flex; align-items: baseline; gap: 12px; font-size: 28px; color: var(--text-2); transform: translateX(-50%); opacity: 0; white-space: nowrap; }
+  .count b { font: 600 56px var(--latin); color: var(--ink); letter-spacing: -.02em; }
+  .count.label-only { margin-top: 56px; font-weight: 600; font-size: 36px; color: var(--ink); }
+  .memdot { position: absolute; width: 22px; height: 22px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 0 8px rgba(79,214,240,.22), 0 0 22px rgba(79,214,240,.9); opacity: 0; }
+</style>
+</head>
+<body>
+<div id="world"></div>
+
+<div class="scrim" id="scrim"></div>
+<div class="hudswap" id="hud">OpenViking · <b>集成生态</b></div>
+<div class="hud-r2" id="hudr">openviking.ai/<b>integrations</b></div>
+<div class="ov-big" id="big1" style="top:330px">装上插件，<br><em>记忆全自动。</em></div>
+<div class="ov-big" id="big2" style="top:118px;font-size:92px">企业自己的<em>应用呢？</em></div>
+
+<script src="../node_modules/gsap/dist/gsap.min.js"></script>
+<script src="../node_modules/gsap/dist/MotionPathPlugin.min.js"></script>
+<script src="launch.js"></script>
+<script src="captions.js"></script>
+<script src="world.js"></script>
+<script>
+// Shots 01–02 as one continuous take on the shared stage (27 s):
+//   01 插件已经接上的 Agent 0–10 · 02 插件够不着的应用 10–27 (ends on shot 03's opening frame)
+const fadeIn = (sel, t, d = .5) => tl.to(sel, { opacity: 1, duration: d }, t);
+const fadeOut = (sel, t, d = .5) => tl.to(sel, { opacity: 0, duration: d }, t);
+const hud = (t, html) => tl.set('#hud', { innerHTML: html }, t);
+
+// everything that belongs to later shots stays out of this take
+gsap.set(['#gate', '#model', '#floorWrap', '#hubmark', '#pTool', '#cap', '#plug', '#appGw', ...[...$('fx').children]], { opacity: 0 });
+gsap.set([...document.querySelectorAll('#world > div.abs')], { opacity: 0 });
+gsap.set(['#app', '#appKf'], { opacity: 0 });
+gsap.set('#appKf', { height: 500 });
+gsap.set('#bubble', { opacity: 0 });
+gsap.set('#leftovers', { opacity: 1 });
+gsap.set(['#leftovers .code-card', '#leftovers .flowarrow', '#ghost3', '#ghost4'], { opacity: 0 });
+gsap.set(['#kfChat', '#kfQ', '#kfA'], { opacity: 0 });
+
+// ---------- 01 · the plugin constellation (around the same spot as shot 05's plugin cluster) ----------
+const C = { x: -1360, y: 340 };
+const W = $('world');
+W.insertAdjacentHTML('beforeend', `<div class="ccore" id="core" style="left:${C.x}px;top:${C.y + 40}px"><div class="halo"></div><img src="../assets/ov-mark.svg"><div class="wm">OpenViking</div></div>`);
+const rings = [
+  { rx: 330, ry: 230, start: 54, items: [['Claude Code', 'claude-code.svg'], ['Codex', 'codex.svg'], ['Cursor', 'cursor.svg'], ['TRAE', 'trae.svg'], ['opencode', 'opencode.svg']] },
+  { rx: 520, ry: 360, start: -54, items: [['Kimi Code', 'kimi-code.svg'], ['DeepSeek Harness', 'deepseek.svg'], ['OpenClaw', 'openclaw.jpg'], ['Hermes', 'hermes.png'], ['Pi', 'pi.svg']] },
+];
+const nodes = [];
+rings.forEach((r, ri) => r.items.forEach(([name, file], i) => {
+  const a = (r.start + i * 360 / r.items.length) * Math.PI / 180;
+  const x = C.x + r.rx * Math.cos(a), y = C.y + r.ry * Math.sin(a);
+  const depth = (y - (C.y - r.ry)) / (2 * r.ry);
+  const photo = /\.(png|jpg)$/.test(file) ? ' class="photo"' : '';
+  const id = 'n_' + name.replace(/\W/g, '');
+  W.insertAdjacentHTML('beforeend', `<div class="lnode" id="${id}" style="left:${x}px;top:${y}px;transform:translate(-50%,-50%) scale(${.82 + depth * .26});filter:blur(${(1 - depth) * (ri ? 2.2 : 1)}px);opacity:0">
+    <div class="disc"><img src="../assets/logos/${file}"${photo}></div><div class="nm">${name}</div></div>`);
+  const p = line(`M${x} ${y} Q${(x + C.x) / 2} ${(y + C.y) / 2 - 60 - 40 * (1 - depth)} ${C.x} ${C.y}`, `rgba(14,154,182,${.22 + depth * .25})`, 1.6);
+  const L = p.getTotalLength(); p.style.strokeDasharray = `${L} ${L}`; p.style.strokeDashoffset = L;
+  nodes.push({ id, name, x, y, arc: p, L, depth, ri });
+}));
+const node = (n) => nodes.find((o) => o.name === n);
+const CC = node('Claude Code'), CX = node('Codex');
+W.insertAdjacentHTML('beforeend', `
+  <div class="term" id="termCC" style="left:${CC.x + 90}px;top:${CC.y - 70}px"><div class="hd">Claude Code · OpenViking 插件</div>
+    <div class="tl" id="cc1">⚙ <b>自动召回</b> · 2 条相关记忆</div><div class="tl" id="cc2">⚙ <b>本轮对话已捕获</b></div></div>
+  <div class="term" id="termCX" style="left:${CX.x - 300}px;top:${CX.y + 140}px"><div class="hd">Codex · OpenViking 插件</div>
+    <div class="tl" id="cx1">⚙ <b>自动召回</b> · 周二在 Claude Code 里的约定</div></div>
+  <div class="memdot" id="memdot"></div>
+  <div class="count${LAUNCH.pluginCount ? '' : ' label-only'}" id="count" style="left:${C.x}px;top:${C.y + 420}px">${LAUNCH.pluginCount ? '<b id="countN">0</b> ' : ''}${LAUNCH.pluginCountLabel}</div>`);
+gsap.set('#memdot', { xPercent: -50, yPercent: -50 });
+
+Object.assign(cam, { cx: C.x, cy: C.y + 20, s: 1.55 }); applyCam();
+tl.fromTo('#core', { opacity: 0, scale: .9 }, { opacity: 1, scale: 1, duration: .6, ease: 'power3.out' }, .1);
+// logos land one after another, each drawing its arc back to OpenViking
+nodes.forEach((n, i) => {
+  const t = .35 + i * .14;
+  tl.fromTo(`#${n.id}`, { opacity: 0, y: 30 }, { opacity: .72 + n.depth * .28, y: 0, duration: .45, ease: 'power3.out' }, t);
+  tl.to(n.arc, { strokeDashoffset: 0, duration: .5, ease: 'power2.out' }, t + .2);
+});
+shot(.2, C.x + 60, C.y + 40, 1.0, 2.2);
+// "召回和沉淀全自动": push in on Claude Code, its plugin recalls and captures on its own
+shot(3.0, CC.x + 200, CC.y, 1.75, 1.1);
+tl.to(nodes.filter((n) => n !== CC).map((n) => `#${n.id}`), { filter: 'blur(4px)', duration: .6 }, 3.0);
+fadeIn('#termCC', 3.5, .35);
+tl.to('#cc1', { opacity: 1, duration: .25 }, 3.65);
+const pulseArc = (n, t, back = false) => {
+  const p = line(n.arc.getAttribute('d'), 'rgba(79,214,240,.95)', 5, { 'stroke-dasharray': `90 ${n.L + 90}` });
+  p.style.opacity = 0; p.style.strokeDashoffset = back ? -n.L : 90;
+  tl.set(p, { opacity: 1 }, t); tl.to(p, { strokeDashoffset: back ? 90 : -n.L, duration: .6, ease: 'power1.inOut' }, t); tl.set(p, { opacity: 0 }, t + .6);
+};
+pulseArc(CC, 3.55, true);      // recall: OpenViking → agent
+tl.to('#cc2', { opacity: 1, duration: .25 }, 4.3);
+pulseArc(CC, 4.25);            // capture: agent → OpenViking
+// "换个 Agent，记忆还在": the memory travels from Claude Code through OpenViking into Codex
+shot(5.2, (CC.x + CX.x) / 2, CC.y - 40, 1.35, 1.0);
+tl.to(`#${CX.id}`, { filter: 'blur(0px)', duration: .4 }, 5.3);
+tl.set('#memdot', { left: CC.x, top: CC.y }, 5.4);
+tl.to('#memdot', { opacity: 1, duration: .15 }, 5.4);
+tl.to('#memdot', { duration: 1.0, ease: 'power2.inOut', motionPath: { path: [{ x: 0, y: 0 }, { x: C.x - CC.x, y: C.y - CC.y }, { x: CX.x - CC.x, y: CX.y - CC.y }], curviness: 1.1 } }, 5.45);
+tl.to('#memdot', { opacity: 0, duration: .2 }, 6.4);
+fadeIn('#termCX', 6.25, .3);
+tl.to('#cx1', { opacity: 1, duration: .25 }, 6.45);
+// pull back to the whole constellation: the premise lands
+shot(7.0, C.x - 420, C.y + 60, .92, 1.4);
+tl.to(nodes.map((n) => `#${n.id}`), { filter: 'blur(0px)', duration: .6 }, 7.0);
+fadeOut(['#termCC', '#termCX'], 7.1, .5);
+fadeIn('#count', 7.4, .4);
+const cnt = { n: 0 }; if (LAUNCH.pluginCount) tl.to(cnt, { n: LAUNCH.pluginCount, duration: .8, ease: 'power2.out', onUpdate: () => { $('countN').textContent = Math.round(cnt.n); } }, 7.45);
+tl.fromTo('#big1', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: .6, ease: 'power3.out' }, 7.6);
+
+// =====================================================================
+// 02 · 插件够不着的应用 (10–27)
+// =====================================================================
+fadeOut('#big1', 9.7, .4);
+hud(10.0, 'OpenViking · <b>企业自己的应用</b>');
+fadeOut('#hudr', 10.0, .4);
+// the camera slides past the constellation's edge
+shot(9.8, 110, 300, .92, 1.7);
+tl.to([...nodes.map((n) => `#${n.id}`), '#core', '#count'], { filter: 'blur(5px)', duration: .8 }, 10.4);
+// two apps no plugin can reach: an in-house agent and a workflow chat bot
+tl.set('#appDay', { textContent: '周一 · 新对话' }, 10.6); tl.set('#kfDay', { textContent: '周一 · 新对话' }, 10.6);
+tl.fromTo('#app', { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: .6, ease: 'power3.out' }, 10.9);
+tl.fromTo('#appKf', { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: .6, ease: 'power3.out' }, 11.1);
+fadeIn(['#appDay', '#kfDay', '#kfChat'], 11.3, .3);
+tl.to('#app', { boxShadow: '0 0 0 3px rgba(79,214,240,.5), 0 28px 70px rgba(7,9,13,.13)', duration: .3, yoyo: true, repeat: 1 }, 11.4);
+fadeIn('#scrim', 12.5, .5);
+tl.fromTo('#big2', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: .6, ease: 'power3.out' }, 12.6);
+// both get the same question, neither remembers
+const appInput = document.querySelector('#app .input');
+const askBoth = (t) => {
+  tl.fromTo(['#bubble', '#kfQ'], { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: .3, ease: 'power2.out' }, t);
+  tl.fromTo(['#failAns', '#kfA'], { opacity: 0 }, { opacity: 1, duration: .35 }, t + .35);
+};
+stream(appInput, '上次定的发布日期是哪天？', 12.6, .8); tl.set(appInput, { color: '#18232A' }, 12.6);
+tl.set(appInput, { textContent: '输入消息…', color: '#8B959C' }, 13.5);
+askBoth(13.5);
+tl.to(['#kfN1', '#kfN2'], { boxShadow: '0 0 0 6px rgba(79,214,240,.35)', duration: .25, yoyo: true, repeat: 1 }, 14.85);
+// "没有插件可装"
+tl.fromTo(['#appNoPlug', '#kfNoPlug'], { opacity: 0, scale: .7 }, { opacity: 1, scale: 1, duration: .3, stagger: .2, ease: 'back.out(2)' }, 15.9);
+// "新对话照样从零开始": push in so the day chips read; Monday, Wednesday, Friday, each a blank start
+shot(16.6, 130, 420, 1.12, 1.0);
+[['周三', 17.35], ['周五', 18.3]].forEach(([d, t]) => {
+  tl.to(['#bubble', '#failAns', '#kfQ', '#kfA'], { opacity: 0, duration: .15 }, t);
+  tl.set(['#appDay', '#kfDay'], { textContent: `${d} · 新对话` }, t + .15);
+  tl.fromTo(['#appDay', '#kfDay'], { scale: 1.15 }, { scale: 1, duration: .25 }, t + .15);
+  askBoth(t + .3);
+});
+// "想接上记忆，就得自己写检索、注入、保存，一个应用接一遍"
+fadeOut(['#big2', '#scrim'], 16.6, .4);
+// first just the in-house agent and the integration work it now needs, as a flow
+fadeOut('#appKf', 19.3, .4);
+shot(19.4, 720, 625, 1.0, 1.4);
+[['#lc1', 21.55], ['#lc2', 22.5], ['#lc3', 22.95], ['#lc4', 23.3]].forEach(([id, t], i) => {
+  tl.fromTo(id, { opacity: 0, y: -24 }, { opacity: 1, y: 0, duration: .35, ease: 'power3.out' }, t);
+  if (i) tl.to(`#la${i}`, { opacity: 1, duration: .25 }, t - .1);
+});
+tl.fromTo('#lc5', { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: .3, ease: 'power3.out' }, 23.65);
+// "一个应用接一遍": pull back; around it, every other app carries the same pile
+shot(24.0, 650, 500, .7, 1.3);
+tl.set('#appKf', { y: 0 }, 24.05);
+fadeIn('#appKf', 24.1, .45);
+fadeIn('#ghost3', 24.25, .45);
+fadeIn('#ghost4', 24.4, .45);
+['#lc12', '#lc13', '#lc14', '#lc6', '#lc7', '#lc8', '#lc9', '#lc10', '#lc11'].forEach((id, k) =>
+  tl.fromTo(id, { opacity: 0, y: -24 }, { opacity: 1, y: 0, duration: .3, ease: 'power3.out' }, 24.35 + k * .07));
+// a tools-only connection fills one slot; automatic recall and saving stay empty
+fadeIn('#kfSlots', 25.3, .4);
+tl.to(['#slotR', '#slotS'], { borderColor: '#4FD6F0', duration: .25, yoyo: true, repeat: 3 }, 25.8);
+tl.to({}, { duration: Math.max(0, 27 - tl.duration()) });
+
+addCaptions('seq01-02');
+
+window.__duration = 27;
+window.__seek = (t) => { tl.seek(t, false); };
+window.__seek(0);
+</script>
+</body></html>

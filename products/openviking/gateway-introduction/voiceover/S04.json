@@ -1,0 +1,180 @@
+{
+  "provider": "volcengine",
+  "resource_id": "seed-tts-2.0",
+  "speaker": "zh_male_gaolengchenwen_uranus_bigtts",
+  "audio_params": {
+    "format": "mp3",
+    "sample_rate": 48000,
+    "bit_rate": 160000,
+    "speech_rate": -5,
+    "enable_subtitle": true
+  },
+  "request_id": "0b65ac23-3455-4565-8d5c-39bb9b710fce",
+  "log_id": "2026102511565938D476030ADF9F883B3F",
+  "text_sha256": "4bf2cdf74f1dd2bf099b37e9e22cee2609b1bdf22cf2e94ce6fbb6c119d87276",
+  "input_characters": 28,
+  "usage": {
+    "text_words": 28
+  },
+  "bytes": 139725,
+  "final_code": 20000000,
+  "terminal_success_seen": true,
+  "stream_end": "terminal_success",
+  "sentences": [
+    {
+      "phonemes": [],
+      "text": "同一个应用，同一个模型，同一个问题。这一次，它答得上来。",
+      "words": []
+    },
+    {
+      "phonemes": [],
+      "text": "同一个应用，同一个模型，同一个问题。",
+      "words": [
+        {
+          "confidence": 0.9054682,
+          "endTime": 0.265,
+          "startTime": 0,
+          "word": "同"
+        },
+        {
+          "confidence": 0.8904215,
+          "endTime": 0.355,
+          "startTime": 0.265,
+          "word": "一"
+        },
+        {
+          "confidence": 0.89762735,
+          "endTime": 0.505,
+          "startTime": 0.355,
+          "word": "个"
+        },
+        {
+          "confidence": 0.8845523,
+          "endTime": 0.675,
+          "startTime": 0.505,
+          "word": "应"
+        },
+        {
+          "confidence": 0.83665246,
+          "endTime": 0.845,
+          "startTime": 0.675,
+          "word": "用，"
+        },
+        {
+          "confidence": 0.96879673,
+          "endTime": 1.625,
+          "startTime": 1.375,
+          "word": "同"
+        },
+        {
+          "confidence": 0.8514098,
+          "endTime": 1.725,
+          "startTime": 1.625,
+          "word": "一"
+        },
+        {
+          "confidence": 0.90455836,
+          "endTime": 1.825,
+          "startTime": 1.725,
+          "word": "个"
+        },
+        {
+          "confidence": 0.96343017,
+          "endTime": 2.015,
+          "startTime": 1.825,
+          "word": "模"
+        },
+        {
+          "confidence": 0.91723114,
+          "endTime": 2.375,
+          "startTime": 2.015,
+          "word": "型，"
+        },
+        {
+          "confidence": 0.88633376,
+          "endTime": 2.995,
+          "startTime": 2.735,
+          "word": "同"
+        },
+        {
+          "confidence": 0.893985,
+          "endTime": 3.075,
+          "startTime": 2.995,
+          "word": "一"
+        },
+        {
+          "confidence": 0.96439546,
+          "endTime": 3.185,
+          "startTime": 3.075,
+          "word": "个"
+        },
+        {
+          "confidence": 0.9842473,
+          "endTime": 3.365,
+          "startTime": 3.185,
+          "word": "问"
+        },
+        {
+          "confidence": 0.9938298,
+          "endTime": 3.555,
+          "startTime": 3.365,
+          "word": "题。"
+        }
+      ]
+    },
+    {
+      "phonemes": [],
+      "text": "这一次，它答得上来。",
+      "words": [
+        {
+          "confidence": 0.81548977,
+          "endTime": 4.745042,
+          "startTime": 4.5850415,
+          "word": "这"
+        },
+        {
+          "confidence": 0.9145643,
+          "endTime": 4.8450418,
+          "startTime": 4.745042,
+          "word": "一"
+        },
+        {
+          "confidence": 0.90870297,
+          "endTime": 5.1850414,
+          "startTime": 4.8450418,
+          "word": "次，"
+        },
+        {
+          "confidence": 0.93125653,
+          "endTime": 5.8450418,
+          "startTime": 5.6850414,
+          "word": "它"
+        },
+        {
+          "confidence": 0.9123801,
+          "endTime": 6.0050416,
+          "startTime": 5.8450418,
+          "word": "答"
+        },
+        {
+          "confidence": 0.9745495,
+          "endTime": 6.0950418,
+          "startTime": 6.0050416,
+          "word": "得"
+        },
+        {
+          "confidence": 0.9415533,
+          "endTime": 6.285042,
+          "startTime": 6.0950418,
+          "word": "上"
+        },
+        {
+          "confidence": 0.8560289,
+          "endTime": 6.5150414,
+          "startTime": 6.285042,
+          "word": "来。"
+        }
+      ]
+    }
+  ]
+}

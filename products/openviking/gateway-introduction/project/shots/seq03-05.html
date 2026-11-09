@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../styleframes/base.css"><link rel="stylesheet" href="../styleframes/apps.css"><link rel="stylesheet" href="world.css">
+<style>
+  .scrim { position: absolute; left: 0; top: 0; width: 1500px; height: 360px; opacity: 0; backdrop-filter: blur(12px);
+    background: linear-gradient(180deg, rgba(244,247,249,.92), rgba(244,247,249,.75) 55%, rgba(244,247,249,0));
+    -webkit-mask-image: radial-gradient(120% 100% at 0% 0%, #000 55%, transparent 100%); }
+  .ov-big { position: absolute; left: 110px; top: 118px; font: 700 92px/1.12 var(--sans); letter-spacing: -.02em; color: var(--ink); opacity: 0; }
+  .ov-big em { font-style: normal; color: var(--cyan-type); }
+  .lockup { position: absolute; left: 110px; bottom: 120px; opacity: 0; }
+  .lockup .row1 { display: flex; align-items: center; gap: 22px; }
+  .lockup img { width: 92px; height: 92px; }
+  .lockup .nm { font: 700 72px var(--sans); letter-spacing: -.01em; color: var(--ink); }
+  .lockup .nm span { font-family: var(--latin); font-weight: 600; letter-spacing: -.025em; }
+  .lockup .sub { margin-top: 18px; font: 500 34px var(--sans); color: var(--text-2); letter-spacing: .04em; }
+  .hudswap { position: absolute; left: 64px; top: 44px; font-size: 22px; color: var(--text-3); }
+  .hudswap b { color: var(--cyan-deep); font-weight: 500; }
+  .reqpill { position: absolute; left: 0; top: 0; height: 44px; padding: 0 16px; border-radius: 999px; background: #fff; box-shadow: var(--shadow-lift);
+    display: flex; align-items: center; gap: 8px; font-size: 20px; white-space: nowrap; border: 1px solid var(--line); opacity: 0; }
+  .reqpill i { width: 12px; height: 12px; border-radius: 50%; background: #B9C2C8; }
+  .reqpill.rmem { border: 2px solid var(--cyan); color: var(--cyan-deep); }
+  .reqpill.rmem i { background: var(--cyan); }
+  .reqpill.rep { border: 2px solid var(--cyan); color: var(--text); }
+</style>
+</head>
+<body>
+<div id="world"></div>
+
+<div class="scrim" id="scrim"></div>
+<div class="hudswap" id="hud">研发助手 · <b>模型服务配置</b></div>
+<div class="ov-big" id="big1">改<em>两项</em>设置</div>
+<div class="ov-big" id="big2" style="font-size:92px">守在通往<em>模型的路上</em></div>
+<div class="lockup" id="lockup">
+  <div class="row1"><img src="../assets/ov-mark.svg"><div class="nm"><span>OpenViking</span> 网关</div></div>
+  <div class="sub" id="lockSub">不装插件 · 不改业务代码</div>
+</div>
+<div class="corner-tag" id="ctag" style="opacity:0">原理示意</div>
+
+<script src="../node_modules/gsap/dist/gsap.min.js"></script>
+<script src="../node_modules/gsap/dist/MotionPathPlugin.min.js"></script>
+<script src="launch.js"></script>
+<script src="captions.js"></script>
+<script src="world.js"></script>
+<script>
+// Shots 03–05 as one continuous take on the shared stage (35 s):
+//   03 改两项设置 0–11 · 04 同一个问题 11–19 · 05 网关是什么 19–35 (ends on shot 06's opening frame)
+const APP = { x: 80, y: 330, w: 780, h: 540 };
+P.model = wrect($('model'));
+const appInput = document.querySelector('#app .input');
+$('world').insertAdjacentHTML('beforeend', '<div id="plugLbl" class="abs" style="left:-1900px;top:640px;width:1080px;text-align:center;opacity:0;font:500 30px var(--sans);color:var(--text-2)">插件 · 装在每个 Agent 里，直连 OpenViking</div>');
+const gwLabel = [...document.querySelectorAll('#world > div.abs')].find((e) => e.textContent.includes('OpenViking 网关'));
+const typeInto = (el, text, t, d) => { tl.set(el, { color: '#18232A' }, t); stream(el, text, t, d); };
+const hud = (t, html) => tl.set('#hud', { innerHTML: html }, t);
+const fadeIn = (sel, t, d = .5) => tl.to(sel, { opacity: 1, duration: d }, t);
+const fadeOut = (sel, t, d = .5) => tl.to(sel, { opacity: 0, duration: d }, t);
+
+// ---------- opening state: end of shot 02 ----------
+Object.assign(cam, { cx: 650, cy: 500, s: .7 }); applyCam();
+const hidden = ['#gate', '#model', '#floorWrap', '#hubmark', '#pTool', '#cap'];
+gsap.set(hidden, { opacity: 0 });
+const rails = [...$('fx').children].slice(0, 2);   // conduit rails appear with the store in 05
+gsap.set(rails, { opacity: 0 });
+gsap.set(document.querySelectorAll('#world > .abs'), { opacity: 0 });   // gateway name label
+gsap.set('#leftovers', { opacity: 1 }); gsap.set('#appKf', { opacity: 1 });
+// shot 02's last frame: the in-house agent with its integration flow, the other apps around it with theirs
+gsap.set('#appGw', { opacity: 0 });
+gsap.set(['#failAns', '#appDay', '#appNoPlug', '#kfChat', '#kfSlots', '#kfDay', '#kfNoPlug'], { opacity: 1 });
+$('appDay').textContent = $('kfDay').textContent = '周五 · 新对话';
+gsap.set('#appKf', { height: 500 });
+gsap.set(['.reqpill'], { xPercent: -50, yPercent: -50 });
+
+// =====================================================================
+// 03 · 改两项设置 (0–11)
+// =====================================================================
+// the other apps and all that integration work fall away; the in-house agent stays
+tl.to(['#leftovers', '#appKf'], { filter: 'blur(10px)', scale: .96, opacity: .4, duration: .4, ease: 'power2.in', transformOrigin: '50% 50%' }, 0);
+fadeOut(['#leftovers', '#appKf'], .6, .6);
+tl.set(['#kfChat', '#kfSlots', '#kfDay', '#kfNoPlug'], { opacity: 0 }, 1.3);
+tl.set('#appKf', { height: 330 }, 1.3);
+fadeOut(['#bubble', '#failAns', '#appDay', '#appNoPlug'], .5, .3);
+shot(.6, 760, 600, .85, 1.4);
+// "OpenViking 网关": the gateway itself arrives, beside the app, named
+tl.fromTo('#gate', { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: .7, ease: 'power3.out' }, .9);
+tl.to('#gate', { boxShadow: '0 0 0 1px rgba(7,9,13,.05), 0 40px 90px rgba(7,9,13,.12), 0 0 110px rgba(79,214,240,.45), inset 0 1px 0 #fff', duration: .5, yoyo: true, repeat: 1 }, 1.3);
+fadeIn(gwLabel, 1.1, .5);
+tl.fromTo('#lockup', { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: .7, ease: 'power3.out' }, 1.2);
+// "换一种接法": the agent's model config comes forward
+tl.fromTo('#editor', { opacity: 0, scale: .96, y: 30 }, { opacity: 1, scale: 1, y: 0, duration: .6, ease: 'power3.out' }, 2.0);
+shot(2.3, 650, 580, 1.2, 1.0);
+fadeOut('#lockup', 2.2, .3);
+fadeIn(['#big1', '#scrim'], 2.85, .6);
+// "把模型地址指向网关": retype base_url; the gateway answers when it lands
+tl.to('#urlVal', { backgroundColor: 'rgba(127,230,250,.25)', duration: .15 }, 2.95);
+tl.set('#urlVal', { textContent: '"', backgroundColor: 'rgba(127,230,250,0)' }, 3.25);
+tl.set('#caret2', { opacity: 1 }, 3.25);
+tl.set('#urlVal', { color: '#7FE6FA' }, 3.25);
+stream($('urlVal'), `"${LAUNCH.gatewayUrl}"`, 3.3, 1.25);
+tl.to('#row2', { backgroundColor: 'rgba(79,214,240,.08)', boxShadow: 'inset 4px 0 0 #4FD6F0', duration: .3 }, 4.55);
+tl.set('#caret2', { opacity: 0 }, 4.6);
+tl.to('#gate', { boxShadow: '0 0 0 1px rgba(7,9,13,.05), 0 40px 90px rgba(7,9,13,.12), 0 0 110px rgba(79,214,240,.5), inset 0 1px 0 #fff', duration: .4, yoyo: true, repeat: 1 }, 4.55);
+tl.to('#gate .addr', { color: '#0A7C93', duration: .3, yoyo: true, repeat: 1, repeatDelay: .4 }, 4.55);
+// "密钥换成 OpenViking API Key"
+tl.to('#keyVal', { backgroundColor: 'rgba(127,230,250,.25)', duration: .15 }, 5.0);
+tl.set('#keyVal', { textContent: '"', backgroundColor: 'rgba(127,230,250,0)', color: '#7FE6FA' }, 5.25);
+tl.set('#caret3', { opacity: 1 }, 5.25);
+stream($('keyVal'), `"${LAUNCH.keyPrefix}••••7c21"`, 5.3, 1.2);
+tl.to('#row3', { backgroundColor: 'rgba(79,214,240,.08)', boxShadow: 'inset 4px 0 0 #4FD6F0', duration: .3 }, 6.55);
+tl.set('#caret3', { opacity: 0 }, 6.6);
+tl.to('#same', { opacity: 1, duration: .3 }, 6.7);
+// "不装插件，不改业务代码": pull back to the app and its gateway; the promise lands under the name
+fadeOut(['#big1', '#scrim'], 7.46, .4);
+shot(7.46, 760, 600, .85, 1.3);
+fadeIn('#lockup', 7.66, .4);
+tl.fromTo('#lockSub', { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: .5, ease: 'power3.out' }, 7.96);
+fadeOut('#lockup', 10.5, .5);
+
+// =====================================================================
+// 04 · 同一个问题 (11–19)
+// =====================================================================
+hud(11.0, '研发助手 · <b>同一个问题</b>');
+// the editor folds back into the app it configures; a twin app appears beside it, still on the old address
+tl.to('#editor', { left: APP.x, top: APP.y, width: APP.w, height: APP.h, borderRadius: 18, duration: .75, ease: 'power3.inOut' }, 10.9);
+tl.to('#editor pre, #editor .bar', { opacity: 0, duration: .3 }, 11.15);
+tl.set('#app', { filter: 'blur(0px)', scale: 1 }, 11.3);
+fadeIn('#app', 11.35, .35);
+fadeOut('#editor', 11.55, .3);
+tl.to('#appGw', { opacity: 1, duration: .3 }, 11.6);
+fadeIn('#direct', 11.5, .5);
+fadeIn(['#lblDirect', '#lblGw'], 11.7, .5);
+shot(10.9, -10, 560, 1.04, 1.3);
+// both type the same question
+typeInto(appInput, '上次定的发布日期是哪天？', 12.0, 1.0);
+typeInto($('dInput'), '上次定的发布日期是哪天？', 12.0, 1.0);
+tl.set([appInput, $('dInput')], { textContent: '输入消息…', color: '#8B959C' }, 13.25);
+tl.fromTo(['#bubble', '#dBubble'], { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: .35, ease: 'power2.out', immediateRender: false }, 13.25);
+// left: no memory; right: answers with what it recalled
+tl.to('#dAnswer', { opacity: 1, duration: .25 }, 13.65);
+stream($('dText'), '抱歉，我看不到之前的对话记录。能告诉我是哪个项目吗？', 13.7, 1.0);
+tl.to('#answer', { opacity: 1, duration: .25 }, 13.75);
+stream($('atext'), '12 月 8 日。上周评审时决定推迟一周，等支付回归测试完成。', 13.9, 1.2);
+tl.to('#direct', { opacity: .72, duration: .5 }, 15.2);
+shot(15.0, 470, 600, 1.2, 1.6);
+
+// =====================================================================
+// 05 · 网关是什么 (19–35)
+// =====================================================================
+hud(19.0, 'OpenViking · <b>网关是什么</b>');
+fadeIn('#ctag', 19.5, .5);
+// rise from the answer into the first full view of the stage
+shot(18.9, 360, 820, .42, 2.5);
+fadeOut(['#direct', '#lblDirect', '#lblGw'], 19.2, .6);
+fadeIn(['#gate', '#model', '#pTool', gwLabel], 19.8, .8);
+fadeIn(['#floorWrap', '#hubmark', ...rails], 20.0, .9);
+fadeIn('#plugLbl', 20.2, .8);
+tl.to('#plug', { opacity: .55, filter: 'blur(3px)', duration: .8 }, 20.2);
+tl.set(['#appKf', '#appYw'], { filter: 'blur(0px)', scale: 1 }, 20.2);
+fadeIn(['#appKf', '#appYw'], 20.3, .7);
+tl.to('#kfAddr', { opacity: 0, duration: .3 }, 20.3);
+// "a model proxy"
+tl.to('#gate', { boxShadow: '0 0 0 1px rgba(7,9,13,.05), 0 40px 90px rgba(7,9,13,.12), 0 0 110px rgba(79,214,240,.45), inset 0 1px 0 #fff', duration: .5, yoyo: true, repeat: 1 }, 20.9);
+// "between your apps and the model": every app's model call is routed through the gate
+const appOut = [[APP.x + APP.w, APP.y + 200], [-40, 255], [-40, 945]];
+const routes = appOut.map(([x, y], i) => {
+  const p = line(`M${x} ${y} C ${x + 260} ${y}, ${gx - 260} ${P.gate.y + 260 + i * 30}, ${gx - 100} ${P.gate.y + 260 + i * 30}`, 'rgba(14,154,182,.45)', 3);
+  const L = p.getTotalLength(); p.style.strokeDasharray = `${L} ${L}`; p.style.strokeDashoffset = L; p.style.opacity = 1;
+  tl.to(p, { strokeDashoffset: 0, duration: .9, ease: 'power2.inOut' }, 22.35 + i * .15); return p;
+});
+const toModel = line(`M${gx + 100} ${P.gate.y + 290} L ${P.model.x} ${P.gate.y + 290}`, 'rgba(7,9,13,.35)', 3);
+(() => { const L = toModel.getTotalLength(); toModel.style.strokeDasharray = `${L} ${L}`; toModel.style.strokeDashoffset = L; })();
+tl.to(toModel, { strokeDashoffset: 0, duration: .7, ease: 'power2.inOut' }, 23.0);
+shot(21.6, 760, 760, .5, 2.2, 'power2.inOut');
+// "plugins go into every agent": the camera visits the plugin cluster; each agent gets its own OV badge
+shot(23.9, -1050, 470, .62, 1.4);
+tl.to('#plug', { opacity: 1, filter: 'blur(0px)', duration: .6 }, 24.1);
+tl.to('.plugbadge', { opacity: 1, scale: 1, duration: .25, stagger: .09, ease: 'back.out(2)' }, 24.6);
+gsap.set('.plugbadge', { scale: .3 });
+// their own road straight to OpenViking (no gateway on it)
+const plugRoad = line(`M-760 640 C -400 1100, ${gx - 900} ${hubC + 40}, ${gx - 260} ${hubC}`, 'rgba(14,154,182,.35)', 3, { 'stroke-dasharray': '3 10' });
+plugRoad.style.opacity = 0; tl.to(plugRoad, { opacity: 1, duration: .6 }, 25.3);
+// "the gateway only stands on the road to the model"
+shot(26.3, 1000, 800, .56, 1.6);
+tl.to('#plug', { opacity: .55, filter: 'blur(3px)', duration: .6 }, 26.4);
+tl.fromTo('#big2', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: .6, ease: 'power3.out' }, 27.0);
+fadeIn('#scrim', 26.9, .6);
+// "every app that passes here picks up memory…"
+const req = [];
+appOut.forEach(([x, y], i) => {
+  const a = document.createElement('div'); a.className = 'reqpill'; a.innerHTML = '<i></i>请求'; $('world').appendChild(a);
+  const b = document.createElement('div'); b.className = 'reqpill rmem'; b.innerHTML = '<i></i>请求 + 记忆'; $('world').appendChild(b);
+  const r = document.createElement('div'); r.className = 'reqpill rep'; r.innerHTML = '<i style="background:#4FD6F0"></i>回复'; $('world').appendChild(r);
+  gsap.set([a, b, r], { xPercent: -50, yPercent: -50 });
+  req.push([a, b, r]);
+  const t0 = 29.3 + i * .3, gyy = P.gate.y + 260 + i * 30;
+  tl.set(a, { left: x + 40, top: y }, t0);
+  tl.to(a, { opacity: 1, duration: .2 }, t0);
+  tl.to(a, { duration: .8, ease: 'power2.inOut', motionPath: { path: [{ x: 220, y: 0 }, { x: gx - 260 - x - 40, y: gyy - y }, { x: gx - 120 - x - 40, y: gyy - y }], curviness: .9 } }, t0);
+  tl.to(a, { opacity: 0, duration: .15 }, t0 + .75);
+  pulse(t0 + .8, 'rgba(79,214,240,.95)', true, .45, 120);
+  hubPulse(t0 + 1.25);
+  tl.set(b, { left: gx + 150, top: P.gate.y + 250 + i * 50 }, t0 + 1.0);
+  tl.to(b, { opacity: 1, duration: .2 }, t0 + 1.0);
+  tl.to(b, { left: P.model.x - 90, duration: .8, ease: 'power2.inOut' }, t0 + 1.0);
+  tl.to(b, { opacity: 0, duration: .2 }, t0 + 1.7);
+  // "…and leaves memory behind": the reply comes back through the gate, the turn goes down to be saved
+  const t1 = 31.7 + i * .3;
+  tl.set(r, { left: P.model.x - 90, top: P.gate.y + 300 + i * 50 }, t1);
+  tl.to(r, { opacity: 1, duration: .2 }, t1);
+  const L0 = P.model.x - 90, Y0 = P.gate.y + 300 + i * 50;
+  tl.to(r, { duration: 1.3, ease: 'power2.inOut', motionPath: { path: [{ x: gx + 130 - L0, y: 0 }, { x: gx - 300 - L0, y: 0 }, { x: x + 60 - L0, y: y - Y0 }], curviness: .8 } }, t1);
+  tl.to(r, { opacity: 0, duration: .2 }, t1 + 1.25);
+  pulse(t1 + .55, 'rgba(79,214,240,.8)', true, .5, 90);
+  hubPulse(t1 + 1.0);
+});
+tag('tagRecall', 30.0, 1.6);
+tag('tagSave', 32.2, 1.5);
+// ---- hand-off: dive into the in-house agent, landing on shot 06's opening frame ----
+fadeOut(['#big2', '#scrim'], 33.1, .5);
+fadeOut(['#appKf', '#appYw', '#plug', '#plugLbl', '#ctag'], 33.3, .6);
+tl.to([...routes, toModel, plugRoad], { opacity: 0, duration: .6 }, 33.3);
+fadeOut('#answer', 33.5, .4);
+tl.to('#appGw', { opacity: 1, duration: .1 }, 33.5);
+shot(33.3, 600, 610, 1.32, 1.7, 'power3.inOut');
+tl.to({}, { duration: Math.max(0, 35 - tl.duration()) });
+
+addCaptions('seq03-05');
+
+window.__duration = 35;
+window.__seek = (t) => { tl.seek(t, false); };
+window.__seek(0);
+</script>
+</body></html>

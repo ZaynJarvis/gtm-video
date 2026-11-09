@@ -1,0 +1,18 @@
+/* Fictional enterprise apps used in shots 02–07 (动效与界面指导 §6.2). */
+.rail { position: absolute; left: 0; top: 64px; bottom: 0; width: 64px; border-right: 1px solid var(--line); background: #FAFBFC; display: flex; flex-direction: column; align-items: center; gap: 18px; padding-top: 22px; }
+.rail i { width: 28px; height: 28px; border-radius: 8px; background: #E6EAED; }
+.rail i.on { background: rgba(79,214,240,.35); }
+.app-body { position: absolute; left: 64px; right: 0; top: 64px; bottom: 0; display: flex; flex-direction: column; }
+.app-body.full { left: 0; }
+.app-body .chat { flex: 1; }
+.flowstrip { padding: 18px 22px; border-bottom: 1px solid var(--line); background: #FAFBFC; }
+.flowstrip .node { height: 46px; padding: 0 13px; font-size: 18px; border-radius: 11px; }
+.flowstrip .edge { width: 24px; }
+.flowstrip .cap { font-size: 17px; color: var(--text-3); margin-bottom: 10px; letter-spacing: .02em; }
+.ghost-win { position: absolute; background: #fff; border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow); }
+.ghost-win .gb { height: 56px; border-bottom: 1px solid var(--line); display: flex; align-items: center; padding: 0 22px; font-size: 20px; color: var(--text-3); gap: 10px; }
+.slots { display: flex; gap: 10px; margin-top: 14px; align-items: center; }
+.slots .cap2 { font-size: 17px; color: var(--text-3); margin-right: 4px; }
+.slot { height: 40px; padding: 0 14px; border-radius: 10px; font-size: 18px; display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+.slot.filled { background: rgba(139,128,217,.14); color: var(--purple-deep); border: 1.5px solid var(--purple); }
+.slot.empty { color: var(--text-3); border: 1.5px dashed #C3CAD0; }

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><link rel="stylesheet" href="apps.css">
+<style>
+  .lane-tag { position: absolute; display: flex; flex-direction: column; gap: 6px; }
+  .lane-tag .t { font: 500 26px var(--sans); color: var(--text); }
+  .lane-tag .a { font: 400 21px var(--mono); color: var(--text-3); }
+  .lane-tag.on .t { color: var(--cyan-deep); }
+  .lane-tag.on .a { color: var(--cyan-deep); }
+  .msg-user { font-size: 27px; max-width: 94%; }
+  .msg-bot { font-size: 27px; }
+  svg.thread { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+</style></head>
+<body>
+  <div class="glow" style="left:900px;top:150px;width:1200px;height:950px;opacity:1.2"></div>
+  <div class="hud-l">研发助手 · <b>同一个问题</b></div>
+  <div class="hud-r">gateway.openviking.<b>volcengine.com</b></div>
+
+  <!-- Left: direct to the model -->
+  <div class="lane-tag" style="left:196px;top:200px;opacity:.8"><div class="t">直连模型</div><div class="a">api.openai.com</div></div>
+  <div class="win" style="left:150px;top:300px;width:760px;height:500px;opacity:.8;transform:scale(.94);transform-origin:100% 50%">
+    <div class="win-bar"><div class="org">内</div><div class="title">研发助手</div><div class="sub">企业自研 Agent</div><div class="spacer"></div><div class="chip">新对话</div></div>
+    <div class="rail"><i class="on"></i><i></i><i></i><i></i></div>
+    <div class="app-body">
+      <div class="chat">
+        <div class="msg-user">上次定的发布日期是哪天？</div>
+        <div class="msg-bot fail"><div class="av"></div><div>抱歉，我看不到之前的对话记录。能告诉我是哪个项目吗？</div></div>
+      </div>
+      <div class="input">输入消息…</div>
+    </div>
+  </div>
+
+  <!-- Right: through the gateway, in focus -->
+  <div class="lane-tag on" style="left:1000px;top:180px"><div class="t">经过网关</div><div class="a">gateway.openviking.volcengine.com</div></div>
+  <div class="win lift" style="left:1000px;top:280px;width:790px;height:540px">
+    <div class="win-bar"><div class="org">内</div><div class="title">研发助手</div><div class="sub">企业自研 Agent</div><div class="spacer"></div><div class="chip cyan">新对话</div></div>
+    <div class="rail"><i class="on"></i><i></i><i></i><i></i></div>
+    <div class="app-body">
+      <div class="chat">
+        <div class="msg-user">上次定的发布日期是哪天？</div>
+        <div class="msg-bot"><div class="av" style="background:rgba(79,214,240,.25)"></div><div>
+          <div class="recall-note">已从记忆补充：发布计划</div>
+          <b style="font-weight:700">12 月 8 日。</b>上周评审时决定推迟一周，等支付回归测试完成。
+        </div></div>
+      </div>
+      <div class="input">输入消息…</div>
+    </div>
+  </div>
+
+  <!-- A thin cyan thread leaves the right window and drops out of frame: next shot follows it -->
+  <svg class="thread">
+    <defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4FD6F0" stop-opacity=".9"/><stop offset="1" stop-color="#4FD6F0" stop-opacity="0"/></linearGradient></defs>
+    <path d="M1395 820 C 1395 920, 1420 990, 1440 1080" stroke="url(#g)" stroke-width="3" fill="none"/>
+    <circle cx="1395" cy="820" r="6" fill="#4FD6F0"/>
+  </svg>
+</body></html>

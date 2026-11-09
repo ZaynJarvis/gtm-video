@@ -1,0 +1,210 @@
+{
+  "provider": "volcengine",
+  "resource_id": "seed-tts-2.0",
+  "speaker": "zh_male_gaolengchenwen_uranus_bigtts",
+  "audio_params": {
+    "format": "mp3",
+    "sample_rate": 48000,
+    "bit_rate": 160000,
+    "speech_rate": 5,
+    "enable_subtitle": true
+  },
+  "request_id": "c2062116-ba52-4acb-8209-4ad999cb9612",
+  "log_id": "202610262018274B4ED3972F61D4A7F1A8",
+  "text_sha256": "84f25ab438d7eaa4a2a041e160d307e84270a31b7308878f88c18864c748b9ab",
+  "input_characters": 42,
+  "usage": {
+    "text_words": 42
+  },
+  "bytes": 137325,
+  "final_code": 20000000,
+  "terminal_success_seen": true,
+  "stream_end": "terminal_success",
+  "sentences": [
+    {
+      "phonemes": [],
+      "text": "OpenViking 网关，即将登陆火山引擎公有云。",
+      "words": [
+        {
+          "confidence": 0.31651568,
+          "endTime": 0.685,
+          "startTime": 0.655,
+          "word": "OpenViking"
+        },
+        {
+          "confidence": 0.8751969,
+          "endTime": 0.835,
+          "startTime": 0.685,
+          "word": "网"
+        },
+        {
+          "confidence": 0.95364875,
+          "endTime": 1.145,
+          "startTime": 0.835,
+          "word": "关，"
+        },
+        {
+          "confidence": 0.9377389,
+          "endTime": 1.585,
+          "startTime": 1.405,
+          "word": "即"
+        },
+        {
+          "confidence": 0.91633683,
+          "endTime": 1.735,
+          "startTime": 1.585,
+          "word": "将"
+        },
+        {
+          "confidence": 0.8022022,
+          "endTime": 1.895,
+          "startTime": 1.735,
+          "word": "登"
+        },
+        {
+          "confidence": 0.942436,
+          "endTime": 2.035,
+          "startTime": 1.895,
+          "word": "陆"
+        },
+        {
+          "confidence": 0.9487928,
+          "endTime": 2.225,
+          "startTime": 2.035,
+          "word": "火"
+        },
+        {
+          "confidence": 0.8674284,
+          "endTime": 2.385,
+          "startTime": 2.225,
+          "word": "山"
+        },
+        {
+          "confidence": 0.7709068,
+          "endTime": 2.515,
+          "startTime": 2.385,
+          "word": "引"
+        },
+        {
+          "confidence": 0.76248795,
+          "endTime": 2.695,
+          "startTime": 2.515,
+          "word": "擎"
+        },
+        {
+          "confidence": 0.9101887,
+          "endTime": 2.845,
+          "startTime": 2.695,
+          "word": "公"
+        },
+        {
+          "confidence": 0.91954386,
+          "endTime": 2.975,
+          "startTime": 2.845,
+          "word": "有"
+        },
+        {
+          "confidence": 0.89083624,
+          "endTime": 3.185,
+          "startTime": 2.975,
+          "word": "云。"
+        }
+      ]
+    },
+    {
+      "phonemes": [],
+      "text": "OpenViking 网关，即将登陆火山引擎公有云。改两项设置，让你的应用接上记忆。",
+      "words": []
+    },
+    {
+      "phonemes": [],
+      "text": "改两项设置，让你的应用接上记忆。",
+      "words": [
+        {
+          "confidence": 0.5481247,
+          "endTime": 4.035042,
+          "startTime": 3.8950417,
+          "word": "改"
+        },
+        {
+          "confidence": 0.86195976,
+          "endTime": 4.1450415,
+          "startTime": 4.035042,
+          "word": "两"
+        },
+        {
+          "confidence": 0.92470664,
+          "endTime": 4.2950416,
+          "startTime": 4.1450415,
+          "word": "项"
+        },
+        {
+          "confidence": 0.8931824,
+          "endTime": 4.495042,
+          "startTime": 4.2950416,
+          "word": "设"
+        },
+        {
+          "confidence": 0.924949,
+          "endTime": 4.7250414,
+          "startTime": 4.495042,
+          "word": "置，"
+        },
+        {
+          "confidence": 0.9386407,
+          "endTime": 5.1950417,
+          "startTime": 5.055042,
+          "word": "让"
+        },
+        {
+          "confidence": 0.9776034,
+          "endTime": 5.305042,
+          "startTime": 5.1950417,
+          "word": "你"
+        },
+        {
+          "confidence": 0.8840601,
+          "endTime": 5.4450417,
+          "startTime": 5.305042,
+          "word": "的"
+        },
+        {
+          "confidence": 0.91619724,
+          "endTime": 5.5850415,
+          "startTime": 5.4450417,
+          "word": "应"
+        },
+        {
+          "confidence": 0.9378643,
+          "endTime": 5.7650414,
+          "startTime": 5.5850415,
+          "word": "用"
+        },
+        {
+          "confidence": 0.9269178,
+          "endTime": 5.9250417,
+          "startTime": 5.7650414,
+          "word": "接"
+        },
+        {
+          "confidence": 0.940989,
+          "endTime": 6.0550413,
+          "startTime": 5.9250417,
+          "word": "上"
+        },
+        {
+          "confidence": 0.8634611,
+          "endTime": 6.2350416,
+          "startTime": 6.0550413,
+          "word": "记"
+        },
+        {
+          "confidence": 0.9118884,
+          "endTime": 6.4250417,
+          "startTime": 6.2350416,
+          "word": "忆。"
+        }
+      ]
+    }
+  ]
+}

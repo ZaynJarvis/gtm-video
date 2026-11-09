@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../styleframes/base.css"><link rel="stylesheet" href="../styleframes/apps.css"><link rel="stylesheet" href="world.css">
+</head>
+<body>
+<div id="world"></div>
+
+<!-- screen-fixed chrome -->
+<div class="steps" id="steps"><span data-s="0">出发</span><i>→</i><span data-s="1">召回</span><i>→</i><span data-s="2">模型推理</span><i>→</i><span data-s="3" class="pu">工具</span><i>→</i><span data-s="4">回复</span><i>→</i><span data-s="5">存回</span></div>
+<div class="corner-tag">原理示意 · 时间已压缩</div>
+
+<script src="../node_modules/gsap/dist/gsap.min.js"></script>
+<script src="../node_modules/gsap/dist/MotionPathPlugin.min.js"></script>
+<script src="launch.js"></script>
+<script src="captions.js"></script>
+<script src="world.js"></script>
+<!-- Shot 06 · 跟着一条消息走 (26 s) -->
+<script src="tl06.js"></script>
+<script>
+addCaptions('shot06');
+window.__duration = 26;
+window.__seek = (t) => { tl.seek(t, false); };
+window.__seek(0);
+</script>
+</body></html>

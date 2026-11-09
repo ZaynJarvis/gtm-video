@@ -1,0 +1,534 @@
+{
+  "provider": "volcengine",
+  "resource_id": "seed-tts-2.0",
+  "speaker": "zh_male_gaolengchenwen_uranus_bigtts",
+  "audio_params": {
+    "format": "mp3",
+    "sample_rate": 48000,
+    "bit_rate": 160000,
+    "speech_rate": 5,
+    "enable_subtitle": true
+  },
+  "request_id": "93bdf1cd-0fec-481f-abc6-0e6322dfa2a0",
+  "log_id": "2026102513042992394BEC1DDF542967E3",
+  "text_sha256": "06cc638c461b490597da5c0bccea646312aa25ee8e6c96dc456a37d64ee468f8",
+  "input_characters": 111,
+  "usage": {
+    "text_words": 111
+  },
+  "bytes": 404205,
+  "final_code": 20000000,
+  "terminal_success_seen": true,
+  "stream_end": "terminal_success",
+  "sentences": [
+    {
+      "phonemes": [],
+      "text": "每条新消息，网关先去 OpenViking 找相关记忆，",
+      "words": [
+        {
+          "confidence": 0.8657359,
+          "endTime": 0.215,
+          "startTime": 0.045,
+          "word": "每"
+        },
+        {
+          "confidence": 0.9275615,
+          "endTime": 0.375,
+          "startTime": 0.215,
+          "word": "条"
+        },
+        {
+          "confidence": 0.92264986,
+          "endTime": 0.525,
+          "startTime": 0.375,
+          "word": "新"
+        },
+        {
+          "confidence": 0.9713165,
+          "endTime": 0.725,
+          "startTime": 0.525,
+          "word": "消"
+        },
+        {
+          "confidence": 0.81178296,
+          "endTime": 1.025,
+          "startTime": 0.725,
+          "word": "息，"
+        },
+        {
+          "confidence": 0.8200765,
+          "endTime": 1.515,
+          "startTime": 1.365,
+          "word": "网"
+        },
+        {
+          "confidence": 0.96323943,
+          "endTime": 1.705,
+          "startTime": 1.515,
+          "word": "关"
+        },
+        {
+          "confidence": 0.88254637,
+          "endTime": 1.885,
+          "startTime": 1.705,
+          "word": "先"
+        },
+        {
+          "confidence": 0.9147498,
+          "endTime": 2.035,
+          "startTime": 1.885,
+          "word": "去"
+        },
+        {
+          "confidence": 0.37120283,
+          "endTime": 2.065,
+          "startTime": 2.035,
+          "word": "OpenViking"
+        },
+        {
+          "confidence": 0.85516447,
+          "endTime": 2.915,
+          "startTime": 2.785,
+          "word": "找"
+        },
+        {
+          "confidence": 0.9701095,
+          "endTime": 3.095,
+          "startTime": 2.915,
+          "word": "相"
+        },
+        {
+          "confidence": 0.9631199,
+          "endTime": 3.235,
+          "startTime": 3.095,
+          "word": "关"
+        },
+        {
+          "confidence": 0.8199984,
+          "endTime": 3.405,
+          "startTime": 3.235,
+          "word": "记"
+        },
+        {
+          "confidence": 0.8884446,
+          "endTime": 3.615,
+          "startTime": 3.405,
+          "word": "忆，"
+        }
+      ]
+    },
+    {
+      "phonemes": [],
+      "text": "附在消息后面，交给你原来的模型。",
+      "words": [
+        {
+          "confidence": 0.7894991,
+          "endTime": 4.2750416,
+          "startTime": 4.180042,
+          "word": "附"
+        },
+        {
+          "confidence": 0.9198568,
+          "endTime": 4.415042,
+          "startTime": 4.2750416,
+          "word": "在"
+        },
+        {
+          "confidence": 0.97024333,
+          "endTime": 4.5950418,
+          "startTime": 4.415042,
+          "word": "消"
+        },
+        {
+          "confidence": 0.801175,
+          "endTime": 4.725042,
+          "startTime": 4.5950418,
+          "word": "息"
+        },
+        {
+          "confidence": 0.931831,
+          "endTime": 4.935042,
+          "startTime": 4.725042,
+          "word": "后"
+        },
+        {
+          "confidence": 0.9675345,
+          "endTime": 5.1150417,
+          "startTime": 4.935042,
+          "word": "面，"
+        },
+        {
+          "confidence": 0.96473783,
+          "endTime": 5.665042,
+          "startTime": 5.4650416,
+          "word": "交"
+        },
+        {
+          "confidence": 0.9567067,
+          "endTime": 5.795042,
+          "startTime": 5.665042,
+          "word": "给"
+        },
+        {
+          "confidence": 0.893494,
+          "endTime": 5.975042,
+          "startTime": 5.795042,
+          "word": "你"
+        },
+        {
+          "confidence": 0.9525383,
+          "endTime": 6.075042,
+          "startTime": 5.975042,
+          "word": "原"
+        },
+        {
+          "confidence": 0.97259194,
+          "endTime": 6.205042,
+          "startTime": 6.075042,
+          "word": "来"
+        },
+        {
+          "confidence": 0.90216017,
+          "endTime": 6.285042,
+          "startTime": 6.205042,
+          "word": "的"
+        },
+        {
+          "confidence": 0.94904834,
+          "endTime": 6.415042,
+          "startTime": 6.285042,
+          "word": "模"
+        },
+        {
+          "confidence": 0.9336025,
+          "endTime": 6.6550417,
+          "startTime": 6.415042,
+          "word": "型。"
+        }
+      ]
+    },
+    {
+      "phonemes": [],
+      "text": "要查得更细，模型会自己调用工具，网关代为执行。",
+      "words": [
+        {
+          "confidence": 0.9178531,
+          "endTime": 7.625084,
+          "startTime": 7.4850836,
+          "word": "要"
+        },
+        {
+          "confidence": 0.9192234,
+          "endTime": 7.7950835,
+          "startTime": 7.625084,
+          "word": "查"
+        },
+        {
+          "confidence": 0.83319974,
+          "endTime": 7.875084,
+          "startTime": 7.7950835,
+          "word": "得"
+        },
+        {
+          "confidence": 0.92223203,
+          "endTime": 8.045084,
+          "startTime": 7.875084,
+          "word": "更"
+        },
+        {
+          "confidence": 0.96550524,
+          "endTime": 8.355083,
+          "startTime": 8.045084,
+          "word": "细，"
+        },
+        {
+          "confidence": 0.9577363,
+          "endTime": 8.855083,
+          "startTime": 8.705084,
+          "word": "模"
+        },
+        {
+          "confidence": 0.8860458,
+          "endTime": 9.015083,
+          "startTime": 8.855083,
+          "word": "型"
+        },
+        {
+          "confidence": 0.9760328,
+          "endTime": 9.185083,
+          "startTime": 9.015083,
+          "word": "会"
+        },
+        {
+          "confidence": 0.9680027,
+          "endTime": 9.365084,
+          "startTime": 9.185083,
+          "word": "自"
+        },
+        {
+          "confidence": 0.96075267,
+          "endTime": 9.535084,
+          "startTime": 9.365084,
+          "word": "己"
+        },
+        {
+          "confidence": 0.90177315,
+          "endTime": 9.685083,
+          "startTime": 9.535084,
+          "word": "调"
+        },
+        {
+          "confidence": 0.96520144,
+          "endTime": 9.775084,
+          "startTime": 9.685083,
+          "word": "用"
+        },
+        {
+          "confidence": 0.967488,
+          "endTime": 9.965084,
+          "startTime": 9.775084,
+          "word": "工"
+        },
+        {
+          "confidence": 0.9478039,
+          "endTime": 10.185083,
+          "startTime": 9.965084,
+          "word": "具，"
+        },
+        {
+          "confidence": 0.8504724,
+          "endTime": 10.835084,
+          "startTime": 10.655084,
+          "word": "网"
+        },
+        {
+          "confidence": 0.9570434,
+          "endTime": 11.035084,
+          "startTime": 10.835084,
+          "word": "关"
+        },
+        {
+          "confidence": 0.92268825,
+          "endTime": 11.275084,
+          "startTime": 11.035084,
+          "word": "代"
+        },
+        {
+          "confidence": 0.923838,
+          "endTime": 11.375084,
+          "startTime": 11.275084,
+          "word": "为"
+        },
+        {
+          "confidence": 0.8322346,
+          "endTime": 11.525084,
+          "startTime": 11.375084,
+          "word": "执"
+        },
+        {
+          "confidence": 0.9418061,
+          "endTime": 11.795084,
+          "startTime": 11.525084,
+          "word": "行。"
+        }
+      ]
+    },
+    {
+      "phonemes": [],
+      "text": "应用收到的，始终是一条完整回复；",
+      "words": [
+        {
+          "confidence": 0.5858811,
+          "endTime": 12.825126,
+          "startTime": 12.745125,
+          "word": "应"
+        },
+        {
+          "confidence": 0.89038396,
+          "endTime": 12.945126,
+          "startTime": 12.825126,
+          "word": "用"
+        },
+        {
+          "confidence": 0.96342176,
+          "endTime": 13.155126,
+          "startTime": 12.945126,
+          "word": "收"
+        },
+        {
+          "confidence": 0.9533636,
+          "endTime": 13.325126,
+          "startTime": 13.155126,
+          "word": "到"
+        },
+        {
+          "confidence": 0.966813,
+          "endTime": 13.615126,
+          "startTime": 13.325126,
+          "word": "的，"
+        },
+        {
+          "confidence": 0.88474447,
+          "endTime": 13.935125,
+          "startTime": 13.685125,
+          "word": "始"
+        },
+        {
+          "confidence": 0.96172076,
+          "endTime": 14.085125,
+          "startTime": 13.935125,
+          "word": "终"
+        },
+        {
+          "confidence": 0.9443857,
+          "endTime": 14.255125,
+          "startTime": 14.085125,
+          "word": "是"
+        },
+        {
+          "confidence": 0.94571966,
+          "endTime": 14.335125,
+          "startTime": 14.255125,
+          "word": "一"
+        },
+        {
+          "confidence": 0.9446234,
+          "endTime": 14.535126,
+          "startTime": 14.335125,
+          "word": "条"
+        },
+        {
+          "confidence": 0.88634217,
+          "endTime": 14.705126,
+          "startTime": 14.535126,
+          "word": "完"
+        },
+        {
+          "confidence": 0.9107887,
+          "endTime": 14.855125,
+          "startTime": 14.705126,
+          "word": "整"
+        },
+        {
+          "confidence": 0.9484856,
+          "endTime": 15.055125,
+          "startTime": 14.855125,
+          "word": "回"
+        },
+        {
+          "confidence": 0.9740819,
+          "endTime": 15.305125,
+          "startTime": 15.055125,
+          "word": "复；"
+        }
+      ]
+    },
+    {
+      "phonemes": [],
+      "text": "每条新消息，网关先去 OpenViking 找相关记忆，附在消息后面，交给你原来的模型。要查得更细，模型会自己调用工具，网关代为执行。应用收到的，始终是一条完整回复；聊过的内容存回 OpenViking，变成下一次的记忆。",
+      "words": []
+    },
+    {
+      "phonemes": [],
+      "text": "聊过的内容存回 OpenViking，变成下一次的记忆。",
+      "words": [
+        {
+          "confidence": 0.91019017,
+          "endTime": 16.265167,
+          "startTime": 16.085167,
+          "word": "聊"
+        },
+        {
+          "confidence": 0.8138208,
+          "endTime": 16.375166,
+          "startTime": 16.265167,
+          "word": "过"
+        },
+        {
+          "confidence": 0.9416187,
+          "endTime": 16.475166,
+          "startTime": 16.375166,
+          "word": "的"
+        },
+        {
+          "confidence": 0.9568023,
+          "endTime": 16.615168,
+          "startTime": 16.475166,
+          "word": "内"
+        },
+        {
+          "confidence": 0.98339516,
+          "endTime": 16.915167,
+          "startTime": 16.615168,
+          "word": "容"
+        },
+        {
+          "confidence": 0.87037855,
+          "endTime": 17.225166,
+          "startTime": 16.995167,
+          "word": "存"
+        },
+        {
+          "confidence": 0.9251764,
+          "endTime": 17.385166,
+          "startTime": 17.225166,
+          "word": "回"
+        },
+        {
+          "confidence": 0.3687268,
+          "endTime": 17.415167,
+          "startTime": 17.385166,
+          "word": "OpenViking，"
+        },
+        {
+          "confidence": 0.90577155,
+          "endTime": 18.675167,
+          "startTime": 18.535168,
+          "word": "变"
+        },
+        {
+          "confidence": 0.98713875,
+          "endTime": 18.825167,
+          "startTime": 18.675167,
+          "word": "成"
+        },
+        {
+          "confidence": 0.9077996,
+          "endTime": 19.105167,
+          "startTime": 18.825167,
+          "word": "下"
+        },
+        {
+          "confidence": 0.8500347,
+          "endTime": 19.165167,
+          "startTime": 19.105167,
+          "word": "一"
+        },
+        {
+          "confidence": 0.97454005,
+          "endTime": 19.305166,
+          "startTime": 19.165167,
+          "word": "次"
+        },
+        {
+          "confidence": 0.42008293,
+          "endTime": 19.365168,
+          "startTime": 19.305166,
+          "word": "的"
+        },
+        {
+          "confidence": 0.20021701,
+          "endTime": 19.425167,
+          "startTime": 19.365168,
+          "word": "记"
+        },
+        {
+          "confidence": 0.4576998,
+          "endTime": 19.455166,
+          "startTime": 19.425167,
+          "word": "忆。"
+        }
+      ]
+    }
+  ]
+}

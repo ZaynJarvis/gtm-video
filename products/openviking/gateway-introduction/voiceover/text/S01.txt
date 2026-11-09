@@ -1,0 +1,1 @@
+Claude Code、Codex、Cursor……主流 Agent 装上 OpenViking 插件，每轮自动召回，对话自动沉淀，换个 Agent，记忆还在。

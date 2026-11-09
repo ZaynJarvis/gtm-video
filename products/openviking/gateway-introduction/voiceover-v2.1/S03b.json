@@ -1,0 +1,253 @@
+{
+  "provider": "volcengine",
+  "resource_id": "seed-tts-2.0",
+  "speaker": "zh_male_gaolengchenwen_uranus_bigtts",
+  "audio_params": {
+    "format": "mp3",
+    "sample_rate": 48000,
+    "bit_rate": 160000,
+    "speech_rate": 5,
+    "enable_subtitle": true
+  },
+  "request_id": "d9fc24b4-5b2b-4612-8949-3715342b9438",
+  "log_id": "202610262103481F81C9E04CA33CB2619B",
+  "text_sha256": "e25714a3943359fcf99543c90549d23718bf22afc50d82a14f9523adb1b70f72",
+  "input_characters": 66,
+  "usage": {
+    "text_words": 66
+  },
+  "bytes": 194925,
+  "final_code": 20000000,
+  "terminal_success_seen": true,
+  "stream_end": "terminal_success",
+  "sentences": [
+    {
+      "phonemes": [],
+      "text": "OpenViking 网关，换一种接法。",
+      "words": [
+        {
+          "confidence": 0.5946906,
+          "endTime": 0.67,
+          "startTime": 0.05,
+          "word": "OpenViking"
+        },
+        {
+          "confidence": 0.730135,
+          "endTime": 0.745,
+          "startTime": 0.665,
+          "word": "网"
+        },
+        {
+          "confidence": 0.9113596,
+          "endTime": 1.035,
+          "startTime": 0.745,
+          "word": "关，"
+        },
+        {
+          "confidence": 0.8699726,
+          "endTime": 1.585,
+          "startTime": 1.405,
+          "word": "换"
+        },
+        {
+          "confidence": 0.7518929,
+          "endTime": 1.615,
+          "startTime": 1.585,
+          "word": "一"
+        },
+        {
+          "confidence": 0.86124897,
+          "endTime": 1.725,
+          "startTime": 1.615,
+          "word": "种"
+        },
+        {
+          "confidence": 0.94033694,
+          "endTime": 1.895,
+          "startTime": 1.725,
+          "word": "接"
+        },
+        {
+          "confidence": 0.870471,
+          "endTime": 2.125,
+          "startTime": 1.895,
+          "word": "法。"
+        }
+      ]
+    },
+    {
+      "phonemes": [],
+      "text": "OpenViking 网关，换一种接法。把模型地址指向网关，密钥换成 OpenViking API Key。不装插件，不改业务代码。",
+      "words": []
+    },
+    {
+      "phonemes": [],
+      "text": "把模型地址指向网关，密钥换成 OpenViking API Key。",
+      "words": [
+        {
+          "confidence": 0.7731093,
+          "endTime": 2.9650416,
+          "startTime": 2.8350418,
+          "word": "把"
+        },
+        {
+          "confidence": 0.93449396,
+          "endTime": 3.1150417,
+          "startTime": 2.9650416,
+          "word": "模"
+        },
+        {
+          "confidence": 0.9420449,
+          "endTime": 3.2750418,
+          "startTime": 3.1150417,
+          "word": "型"
+        },
+        {
+          "confidence": 0.95825505,
+          "endTime": 3.4250417,
+          "startTime": 3.2750418,
+          "word": "地"
+        },
+        {
+          "confidence": 0.9440421,
+          "endTime": 3.6150417,
+          "startTime": 3.4250417,
+          "word": "址"
+        },
+        {
+          "confidence": 0.92718947,
+          "endTime": 3.7450418,
+          "startTime": 3.6150417,
+          "word": "指"
+        },
+        {
+          "confidence": 0.9257979,
+          "endTime": 3.8750417,
+          "startTime": 3.7450418,
+          "word": "向"
+        },
+        {
+          "confidence": 0.9580111,
+          "endTime": 4.015042,
+          "startTime": 3.8750417,
+          "word": "网"
+        },
+        {
+          "confidence": 0.94411284,
+          "endTime": 4.245042,
+          "startTime": 4.015042,
+          "word": "关，"
+        },
+        {
+          "confidence": 0.7941723,
+          "endTime": 5.0250416,
+          "startTime": 4.805042,
+          "word": "密"
+        },
+        {
+          "confidence": 0.9016871,
+          "endTime": 5.2750416,
+          "startTime": 5.0250416,
+          "word": "钥"
+        },
+        {
+          "confidence": 0.9114493,
+          "endTime": 5.4250417,
+          "startTime": 5.305042,
+          "word": "换"
+        },
+        {
+          "confidence": 0.7780639,
+          "endTime": 5.545042,
+          "startTime": 5.4250417,
+          "word": "成"
+        },
+        {
+          "confidence": 0.33072042,
+          "endTime": 6.1350417,
+          "startTime": 6.1050415,
+          "word": "OpenViking"
+        },
+        {
+          "confidence": 0.6758808,
+          "endTime": 6.5250416,
+          "startTime": 6.255042,
+          "word": "API"
+        },
+        {
+          "confidence": 0.82121927,
+          "endTime": 6.7550416,
+          "startTime": 6.5250416,
+          "word": "Key。"
+        }
+      ]
+    },
+    {
+      "phonemes": [],
+      "text": "不装插件，不改业务代码。",
+      "words": [
+        {
+          "confidence": 0.4395284,
+          "endTime": 7.68,
+          "startTime": 7.53,
+          "word": "不"
+        },
+        {
+          "confidence": 0.17737824,
+          "endTime": 7.83,
+          "startTime": 7.68,
+          "word": "装"
+        },
+        {
+          "confidence": 0.15803196,
+          "endTime": 7.98,
+          "startTime": 7.83,
+          "word": "插"
+        },
+        {
+          "confidence": 0.17351963,
+          "endTime": 8.13,
+          "startTime": 7.98,
+          "word": "件，"
+        },
+        {
+          "confidence": 0.97674584,
+          "endTime": 8.633,
+          "startTime": 8.52,
+          "word": "不"
+        },
+        {
+          "confidence": 0.9024159,
+          "endTime": 8.746,
+          "startTime": 8.633,
+          "word": "改"
+        },
+        {
+          "confidence": 0.7097909,
+          "endTime": 8.859,
+          "startTime": 8.746,
+          "word": "业"
+        },
+        {
+          "confidence": 0.70892215,
+          "endTime": 8.972,
+          "startTime": 8.859,
+          "word": "务"
+        },
+        {
+          "confidence": 0.95421505,
+          "endTime": 9.085,
+          "startTime": 8.972,
+          "word": "代"
+        },
+        {
+          "confidence": 0.79800856,
+          "endTime": 9.198,
+          "startTime": 9.085,
+          "word": "码。"
+        }
+      ]
+    }
+  ],
+  "timing_fix": "Word times re-anchored to silencedetect pauses (speech 7.53-8.14, 8.52-9.20); the TTS service returned wrong times after the English words."
+}

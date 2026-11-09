@@ -1,0 +1,216 @@
+{
+  "provider": "volcengine",
+  "resource_id": "seed-tts-2.0",
+  "speaker": "zh_male_gaolengchenwen_uranus_bigtts",
+  "audio_params": {
+    "format": "mp3",
+    "sample_rate": 48000,
+    "bit_rate": 160000,
+    "speech_rate": -5,
+    "enable_subtitle": true
+  },
+  "request_id": "9ac78027-98b9-4d53-9c79-3c6a5ff8f7c3",
+  "log_id": "202610251157175EBDD9446D88297C76B4",
+  "text_sha256": "1da38ff68c3ccc052eca6ce64491506b81d6b11c15657ae6f8210a783b25f814",
+  "input_characters": 43,
+  "usage": {
+    "text_words": 43
+  },
+  "bytes": 160365,
+  "final_code": 20000000,
+  "terminal_success_seen": true,
+  "stream_end": "terminal_success",
+  "sentences": [
+    {
+      "phonemes": [],
+      "text": "OpenViking 网关，十一月登陆火山引擎公有云。",
+      "words": [
+        {
+          "confidence": 0.29528764,
+          "endTime": 0.815,
+          "startTime": 0.785,
+          "word": "OpenViking"
+        },
+        {
+          "confidence": 0.7564022,
+          "endTime": 0.995,
+          "startTime": 0.815,
+          "word": "网"
+        },
+        {
+          "confidence": 0.9581628,
+          "endTime": 1.235,
+          "startTime": 0.995,
+          "word": "关，"
+        },
+        {
+          "confidence": 0.9327976,
+          "endTime": 1.945,
+          "startTime": 1.665,
+          "word": "十"
+        },
+        {
+          "confidence": 0.8327448,
+          "endTime": 2.055,
+          "startTime": 1.945,
+          "word": "一"
+        },
+        {
+          "confidence": 0.9811075,
+          "endTime": 2.255,
+          "startTime": 2.055,
+          "word": "月"
+        },
+        {
+          "confidence": 0.8634086,
+          "endTime": 2.455,
+          "startTime": 2.255,
+          "word": "登"
+        },
+        {
+          "confidence": 0.96033883,
+          "endTime": 2.575,
+          "startTime": 2.455,
+          "word": "陆"
+        },
+        {
+          "confidence": 0.9404787,
+          "endTime": 2.765,
+          "startTime": 2.575,
+          "word": "火"
+        },
+        {
+          "confidence": 0.89455724,
+          "endTime": 2.945,
+          "startTime": 2.765,
+          "word": "山"
+        },
+        {
+          "confidence": 0.8368775,
+          "endTime": 3.105,
+          "startTime": 2.945,
+          "word": "引"
+        },
+        {
+          "confidence": 0.84054244,
+          "endTime": 3.335,
+          "startTime": 3.105,
+          "word": "擎"
+        },
+        {
+          "confidence": 0.9250047,
+          "endTime": 3.505,
+          "startTime": 3.335,
+          "word": "公"
+        },
+        {
+          "confidence": 0.9063847,
+          "endTime": 3.665,
+          "startTime": 3.505,
+          "word": "有"
+        },
+        {
+          "confidence": 0.85740083,
+          "endTime": 3.895,
+          "startTime": 3.665,
+          "word": "云。"
+        }
+      ]
+    },
+    {
+      "phonemes": [],
+      "text": "OpenViking 网关，十一月登陆火山引擎公有云。改两项设置，让你的应用接上记忆。",
+      "words": []
+    },
+    {
+      "phonemes": [],
+      "text": "改两项设置，让你的应用接上记忆。",
+      "words": [
+        {
+          "confidence": 0.8097805,
+          "endTime": 5.055042,
+          "startTime": 4.915042,
+          "word": "改"
+        },
+        {
+          "confidence": 0.8879368,
+          "endTime": 5.1950417,
+          "startTime": 5.055042,
+          "word": "两"
+        },
+        {
+          "confidence": 0.9634812,
+          "endTime": 5.355042,
+          "startTime": 5.1950417,
+          "word": "项"
+        },
+        {
+          "confidence": 0.93732435,
+          "endTime": 5.5650415,
+          "startTime": 5.355042,
+          "word": "设"
+        },
+        {
+          "confidence": 0.9490307,
+          "endTime": 5.895042,
+          "startTime": 5.5650415,
+          "word": "置，"
+        },
+        {
+          "confidence": 0.9311447,
+          "endTime": 6.3450418,
+          "startTime": 6.1950417,
+          "word": "让"
+        },
+        {
+          "confidence": 0.958284,
+          "endTime": 6.4850416,
+          "startTime": 6.3450418,
+          "word": "你"
+        },
+        {
+          "confidence": 0.9170175,
+          "endTime": 6.625042,
+          "startTime": 6.4850416,
+          "word": "的"
+        },
+        {
+          "confidence": 0.9001988,
+          "endTime": 6.7750416,
+          "startTime": 6.625042,
+          "word": "应"
+        },
+        {
+          "confidence": 0.9354909,
+          "endTime": 6.955042,
+          "startTime": 6.7750416,
+          "word": "用"
+        },
+        {
+          "confidence": 0.93330806,
+          "endTime": 7.1150417,
+          "startTime": 6.955042,
+          "word": "接"
+        },
+        {
+          "confidence": 0.9724332,
+          "endTime": 7.255042,
+          "startTime": 7.1150417,
+          "word": "上"
+        },
+        {
+          "confidence": 0.8733836,
+          "endTime": 7.4450417,
+          "startTime": 7.255042,
+          "word": "记"
+        },
+        {
+          "confidence": 0.8558564,
+          "endTime": 7.685042,
+          "startTime": 7.4450417,
+          "word": "忆。"
+        }
+      ]
+    }
+  ]
+}

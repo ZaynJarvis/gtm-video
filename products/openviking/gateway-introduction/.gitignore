@@ -1,0 +1,23 @@
+# Dependencies restored from package.json and package-lock.json.
+node_modules/
+
+# Rendered frames, stills, contact sheets, and finished videos.
+/project/renders/
+*.mp4
+
+# Generated effects and mixes; keep the Python source files.
+/project/audio/sfx_*.wav
+/project/audio/*_mix.wav
+
+# Assembled narration previews; keep original takes and timestamp JSON.
+/voiceover/full-preview.mp3
+/voiceover-v2.1/timeline-preview.mp3
+
+# Local runtime caches and environments.
+__pycache__/
+*.py[cod]
+.venv/
+
+# macOS metadata.
+.DS_Store
+._*

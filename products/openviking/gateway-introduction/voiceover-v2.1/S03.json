@@ -1,0 +1,258 @@
+{
+  "provider": "volcengine",
+  "resource_id": "seed-tts-2.0",
+  "speaker": "zh_male_gaolengchenwen_uranus_bigtts",
+  "audio_params": {
+    "format": "mp3",
+    "sample_rate": 48000,
+    "bit_rate": 160000,
+    "speech_rate": 5,
+    "enable_subtitle": true
+  },
+  "request_id": "eb62cfa8-5089-4438-859a-02f19fceea33",
+  "log_id": "20261025130421C3C93A460E325DC702C3",
+  "text_sha256": "52d647de98b151b0ba1c33a985a6208e3f2eb5143ff42753ad09557aa9ed6c29",
+  "input_characters": 51,
+  "usage": {
+    "text_words": 51
+  },
+  "bytes": 175725,
+  "final_code": 20000000,
+  "terminal_success_seen": true,
+  "stream_end": "terminal_success",
+  "sentences": [
+    {
+      "phonemes": [],
+      "text": "OpenViking 网关，换一种接法。",
+      "words": [
+        {
+          "confidence": 0.5569256,
+          "endTime": 0.745,
+          "startTime": 0.705,
+          "word": "OpenViking"
+        },
+        {
+          "confidence": 0.3185373,
+          "endTime": 0.775,
+          "startTime": 0.745,
+          "word": "网"
+        },
+        {
+          "confidence": 0.9435967,
+          "endTime": 1.065,
+          "startTime": 0.775,
+          "word": "关，"
+        },
+        {
+          "confidence": 0.8669635,
+          "endTime": 1.605,
+          "startTime": 1.395,
+          "word": "换"
+        },
+        {
+          "confidence": 0.6409551,
+          "endTime": 1.635,
+          "startTime": 1.605,
+          "word": "一"
+        },
+        {
+          "confidence": 0.93796325,
+          "endTime": 1.745,
+          "startTime": 1.635,
+          "word": "种"
+        },
+        {
+          "confidence": 0.93270797,
+          "endTime": 1.905,
+          "startTime": 1.745,
+          "word": "接"
+        },
+        {
+          "confidence": 0.91956353,
+          "endTime": 2.125,
+          "startTime": 1.905,
+          "word": "法。"
+        }
+      ]
+    },
+    {
+      "phonemes": [],
+      "text": "把模型地址指向网关，密钥换成网关密钥。",
+      "words": [
+        {
+          "confidence": 0.7093291,
+          "endTime": 2.8950417,
+          "startTime": 2.7650418,
+          "word": "把"
+        },
+        {
+          "confidence": 0.871639,
+          "endTime": 3.0650418,
+          "startTime": 2.8950417,
+          "word": "模"
+        },
+        {
+          "confidence": 0.92047,
+          "endTime": 3.2350419,
+          "startTime": 3.0650418,
+          "word": "型"
+        },
+        {
+          "confidence": 0.9611999,
+          "endTime": 3.4050417,
+          "startTime": 3.2350419,
+          "word": "地"
+        },
+        {
+          "confidence": 0.91537476,
+          "endTime": 3.5350418,
+          "startTime": 3.4050417,
+          "word": "址"
+        },
+        {
+          "confidence": 0.95128965,
+          "endTime": 3.6750417,
+          "startTime": 3.5350418,
+          "word": "指"
+        },
+        {
+          "confidence": 0.9549897,
+          "endTime": 3.8050418,
+          "startTime": 3.6750417,
+          "word": "向"
+        },
+        {
+          "confidence": 0.91348416,
+          "endTime": 3.955042,
+          "startTime": 3.8050418,
+          "word": "网"
+        },
+        {
+          "confidence": 0.94415134,
+          "endTime": 4.2150416,
+          "startTime": 3.955042,
+          "word": "关，"
+        },
+        {
+          "confidence": 0.774086,
+          "endTime": 4.755042,
+          "startTime": 4.545042,
+          "word": "密"
+        },
+        {
+          "confidence": 0.8784035,
+          "endTime": 4.9050417,
+          "startTime": 4.755042,
+          "word": "钥"
+        },
+        {
+          "confidence": 0.8582134,
+          "endTime": 5.045042,
+          "startTime": 4.9050417,
+          "word": "换"
+        },
+        {
+          "confidence": 0.9216349,
+          "endTime": 5.165042,
+          "startTime": 5.045042,
+          "word": "成"
+        },
+        {
+          "confidence": 0.9002356,
+          "endTime": 5.3150415,
+          "startTime": 5.165042,
+          "word": "网"
+        },
+        {
+          "confidence": 0.9602988,
+          "endTime": 5.475042,
+          "startTime": 5.3150415,
+          "word": "关"
+        },
+        {
+          "confidence": 0.77467144,
+          "endTime": 5.665042,
+          "startTime": 5.475042,
+          "word": "密"
+        },
+        {
+          "confidence": 0.7442561,
+          "endTime": 5.795042,
+          "startTime": 5.665042,
+          "word": "钥。"
+        }
+      ]
+    },
+    {
+      "phonemes": [],
+      "text": "OpenViking 网关，换一种接法。把模型地址指向网关，密钥换成网关密钥。不装插件，不改业务代码。",
+      "words": []
+    },
+    {
+      "phonemes": [],
+      "text": "不装插件，不改业务代码。",
+      "words": [
+        {
+          "confidence": 0.87055445,
+          "endTime": 6.5750837,
+          "startTime": 6.4150834,
+          "word": "不"
+        },
+        {
+          "confidence": 0.966788,
+          "endTime": 6.7250834,
+          "startTime": 6.5750837,
+          "word": "装"
+        },
+        {
+          "confidence": 0.8311707,
+          "endTime": 6.9350834,
+          "startTime": 6.7250834,
+          "word": "插"
+        },
+        {
+          "confidence": 0.7608981,
+          "endTime": 7.1750836,
+          "startTime": 6.9350834,
+          "word": "件，"
+        },
+        {
+          "confidence": 0.97589725,
+          "endTime": 7.5850835,
+          "startTime": 7.455084,
+          "word": "不"
+        },
+        {
+          "confidence": 0.88597935,
+          "endTime": 7.7550836,
+          "startTime": 7.5850835,
+          "word": "改"
+        },
+        {
+          "confidence": 0.4410847,
+          "endTime": 7.8350835,
+          "startTime": 7.7550836,
+          "word": "业"
+        },
+        {
+          "confidence": 0.68233544,
+          "endTime": 7.9350834,
+          "startTime": 7.8350835,
+          "word": "务"
+        },
+        {
+          "confidence": 0.8993781,
+          "endTime": 8.085084,
+          "startTime": 7.9350834,
+          "word": "代"
+        },
+        {
+          "confidence": 0.81771576,
+          "endTime": 8.265083,
+          "startTime": 8.085084,
+          "word": "码。"
+        }
+      ]
+    }
+  ]
+}

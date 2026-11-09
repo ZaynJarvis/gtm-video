@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><link rel="stylesheet" href="apps.css">
+<style>
+  svg.stubs { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+  .msg-user { max-width: 94%; font-size: 26px; }
+  .msg-bot { font-size: 26px; }
+</style></head>
+<body>
+  <div class="glow" style="left:-300px;top:-300px;width:900px;height:900px"></div>
+  <div class="glow" style="left:900px;top:200px;width:1100px;height:900px;opacity:.5"></div>
+
+  <div class="hud-l">OpenViking · <b>企业自己的应用</b></div>
+
+  <!-- Edge of the plugin constellation, left behind as the camera pans right -->
+  <div class="near" style="opacity:.6">
+    <div class="lnode" style="left:60px;top:250px;transform:translate(-50%,-50%) scale(.9)"><div class="disc"><img src="../assets/logos/deepseek.svg"></div><div class="nm">DeepSeek Harness</div></div>
+    <div class="lnode" style="left:150px;top:-10px;transform:translate(-50%,-50%) scale(.85)"><div class="disc"><img src="../assets/logos/kimi-code.svg"></div></div>
+    <div class="lnode" style="left:-40px;top:520px;transform:translate(-50%,-50%) scale(.85)"><div class="disc"><img src="../assets/logos/opencode.svg"></div></div>
+  </div>
+  <svg class="stubs">
+    <defs><linearGradient id="fade" x1="0" x2="1"><stop offset="0" stop-color="rgba(14,154,182,.45)"/><stop offset="1" stop-color="rgba(14,154,182,0)"/></linearGradient></defs>
+    <path d="M120 250 Q 330 200 520 290" fill="none" stroke="url(#fade)" stroke-width="1.6" stroke-dasharray="2 7"/>
+    <path d="M30 520 Q 300 470 470 520" fill="none" stroke="url(#fade)" stroke-width="1.6" stroke-dasharray="2 7"/>
+  </svg>
+
+  <!-- Earlier "new conversations" stacked behind: every day starts blank -->
+  <div class="ghost-win far" style="left:785px;top:155px;width:550px;height:540px"><div class="gb">研发助手 · 周一 · 新对话</div></div>
+  <div class="ghost-win near" style="left:740px;top:200px;width:560px;height:560px"><div class="gb">研发助手 · 周三 · 新对话</div></div>
+  <div class="ghost-win far" style="left:1395px;top:165px;width:560px;height:540px"><div class="gb">客服 Bot · 周一 · 新对话</div></div>
+  <div class="ghost-win near" style="left:1350px;top:210px;width:570px;height:560px"><div class="gb">客服 Bot · 周三 · 新对话</div></div>
+
+  <div class="win lift" style="left:690px;top:250px;width:570px;height:580px">
+    <div class="win-bar"><div class="org">内</div><div class="title">研发助手</div><div class="sub">企业自研 Agent</div><div class="spacer"></div><div class="chip">周五 · 新对话</div></div>
+    <div class="rail"><i class="on"></i><i></i><i></i><i></i></div>
+    <div class="app-body">
+      <div class="chat">
+        <div class="msg-user">上次定的发布日期是哪天？</div>
+        <div class="msg-bot fail"><div class="av"></div><div>抱歉，我看不到之前的对话记录。能告诉我是哪个项目吗？</div></div>
+      </div>
+      <div class="input">输入消息…</div>
+    </div>
+  </div>
+
+  <div class="win lift" style="left:1300px;top:260px;width:580px;height:580px">
+    <div class="win-bar"><div class="org">客</div><div class="title">客服 Bot</div><div class="sub">工作流</div><div class="spacer"></div><div class="chip">周五 · 新对话</div></div>
+    <div class="app-body full">
+      <div class="flowstrip">
+        <div class="cap">流程</div>
+        <div class="flow"><div class="node">消息</div><div class="edge"></div><div class="node">意图识别</div><div class="edge"></div><div class="node llm">模型调用</div><div class="edge"></div><div class="node llm">模型调用</div><div class="edge"></div><div class="node">回复</div></div>
+      </div>
+      <div class="chat">
+        <div class="msg-user">上次定的发布日期是哪天？</div>
+        <div class="msg-bot fail"><div class="av"></div><div>抱歉，我看不到之前的对话记录……</div></div>
+      </div>
+      <div class="input">输入消息…</div>
+    </div>
+  </div>
+
+  <div class="big" style="left:110px;top:640px;font-size:96px">企业自己的<br><em>应用呢？</em></div>
+</body></html>
