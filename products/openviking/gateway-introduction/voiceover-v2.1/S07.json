@@ -1,0 +1,270 @@
+{
+  "provider": "volcengine",
+  "resource_id": "seed-tts-2.0",
+  "speaker": "zh_male_gaolengchenwen_uranus_bigtts",
+  "audio_params": {
+    "format": "mp3",
+    "sample_rate": 48000,
+    "bit_rate": 160000,
+    "speech_rate": 5,
+    "enable_subtitle": true
+  },
+  "request_id": "642c4cfa-168f-4556-af35-27c158d56503",
+  "log_id": "20261025130434BC895540A4DF28F45BCB",
+  "text_sha256": "bfb2805a64405bb923b1fe2f1225ab351bcd560829fd03a57265d06201216905",
+  "input_characters": 43,
+  "usage": {
+    "text_words": 43
+  },
+  "bytes": 164205,
+  "final_code": 20000000,
+  "terminal_success_seen": true,
+  "stream_end": "terminal_success",
+  "sentences": [
+    {
+      "phonemes": [],
+      "text": "记忆跟着人走，不跟着应用。",
+      "words": [
+        {
+          "confidence": 0.8670481,
+          "endTime": 0.225,
+          "startTime": 0,
+          "word": "记"
+        },
+        {
+          "confidence": 0.8982999,
+          "endTime": 0.305,
+          "startTime": 0.225,
+          "word": "忆"
+        },
+        {
+          "confidence": 0.9700853,
+          "endTime": 0.455,
+          "startTime": 0.305,
+          "word": "跟"
+        },
+        {
+          "confidence": 0.87483627,
+          "endTime": 0.555,
+          "startTime": 0.455,
+          "word": "着"
+        },
+        {
+          "confidence": 0.9439035,
+          "endTime": 0.745,
+          "startTime": 0.555,
+          "word": "人"
+        },
+        {
+          "confidence": 0.95717406,
+          "endTime": 1.085,
+          "startTime": 0.745,
+          "word": "走，"
+        },
+        {
+          "confidence": 0.9622011,
+          "endTime": 1.495,
+          "startTime": 1.375,
+          "word": "不"
+        },
+        {
+          "confidence": 0.9620804,
+          "endTime": 1.605,
+          "startTime": 1.495,
+          "word": "跟"
+        },
+        {
+          "confidence": 0.75477296,
+          "endTime": 1.715,
+          "startTime": 1.605,
+          "word": "着"
+        },
+        {
+          "confidence": 0.66518784,
+          "endTime": 1.875,
+          "startTime": 1.715,
+          "word": "应"
+        },
+        {
+          "confidence": 0.79679966,
+          "endTime": 2.055,
+          "startTime": 1.875,
+          "word": "用。"
+        }
+      ]
+    },
+    {
+      "phonemes": [],
+      "text": "记忆跟着人走，不跟着应用。周一在研发助手里交代的习惯，周三换到运维机器人，它照样记得。",
+      "words": []
+    },
+    {
+      "phonemes": [],
+      "text": "周一在研发助手里交代的习惯，周三换到运维机器人，它照样记得。",
+      "words": [
+        {
+          "confidence": 0.89418143,
+          "endTime": 3.1950417,
+          "startTime": 2.9950416,
+          "word": "周"
+        },
+        {
+          "confidence": 0.84108925,
+          "endTime": 3.3050416,
+          "startTime": 3.1950417,
+          "word": "一"
+        },
+        {
+          "confidence": 0.8101704,
+          "endTime": 3.4550414,
+          "startTime": 3.3050416,
+          "word": "在"
+        },
+        {
+          "confidence": 0.8587948,
+          "endTime": 3.5650415,
+          "startTime": 3.4550414,
+          "word": "研"
+        },
+        {
+          "confidence": 0.9246359,
+          "endTime": 3.7250416,
+          "startTime": 3.5650415,
+          "word": "发"
+        },
+        {
+          "confidence": 0.97854644,
+          "endTime": 3.8750415,
+          "startTime": 3.7250416,
+          "word": "助"
+        },
+        {
+          "confidence": 0.9674358,
+          "endTime": 4.0150414,
+          "startTime": 3.8750415,
+          "word": "手"
+        },
+        {
+          "confidence": 0.9472777,
+          "endTime": 4.1450415,
+          "startTime": 4.0150414,
+          "word": "里"
+        },
+        {
+          "confidence": 0.9411829,
+          "endTime": 4.3050413,
+          "startTime": 4.1450415,
+          "word": "交"
+        },
+        {
+          "confidence": 0.891435,
+          "endTime": 4.415042,
+          "startTime": 4.3050413,
+          "word": "代"
+        },
+        {
+          "confidence": 0.94371104,
+          "endTime": 4.5050416,
+          "startTime": 4.415042,
+          "word": "的"
+        },
+        {
+          "confidence": 0.92870075,
+          "endTime": 4.6850414,
+          "startTime": 4.5050416,
+          "word": "习"
+        },
+        {
+          "confidence": 0.9399487,
+          "endTime": 4.995042,
+          "startTime": 4.6850414,
+          "word": "惯，"
+        },
+        {
+          "confidence": 0.9353503,
+          "endTime": 5.5450416,
+          "startTime": 5.3450413,
+          "word": "周"
+        },
+        {
+          "confidence": 0.8238427,
+          "endTime": 5.7150416,
+          "startTime": 5.5450416,
+          "word": "三"
+        },
+        {
+          "confidence": 0.82451314,
+          "endTime": 5.8950415,
+          "startTime": 5.7150416,
+          "word": "换"
+        },
+        {
+          "confidence": 0.8192051,
+          "endTime": 6.0150414,
+          "startTime": 5.8950415,
+          "word": "到"
+        },
+        {
+          "confidence": 0.77643234,
+          "endTime": 6.1450415,
+          "startTime": 6.0150414,
+          "word": "运"
+        },
+        {
+          "confidence": 0.9348741,
+          "endTime": 6.285042,
+          "startTime": 6.1450415,
+          "word": "维"
+        },
+        {
+          "confidence": 0.9260444,
+          "endTime": 6.4350414,
+          "startTime": 6.285042,
+          "word": "机"
+        },
+        {
+          "confidence": 0.88192785,
+          "endTime": 6.575042,
+          "startTime": 6.4350414,
+          "word": "器"
+        },
+        {
+          "confidence": 0.962635,
+          "endTime": 6.8350415,
+          "startTime": 6.575042,
+          "word": "人，"
+        },
+        {
+          "confidence": 0.981383,
+          "endTime": 7.2550416,
+          "startTime": 7.1350417,
+          "word": "它"
+        },
+        {
+          "confidence": 0.9216704,
+          "endTime": 7.4250417,
+          "startTime": 7.2550416,
+          "word": "照"
+        },
+        {
+          "confidence": 0.7857718,
+          "endTime": 7.4950414,
+          "startTime": 7.4250417,
+          "word": "样"
+        },
+        {
+          "confidence": 0.91093624,
+          "endTime": 7.6550417,
+          "startTime": 7.4950414,
+          "word": "记"
+        },
+        {
+          "confidence": 0.9633702,
+          "endTime": 7.8350415,
+          "startTime": 7.6550417,
+          "word": "得。"
+        }
+      ]
+    }
+  ]
+}

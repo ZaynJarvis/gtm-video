@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><link rel="stylesheet" href="apps.css">
+<style>
+  svg.fx { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+  .doc { position: absolute; width: 600px; background: #fff; border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow-lift); overflow: hidden; }
+  .doc .dh { height: 54px; display: flex; align-items: center; gap: 10px; padding: 0 20px; border-bottom: 1px solid var(--line); font: 400 19px var(--mono); color: var(--cyan-deep); }
+  .doc .db { padding: 18px 22px; font-size: 23px; line-height: 1.7; color: var(--text-2); }
+  .doc .db .hl { color: var(--text); background: rgba(139,128,217,.14); box-shadow: inset 3px 0 0 var(--purple); padding: 2px 10px; margin: 0 -10px; display: block; border-radius: 4px; }
+  .notice { position: absolute; display: flex; align-items: center; gap: 10px; font: 400 20px var(--sans); color: var(--text-3); }
+  .notice::before { content: '↳'; color: var(--text-3); }
+</style></head>
+<body>
+  <div class="glow" style="left:700px;top:0;width:1200px;height:900px;opacity:.8"></div>
+  <div class="glow" style="left:1100px;top:200px;width:700px;height:700px;background:radial-gradient(closest-side,rgba(139,128,217,.12),rgba(139,128,217,0))"></div>
+  <div class="hud-l">OpenViking 网关 · <b>工具往返</b></div>
+  <div class="hud-r">openviking_<b>read</b></div>
+  <div class="corner-tag">原理示意</div>
+
+  <!-- The app, far left and out of focus: it only sees a one-line notice -->
+  <div class="win near" style="left:-240px;top:300px;width:560px;height:420px;opacity:.85">
+    <div class="win-bar"><div class="spacer"></div><div class="title" style="font-size:20px">研发助手</div></div>
+  </div>
+  <div class="notice" style="left:28px;top:470px;line-height:1.5">正在查阅 OpenViking<br>release-plan.md</div>
+
+  <!-- Floor edge below, out of focus -->
+  <div class="floor-wrap" style="left:0;top:0;width:1920px;height:1080px;perspective-origin:50% -40%">
+    <div class="floor" style="left:-200px;top:300px;width:2320px;height:1100px;filter:blur(3px);opacity:.8"></div>
+  </div>
+
+  <svg class="fx">
+    <!-- capsule path from gate to model (done) -->
+    <path d="M760 470 L 1270 470" stroke="rgba(7,9,13,.25)" stroke-width="2" fill="none"/>
+    <!-- tool call flying back from model to gate -->
+    <path d="M1300 600 C 1150 720, 900 700, 760 600" stroke="rgba(139,128,217,.7)" stroke-width="2.5" stroke-dasharray="6 8" fill="none"/>
+    <!-- gate reaches down into OpenViking -->
+    <path d="M640 690 L 640 790" stroke="rgba(139,128,217,.85)" stroke-width="4" stroke-linecap="round"/>
+    <path d="M640 690 L 640 790" stroke="rgba(139,128,217,.2)" stroke-width="18" stroke-linecap="round"/>
+  </svg>
+
+  <!-- Gateway -->
+  <div class="gate" style="left:560px;top:220px;height:470px;width:170px"><div class="addr" style="left:-140px;right:-140px">gateway.openviking.volcengine.com</div></div>
+  <div class="port on tool" style="left:750px;top:610px"><i></i>工具 · 网关执行</div>
+
+  <!-- The message capsule, now carrying the recalled memory -->
+  <div class="capsule" style="left:768px;top:372px;transform:scale(.78);transform-origin:0 50%">
+    <div class="seg user">上次定的发布日期是哪天？</div>
+    <div class="seg memseg">记忆 · 推迟到 12 月 8 日</div>
+  </div>
+
+  <!-- Upstream model emits a tool call -->
+  <div class="model" style="left:1280px;top:310px;width:300px;height:300px">
+    <div class="sheen"></div><div class="lbl">模型</div>
+    <div class="vendors" style="left:0;right:0;text-align:center;font-size:17px">生成中…</div>
+  </div>
+  <div class="toolcall" style="left:1000px;top:660px">openviking_read(release-plan.md)</div>
+  <div class="abs" style="left:1600px;top:420px;width:260px;font-size:21px;line-height:1.6;color:var(--text-3)">模型决定<br><span style="color:var(--purple-deep)">要读原文</span></div>
+
+  <!-- The full document opened inside OpenViking -->
+  <div class="doc" style="left:380px;top:770px">
+    <div class="dh"><img src="../assets/ov-mark-small.svg" style="width:20px;height:20px">memories/events/release-plan.md</div>
+    <div class="db">
+      2.0 发布从 12 月 1 日推迟到 12 月 8 日。<br>
+      <span class="hl">原因：支付回归测试未完成。</span>
+      负责人：林夏 · 10 月 28 日评审决定
+    </div>
+  </div>
+</body></html>

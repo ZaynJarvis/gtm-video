@@ -1,0 +1,546 @@
+{
+  "provider": "volcengine",
+  "resource_id": "seed-tts-2.0",
+  "speaker": "zh_male_gaolengchenwen_uranus_bigtts",
+  "audio_params": {
+    "format": "mp3",
+    "sample_rate": 48000,
+    "bit_rate": 160000,
+    "speech_rate": -5,
+    "enable_subtitle": true
+  },
+  "request_id": "fb3b096b-da08-491c-873d-b9a71f6098e5",
+  "log_id": "20261025115713BA30D30682355E579E16",
+  "text_sha256": "ebcfb4df651f7680cee3a6890ebeba250b3f52aac0e61611299bdb3da5b1d32d",
+  "input_characters": 93,
+  "usage": {
+    "text_words": 93
+  },
+  "bytes": 426285,
+  "final_code": 20000000,
+  "terminal_success_seen": true,
+  "stream_end": "terminal_success",
+  "sentences": [
+    {
+      "phonemes": [],
+      "text": "在火山引擎公有云上，网关开通即用，无需部署。",
+      "words": [
+        {
+          "confidence": 0.37000564,
+          "endTime": 0.175,
+          "startTime": 0.115,
+          "word": "在"
+        },
+        {
+          "confidence": 0.94325227,
+          "endTime": 0.395,
+          "startTime": 0.175,
+          "word": "火"
+        },
+        {
+          "confidence": 0.8839547,
+          "endTime": 0.555,
+          "startTime": 0.395,
+          "word": "山"
+        },
+        {
+          "confidence": 0.8665799,
+          "endTime": 0.705,
+          "startTime": 0.555,
+          "word": "引"
+        },
+        {
+          "confidence": 0.80363077,
+          "endTime": 0.955,
+          "startTime": 0.705,
+          "word": "擎"
+        },
+        {
+          "confidence": 0.9464069,
+          "endTime": 1.135,
+          "startTime": 0.955,
+          "word": "公"
+        },
+        {
+          "confidence": 0.93067086,
+          "endTime": 1.285,
+          "startTime": 1.135,
+          "word": "有"
+        },
+        {
+          "confidence": 0.865618,
+          "endTime": 1.405,
+          "startTime": 1.285,
+          "word": "云"
+        },
+        {
+          "confidence": 0.92505175,
+          "endTime": 1.715,
+          "startTime": 1.405,
+          "word": "上，"
+        },
+        {
+          "confidence": 0.8392664,
+          "endTime": 2.275,
+          "startTime": 2.075,
+          "word": "网"
+        },
+        {
+          "confidence": 0.9609401,
+          "endTime": 2.475,
+          "startTime": 2.275,
+          "word": "关"
+        },
+        {
+          "confidence": 0.9819853,
+          "endTime": 2.695,
+          "startTime": 2.475,
+          "word": "开"
+        },
+        {
+          "confidence": 0.96022326,
+          "endTime": 2.855,
+          "startTime": 2.695,
+          "word": "通"
+        },
+        {
+          "confidence": 0.7591368,
+          "endTime": 3.065,
+          "startTime": 2.855,
+          "word": "即"
+        },
+        {
+          "confidence": 0.8416812,
+          "endTime": 3.265,
+          "startTime": 3.065,
+          "word": "用，"
+        },
+        {
+          "confidence": 0.9359275,
+          "endTime": 3.725,
+          "startTime": 3.575,
+          "word": "无"
+        },
+        {
+          "confidence": 0.91715413,
+          "endTime": 3.905,
+          "startTime": 3.725,
+          "word": "需"
+        },
+        {
+          "confidence": 0.8200271,
+          "endTime": 4.025,
+          "startTime": 3.905,
+          "word": "部"
+        },
+        {
+          "confidence": 0.8903232,
+          "endTime": 4.295,
+          "startTime": 4.025,
+          "word": "署。"
+        }
+      ]
+    },
+    {
+      "phonemes": [],
+      "text": "整个团队只用一个地址：服务商密钥留在网关上，",
+      "words": [
+        {
+          "confidence": 0.85416406,
+          "endTime": 5.2550416,
+          "startTime": 5.0850415,
+          "word": "整"
+        },
+        {
+          "confidence": 0.95053947,
+          "endTime": 5.3750415,
+          "startTime": 5.2550416,
+          "word": "个"
+        },
+        {
+          "confidence": 0.88800365,
+          "endTime": 5.5650415,
+          "startTime": 5.3750415,
+          "word": "团"
+        },
+        {
+          "confidence": 0.96201646,
+          "endTime": 5.7850413,
+          "startTime": 5.5650415,
+          "word": "队"
+        },
+        {
+          "confidence": 0.9386907,
+          "endTime": 5.9250417,
+          "startTime": 5.7850413,
+          "word": "只"
+        },
+        {
+          "confidence": 0.9517155,
+          "endTime": 6.0650415,
+          "startTime": 5.9250417,
+          "word": "用"
+        },
+        {
+          "confidence": 0.86005723,
+          "endTime": 6.1950417,
+          "startTime": 6.0650415,
+          "word": "一"
+        },
+        {
+          "confidence": 0.95740736,
+          "endTime": 6.3050413,
+          "startTime": 6.1950417,
+          "word": "个"
+        },
+        {
+          "confidence": 0.9176936,
+          "endTime": 6.4650416,
+          "startTime": 6.3050413,
+          "word": "地"
+        },
+        {
+          "confidence": 0.2274058,
+          "endTime": 6.635041,
+          "startTime": 6.6050415,
+          "word": "址："
+        },
+        {
+          "confidence": 0.75232667,
+          "endTime": 7.4750414,
+          "startTime": 7.2650414,
+          "word": "服"
+        },
+        {
+          "confidence": 0.85971695,
+          "endTime": 7.6050415,
+          "startTime": 7.4750414,
+          "word": "务"
+        },
+        {
+          "confidence": 0.89927685,
+          "endTime": 7.7950416,
+          "startTime": 7.6050415,
+          "word": "商"
+        },
+        {
+          "confidence": 0.77065516,
+          "endTime": 8.025042,
+          "startTime": 7.7950416,
+          "word": "密"
+        },
+        {
+          "confidence": 0.89500326,
+          "endTime": 8.285042,
+          "startTime": 8.025042,
+          "word": "钥"
+        },
+        {
+          "confidence": 0.9657054,
+          "endTime": 8.495042,
+          "startTime": 8.325042,
+          "word": "留"
+        },
+        {
+          "confidence": 0.7694987,
+          "endTime": 8.625042,
+          "startTime": 8.495042,
+          "word": "在"
+        },
+        {
+          "confidence": 0.90988624,
+          "endTime": 8.775042,
+          "startTime": 8.625042,
+          "word": "网"
+        },
+        {
+          "confidence": 0.96693534,
+          "endTime": 8.945042,
+          "startTime": 8.775042,
+          "word": "关"
+        },
+        {
+          "confidence": 0.84907895,
+          "endTime": 9.155042,
+          "startTime": 8.945042,
+          "word": "上，"
+        }
+      ]
+    },
+    {
+      "phonemes": [],
+      "text": "每人一把网关密钥，单独配置，随时吊销。",
+      "words": [
+        {
+          "confidence": 0.92723423,
+          "endTime": 10.1050825,
+          "startTime": 9.885082,
+          "word": "每"
+        },
+        {
+          "confidence": 0.9327923,
+          "endTime": 10.275083,
+          "startTime": 10.1050825,
+          "word": "人"
+        },
+        {
+          "confidence": 0.93565875,
+          "endTime": 10.425083,
+          "startTime": 10.275083,
+          "word": "一"
+        },
+        {
+          "confidence": 0.8578717,
+          "endTime": 10.595082,
+          "startTime": 10.425083,
+          "word": "把"
+        },
+        {
+          "confidence": 0.8705476,
+          "endTime": 10.775083,
+          "startTime": 10.595082,
+          "word": "网"
+        },
+        {
+          "confidence": 0.97051686,
+          "endTime": 10.945083,
+          "startTime": 10.775083,
+          "word": "关"
+        },
+        {
+          "confidence": 0.8305675,
+          "endTime": 11.1050825,
+          "startTime": 10.945083,
+          "word": "密"
+        },
+        {
+          "confidence": 0.8652353,
+          "endTime": 11.3550825,
+          "startTime": 11.195083,
+          "word": "钥，"
+        },
+        {
+          "confidence": 0.8519546,
+          "endTime": 11.735083,
+          "startTime": 11.565083,
+          "word": "单"
+        },
+        {
+          "confidence": 0.93060946,
+          "endTime": 11.905083,
+          "startTime": 11.735083,
+          "word": "独"
+        },
+        {
+          "confidence": 0.9565693,
+          "endTime": 12.125083,
+          "startTime": 11.905083,
+          "word": "配"
+        },
+        {
+          "confidence": 0.95076025,
+          "endTime": 12.365083,
+          "startTime": 12.125083,
+          "word": "置，"
+        },
+        {
+          "confidence": 0.7308484,
+          "endTime": 12.845082,
+          "startTime": 12.6050825,
+          "word": "随"
+        },
+        {
+          "confidence": 0.8329273,
+          "endTime": 13.015082,
+          "startTime": 12.845082,
+          "word": "时"
+        },
+        {
+          "confidence": 0.95098364,
+          "endTime": 13.165083,
+          "startTime": 13.015082,
+          "word": "吊"
+        },
+        {
+          "confidence": 0.84860396,
+          "endTime": 13.415083,
+          "startTime": 13.165083,
+          "word": "销。"
+        }
+      ]
+    },
+    {
+      "phonemes": [],
+      "text": "记忆按人隔离，日志不存对话内容。",
+      "words": [
+        {
+          "confidence": 0.8641921,
+          "endTime": 14.615124,
+          "startTime": 14.375124,
+          "word": "记"
+        },
+        {
+          "confidence": 0.77126956,
+          "endTime": 14.795124,
+          "startTime": 14.615124,
+          "word": "忆"
+        },
+        {
+          "confidence": 0.851827,
+          "endTime": 14.925124,
+          "startTime": 14.795124,
+          "word": "按"
+        },
+        {
+          "confidence": 0.9587817,
+          "endTime": 15.095124,
+          "startTime": 14.925124,
+          "word": "人"
+        },
+        {
+          "confidence": 0.9291719,
+          "endTime": 15.295124,
+          "startTime": 15.095124,
+          "word": "隔"
+        },
+        {
+          "confidence": 0.75367415,
+          "endTime": 15.525125,
+          "startTime": 15.295124,
+          "word": "离，"
+        },
+        {
+          "confidence": 0.4726884,
+          "endTime": 16.105124,
+          "startTime": 16.025124,
+          "word": "日"
+        },
+        {
+          "confidence": 0.8321167,
+          "endTime": 16.315125,
+          "startTime": 16.105124,
+          "word": "志"
+        },
+        {
+          "confidence": 0.9537634,
+          "endTime": 16.545124,
+          "startTime": 16.315125,
+          "word": "不"
+        },
+        {
+          "confidence": 0.9626931,
+          "endTime": 16.755125,
+          "startTime": 16.545124,
+          "word": "存"
+        },
+        {
+          "confidence": 0.9406594,
+          "endTime": 16.865124,
+          "startTime": 16.755125,
+          "word": "对"
+        },
+        {
+          "confidence": 0.9342287,
+          "endTime": 17.045124,
+          "startTime": 16.865124,
+          "word": "话"
+        },
+        {
+          "confidence": 0.8928892,
+          "endTime": 17.175125,
+          "startTime": 17.045124,
+          "word": "内"
+        },
+        {
+          "confidence": 0.71761715,
+          "endTime": 17.385124,
+          "startTime": 17.175125,
+          "word": "容。"
+        }
+      ]
+    },
+    {
+      "phonemes": [],
+      "text": "在火山引擎公有云上，网关开通即用，无需部署。整个团队只用一个地址：服务商密钥留在网关上，每人一把网关密钥，单独配置，随时吊销。记忆按人隔离，日志不存对话内容。原来用哪家模型，接着用哪家。",
+      "words": []
+    },
+    {
+      "phonemes": [],
+      "text": "原来用哪家模型，接着用哪家。",
+      "words": [
+        {
+          "confidence": 0.94731396,
+          "endTime": 18.425165,
+          "startTime": 18.255167,
+          "word": "原"
+        },
+        {
+          "confidence": 0.8123601,
+          "endTime": 18.575167,
+          "startTime": 18.425165,
+          "word": "来"
+        },
+        {
+          "confidence": 0.89500535,
+          "endTime": 18.715166,
+          "startTime": 18.575167,
+          "word": "用"
+        },
+        {
+          "confidence": 0.6945981,
+          "endTime": 18.865166,
+          "startTime": 18.715166,
+          "word": "哪"
+        },
+        {
+          "confidence": 0.7310692,
+          "endTime": 19.015165,
+          "startTime": 18.865166,
+          "word": "家"
+        },
+        {
+          "confidence": 0.97002643,
+          "endTime": 19.175167,
+          "startTime": 19.015165,
+          "word": "模"
+        },
+        {
+          "confidence": 0.9318416,
+          "endTime": 19.575167,
+          "startTime": 19.175167,
+          "word": "型，"
+        },
+        {
+          "confidence": 0.8979284,
+          "endTime": 20.105165,
+          "startTime": 19.915167,
+          "word": "接"
+        },
+        {
+          "confidence": 0.9128657,
+          "endTime": 20.225166,
+          "startTime": 20.105165,
+          "word": "着"
+        },
+        {
+          "confidence": 0.83466446,
+          "endTime": 20.355165,
+          "startTime": 20.225166,
+          "word": "用"
+        },
+        {
+          "confidence": 0.68691665,
+          "endTime": 20.465166,
+          "startTime": 20.355165,
+          "word": "哪"
+        },
+        {
+          "confidence": 0.73170793,
+          "endTime": 20.755165,
+          "startTime": 20.465166,
+          "word": "家。"
+        }
+      ]
+    }
+  ]
+}

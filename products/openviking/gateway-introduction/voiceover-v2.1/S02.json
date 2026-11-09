@@ -1,0 +1,426 @@
+{
+  "provider": "volcengine",
+  "resource_id": "seed-tts-2.0",
+  "speaker": "zh_male_gaolengchenwen_uranus_bigtts",
+  "audio_params": {
+    "format": "mp3",
+    "sample_rate": 48000,
+    "bit_rate": 160000,
+    "speech_rate": 5,
+    "enable_subtitle": true
+  },
+  "request_id": "fd98294e-5d99-4f0b-b22f-3d11e0ee5cd5",
+  "log_id": "202610251304173A035B443E4C5F86C660",
+  "text_sha256": "dcf0eca7f7ada322eb9fbfcd71d90caffc0ac6ce0b5317a93aed339a559f0c79",
+  "input_characters": 76,
+  "usage": {
+    "text_words": 76
+  },
+  "bytes": 294285,
+  "final_code": 20000000,
+  "terminal_success_seen": true,
+  "stream_end": "terminal_success",
+  "sentences": [
+    {
+      "phonemes": [],
+      "text": "可企业自己开发的 Agent，",
+      "words": [
+        {
+          "confidence": 0.7476484,
+          "endTime": 0.135,
+          "startTime": 0,
+          "word": "可"
+        },
+        {
+          "confidence": 0.85193807,
+          "endTime": 0.405,
+          "startTime": 0.135,
+          "word": "企"
+        },
+        {
+          "confidence": 0.9453571,
+          "endTime": 0.505,
+          "startTime": 0.405,
+          "word": "业"
+        },
+        {
+          "confidence": 0.93774724,
+          "endTime": 0.705,
+          "startTime": 0.505,
+          "word": "自"
+        },
+        {
+          "confidence": 0.9890188,
+          "endTime": 0.875,
+          "startTime": 0.705,
+          "word": "己"
+        },
+        {
+          "confidence": 0.9500577,
+          "endTime": 1.055,
+          "startTime": 0.875,
+          "word": "开"
+        },
+        {
+          "confidence": 0.9718411,
+          "endTime": 1.205,
+          "startTime": 1.055,
+          "word": "发"
+        },
+        {
+          "confidence": 0.8736077,
+          "endTime": 1.315,
+          "startTime": 1.205,
+          "word": "的"
+        },
+        {
+          "confidence": 0.8915406,
+          "endTime": 1.775,
+          "startTime": 1.315,
+          "word": "Agent，"
+        }
+      ]
+    },
+    {
+      "phonemes": [],
+      "text": "用几步模型调用串成的对话机器人，没有插件可装。",
+      "words": [
+        {
+          "confidence": 0.4608345,
+          "endTime": 2.2850418,
+          "startTime": 2.2400417,
+          "word": "用"
+        },
+        {
+          "confidence": 0.8305706,
+          "endTime": 2.4750416,
+          "startTime": 2.2850418,
+          "word": "几"
+        },
+        {
+          "confidence": 0.95486814,
+          "endTime": 2.6550417,
+          "startTime": 2.4750416,
+          "word": "步"
+        },
+        {
+          "confidence": 0.9669315,
+          "endTime": 2.7850418,
+          "startTime": 2.6550417,
+          "word": "模"
+        },
+        {
+          "confidence": 0.94376934,
+          "endTime": 3.0150418,
+          "startTime": 2.7850418,
+          "word": "型"
+        },
+        {
+          "confidence": 0.918635,
+          "endTime": 3.2350416,
+          "startTime": 3.0150418,
+          "word": "调"
+        },
+        {
+          "confidence": 0.97892725,
+          "endTime": 3.3750417,
+          "startTime": 3.2350416,
+          "word": "用"
+        },
+        {
+          "confidence": 0.8843028,
+          "endTime": 3.6050417,
+          "startTime": 3.3750417,
+          "word": "串"
+        },
+        {
+          "confidence": 0.88172334,
+          "endTime": 3.7350416,
+          "startTime": 3.6050417,
+          "word": "成"
+        },
+        {
+          "confidence": 0.93375224,
+          "endTime": 3.8250418,
+          "startTime": 3.7350416,
+          "word": "的"
+        },
+        {
+          "confidence": 0.95089203,
+          "endTime": 3.9650416,
+          "startTime": 3.8250418,
+          "word": "对"
+        },
+        {
+          "confidence": 0.96514153,
+          "endTime": 4.1350417,
+          "startTime": 3.9650416,
+          "word": "话"
+        },
+        {
+          "confidence": 0.90694225,
+          "endTime": 4.285042,
+          "startTime": 4.1350417,
+          "word": "机"
+        },
+        {
+          "confidence": 0.8726363,
+          "endTime": 4.4250417,
+          "startTime": 4.285042,
+          "word": "器"
+        },
+        {
+          "confidence": 0.9722338,
+          "endTime": 4.6550417,
+          "startTime": 4.4250417,
+          "word": "人，"
+        },
+        {
+          "confidence": 0.9889771,
+          "endTime": 5.075042,
+          "startTime": 4.8550415,
+          "word": "没"
+        },
+        {
+          "confidence": 0.9572974,
+          "endTime": 5.1450415,
+          "startTime": 5.075042,
+          "word": "有"
+        },
+        {
+          "confidence": 0.9152027,
+          "endTime": 5.335042,
+          "startTime": 5.1450415,
+          "word": "插"
+        },
+        {
+          "confidence": 0.8283744,
+          "endTime": 5.4650416,
+          "startTime": 5.335042,
+          "word": "件"
+        },
+        {
+          "confidence": 0.9182211,
+          "endTime": 5.6050415,
+          "startTime": 5.4650416,
+          "word": "可"
+        },
+        {
+          "confidence": 0.95825875,
+          "endTime": 5.835042,
+          "startTime": 5.6050415,
+          "word": "装。"
+        }
+      ]
+    },
+    {
+      "phonemes": [],
+      "text": "新对话照样从零开始；",
+      "words": [
+        {
+          "confidence": 0.88957125,
+          "endTime": 6.6550837,
+          "startTime": 6.4200835,
+          "word": "新"
+        },
+        {
+          "confidence": 0.8977377,
+          "endTime": 6.8050833,
+          "startTime": 6.6550837,
+          "word": "对"
+        },
+        {
+          "confidence": 0.95123965,
+          "endTime": 7.0150833,
+          "startTime": 6.8050833,
+          "word": "话"
+        },
+        {
+          "confidence": 0.9674444,
+          "endTime": 7.2750835,
+          "startTime": 7.0150833,
+          "word": "照"
+        },
+        {
+          "confidence": 0.8699756,
+          "endTime": 7.3750834,
+          "startTime": 7.2750835,
+          "word": "样"
+        },
+        {
+          "confidence": 0.9499983,
+          "endTime": 7.535084,
+          "startTime": 7.3750834,
+          "word": "从"
+        },
+        {
+          "confidence": 0.97365725,
+          "endTime": 7.6550837,
+          "startTime": 7.535084,
+          "word": "零"
+        },
+        {
+          "confidence": 0.972661,
+          "endTime": 7.8250837,
+          "startTime": 7.6550837,
+          "word": "开"
+        },
+        {
+          "confidence": 0.98322326,
+          "endTime": 8.055083,
+          "startTime": 7.8250837,
+          "word": "始；"
+        }
+      ]
+    },
+    {
+      "phonemes": [],
+      "text": "可企业自己开发的 Agent，用几步模型调用串成的对话机器人，没有插件可装。新对话照样从零开始；想接上记忆，就得自己写检索、注入、保存，一个应用接一遍。",
+      "words": []
+    },
+    {
+      "phonemes": [],
+      "text": "想接上记忆，就得自己写检索、注入、保存，一个应用接一遍。",
+      "words": [
+        {
+          "confidence": 0.92586875,
+          "endTime": 8.905125,
+          "startTime": 8.685124,
+          "word": "想"
+        },
+        {
+          "confidence": 0.9452786,
+          "endTime": 9.0651245,
+          "startTime": 8.905125,
+          "word": "接"
+        },
+        {
+          "confidence": 0.9558879,
+          "endTime": 9.185125,
+          "startTime": 9.0651245,
+          "word": "上"
+        },
+        {
+          "confidence": 0.86618227,
+          "endTime": 9.395124,
+          "startTime": 9.185125,
+          "word": "记"
+        },
+        {
+          "confidence": 0.914734,
+          "endTime": 9.675125,
+          "startTime": 9.395124,
+          "word": "忆，"
+        },
+        {
+          "confidence": 0.93581855,
+          "endTime": 10.005125,
+          "startTime": 9.855124,
+          "word": "就"
+        },
+        {
+          "confidence": 0.8798618,
+          "endTime": 10.125125,
+          "startTime": 10.005125,
+          "word": "得"
+        },
+        {
+          "confidence": 0.9363234,
+          "endTime": 10.335125,
+          "startTime": 10.125125,
+          "word": "自"
+        },
+        {
+          "confidence": 0.9831766,
+          "endTime": 10.525125,
+          "startTime": 10.335125,
+          "word": "己"
+        },
+        {
+          "confidence": 0.91194487,
+          "endTime": 10.695125,
+          "startTime": 10.525125,
+          "word": "写"
+        },
+        {
+          "confidence": 0.88025117,
+          "endTime": 10.865125,
+          "startTime": 10.695125,
+          "word": "检"
+        },
+        {
+          "confidence": 0.16711725,
+          "endTime": 10.895124,
+          "startTime": 10.865125,
+          "word": "索、"
+        },
+        {
+          "confidence": 0.83280545,
+          "endTime": 11.905125,
+          "startTime": 11.655125,
+          "word": "注"
+        },
+        {
+          "confidence": 0.2078967,
+          "endTime": 12.0651245,
+          "startTime": 12.035125,
+          "word": "入、"
+        },
+        {
+          "confidence": 0.8641863,
+          "endTime": 12.235125,
+          "startTime": 12.0651245,
+          "word": "保"
+        },
+        {
+          "confidence": 0.7476263,
+          "endTime": 12.495125,
+          "startTime": 12.235125,
+          "word": "存，"
+        },
+        {
+          "confidence": 0.81779885,
+          "endTime": 13.3151245,
+          "startTime": 13.175125,
+          "word": "一"
+        },
+        {
+          "confidence": 0.9404124,
+          "endTime": 13.475124,
+          "startTime": 13.3151245,
+          "word": "个"
+        },
+        {
+          "confidence": 0.82394177,
+          "endTime": 13.585125,
+          "startTime": 13.475124,
+          "word": "应"
+        },
+        {
+          "confidence": 0.9376153,
+          "endTime": 13.735125,
+          "startTime": 13.585125,
+          "word": "用"
+        },
+        {
+          "confidence": 0.9033093,
+          "endTime": 13.895124,
+          "startTime": 13.735125,
+          "word": "接"
+        },
+        {
+          "confidence": 0.8503743,
+          "endTime": 14.015125,
+          "startTime": 13.895124,
+          "word": "一"
+        },
+        {
+          "confidence": 0.94300056,
+          "endTime": 14.235125,
+          "startTime": 14.015125,
+          "word": "遍。"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<link rel="stylesheet" href="../styleframes/base.css"><link rel="stylesheet" href="../styleframes/apps.css">
+<style>
+  #world { position: absolute; left: 0; top: 0; width: 3400px; height: 2300px; transform-origin: 0 0; }
+  .wglow { position: absolute; border-radius: 50%; background: radial-gradient(closest-side, rgba(79,214,240,.15), rgba(79,214,240,0)); }
+  .msg-user, .msg-bot { font-size: 27px; }
+  .msg-user { max-width: 94%; }
+  .notice-line { font-size: 21px; color: var(--text-3); margin-bottom: 4px; }
+  .capwrap { position: absolute; left: 0; top: 0; width: 0; height: 0; }
+  .capwrap .capsule { position: absolute; right: 0; top: -32px; }
+  .capsule .seg.memseg, .capsule .seg.toolseg { overflow: hidden; max-width: 0; padding: 0; }
+  .pill { position: absolute; left: 0; top: 0; height: 54px; padding: 0 22px; border-radius: 999px; display: flex; align-items: center; gap: 10px;
+    font-size: 23px; white-space: nowrap; background: #fff; box-shadow: var(--shadow-lift); }
+  .pill.purple { border: 2px solid var(--purple); color: var(--purple-deep); }
+  .pill.reply { border: 2px solid var(--cyan); color: var(--text); }
+  .pill.line { height: 44px; font-size: 20px; color: var(--text-2); border: 1px solid var(--line); }
+  .lit { position: absolute; width: 14px; height: 14px; border-radius: 50%; }
+  .port .litdot { position: absolute; left: 0; top: 50%; width: 14px; height: 14px; margin-top: -7px; border-radius: 50%; opacity: 0; }
+  .port.cy .litdot { background: var(--cyan); box-shadow: 0 0 0 6px rgba(79,214,240,.22), 0 0 18px rgba(79,214,240,.8); }
+  .port.pu .litdot { background: var(--purple); box-shadow: 0 0 0 6px rgba(139,128,217,.22), 0 0 18px rgba(139,128,217,.8); }
+  .port { font-size: 22px; }
+  .floor .fcard { width: 520px; height: 200px; padding: 24px 28px; }
+  .floor .fcard .n { font-size: 32px; }
+  .floor .fcard .l { height: 14px; margin-top: 24px; }
+  .floor .fcard .l.s { height: 14px; margin-top: 14px; }
+  .floor .zone { font-size: 36px; }
+  .scan { position: absolute; border-radius: 50%; border: 5px solid rgba(79,214,240,.6); box-shadow: 0 0 50px rgba(79,214,240,.3); opacity: 0; }
+  svg.wfx { position: absolute; left: 0; top: 0; width: 3400px; height: 2300px; overflow: visible; pointer-events: none; }
+  .doc { position: absolute; width: 640px; background: #fff; border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow-lift); overflow: hidden; transform-origin: 50% 100%; }
+  .doc .dh { height: 56px; display: flex; align-items: center; gap: 10px; padding: 0 22px; border-bottom: 1px solid var(--line); font: 400 20px var(--mono); color: var(--cyan-deep); }
+  .doc .db { padding: 18px 24px; font-size: 25px; line-height: 1.75; color: var(--text-2); }
+  .doc .hl { display: block; margin: 0 -12px; padding: 0 12px; border-radius: 4px; color: var(--text); }
+  .timechip { position: absolute; }
+  .steps { position: absolute; left: 64px; top: 44px; display: flex; gap: 14px; align-items: center; font-size: 22px; color: var(--text-3); }
+  .steps span.on { color: var(--cyan-deep); font-weight: 500; }
+  .steps span.on.pu { color: var(--purple-deep); }
+  .steps i { font-style: normal; color: #C3CAD0; }
+</style></head>
+<body>
+<div id="world">
+  <div class="wglow" style="left:700px;top:0;width:1600px;height:1300px"></div>
+  <div class="wglow" style="left:1700px;top:200px;width:1100px;height:1000px;background:radial-gradient(closest-side,rgba(139,128,217,.08),rgba(139,128,217,0))"></div>
+
+  <!-- ④ OpenViking library floor -->
+  <div id="floorWrap" class="floor-wrap" style="left:150px;top:1000px;width:3100px;height:1300px;perspective-origin:50% -30%">
+    <div class="floor" id="floor" style="left:0;top:0;width:3100px;height:1300px;background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,.92))"></div>
+  </div>
+  <div class="scan" id="scan" style="width:900px;height:380px"></div>
+
+  <svg class="wfx" id="fx"></svg>
+
+  <!-- ① the in-house agent -->
+  <div class="win lift" id="app" style="left:80px;top:330px;width:780px;height:540px">
+    <div class="win-bar"><div class="org">内</div><div class="title">研发助手</div><div class="sub">企业自研 Agent</div><div class="spacer"></div><div class="chip cyan">经过网关</div></div>
+    <div class="rail"><i class="on"></i><i></i><i></i><i></i></div>
+    <div class="app-body">
+      <div class="chat">
+        <div class="msg-user" id="bubble">上次定的发布日期是哪天？</div>
+        <div class="msg-bot" id="answer" style="opacity:0"><div class="av" style="background:rgba(79,214,240,.25)"></div><div>
+          <div class="recall-note" id="rnote">已从记忆补充：发布计划</div>
+          <div class="notice-line" id="notice">↳ 已查阅 OpenViking：release-plan.md</div>
+          <div id="atext"></div>
+        </div></div>
+      </div>
+      <div class="input">输入消息…</div>
+    </div>
+  </div>
+
+  <!-- ② gateway -->
+  <div class="gate" id="gate" style="left:1250px;top:250px;height:560px;width:200px">
+    <div class="addr" style="left:-160px;right:-160px">gateway.openviking.volcengine.com</div>
+  </div>
+  <div class="abs" style="left:1150px;top:828px;width:400px;text-align:center;font:600 26px var(--sans);color:var(--text)">OpenViking 网关</div>
+  <div class="port cy" id="pRecall" style="left:1190px;top:890px"><i></i><span class="litdot"></span>召回</div>
+  <div class="port cy" id="pSave" style="left:1400px;top:890px"><i></i><span class="litdot"></span>存回</div>
+  <div class="port pu" id="pTool" style="left:1475px;top:690px"><i></i><span class="litdot"></span>工具</div>
+
+  <!-- ③ upstream model -->
+  <div class="model" id="model" style="left:2160px;top:390px;width:320px;height:320px">
+    <div class="sheen" id="sheen"></div><div class="lbl" id="mlabel">模型</div>
+    <div class="vendors" id="vendors" style="left:0;right:0;text-align:center;font-size:19px">你原来的模型</div>
+  </div>
+
+  <!-- moving objects -->
+  <div class="capwrap" id="cap"><div class="capsule"><div class="seg user">上次定的发布日期是哪天？</div><div class="seg memseg" id="capMem">记忆 · 推迟到 12 月 8 日</div><div class="seg toolseg" id="capTool">原文 · 支付回归测试未完成</div></div></div>
+  <div class="mem hit" id="hitcard" style="width:660px;opacity:0;transform-origin:50% 100%">
+    <div class="uri">viking://user/linxia/memories/events/release-plan.md</div>
+    <div class="txt">2.0 发布从 12 月 1 日推迟到 12 月 8 日</div>
+    <div class="type"><span class="chip cyan" style="height:30px;font-size:18px">事件</span></div>
+  </div>
+  <div class="pill purple" id="toolcall" style="opacity:0;font-family:var(--mono)">openviking_read(release-plan.md)</div>
+  <div class="doc" id="doc" style="left:1030px;top:1000px;opacity:0">
+    <div class="dh"><img src="../assets/ov-mark-small.svg" style="width:20px;height:20px">memories/events/release-plan.md</div>
+    <div class="db">2.0 发布从 12 月 1 日推迟到 12 月 8 日。<br><span class="hl" id="docHl">原因：支付回归测试未完成。</span>负责人：林夏 · 10 月 28 日评审决定</div>
+  </div>
+  <div class="pill purple" id="result" style="opacity:0">原因：支付回归测试未完成</div>
+  <div class="pill reply" id="reply" style="opacity:0">12 月 8 日。上周评审时决定推迟一周……</div>
+  <div class="pill line" id="turnQ" style="opacity:0">上次定的发布日期是哪天？</div>
+  <div class="pill line" id="turnA" style="opacity:0">12 月 8 日。上周评审时决定推迟一周……</div>
+  <div class="mem" id="newcard" style="width:600px;opacity:0;border:2px solid var(--cyan);transform-origin:50% 50%">
+    <div class="uri">viking://user/linxia/memories/events/release-followup.md</div>
+    <div class="txt">林夏在跟进 2.0 发布：关注支付回归测试</div>
+    <div class="type"><span class="chip cyan" style="height:30px;font-size:18px">事件</span></div>
+  </div>
+  <div class="chip timechip" id="timechip" style="opacity:0;background:#fff;box-shadow:var(--shadow);height:42px;font-size:21px">停顿 10 分钟后 · 提交 → 后台提取记忆</div>
+</div>
+
+<!-- screen-fixed chrome -->
+<div class="steps" id="steps"><span data-s="0">出发</span><i>→</i><span data-s="1">召回</span><i>→</i><span data-s="2">模型</span><i>→</i><span data-s="3" class="pu">工具</span><i>→</i><span data-s="4">回复</span><i>→</i><span data-s="5">存回</span></div>
+<div class="corner-tag">原理示意 · 时间已压缩</div>
+
+<script src="../node_modules/gsap/dist/gsap.min.js"></script>
+<script src="../node_modules/gsap/dist/MotionPathPlugin.min.js"></script>
+<script>
+gsap.registerPlugin(MotionPathPlugin);
+const $ = (id) => document.getElementById(id);
+const world = $('world');
+
+// ---------- floor content (floor coords 3100×1300; events column sits under the gate) ----------
+const cols = [
+  ['memories/preferences', 120, ['deploy.md', 'writing.md', 'code-style.md']],
+  ['memories/events', 860, ['review-1028.md', 'release-plan.md', null]],
+  ['sessions', 1600, ['gateway-7d21', 'gateway-5c0e', null]],
+  ['resources', 2340, ['release-checklist.md', 'payment-runbook.md', 'api-guide.md']],
+];
+let fh = '';
+cols.forEach(([zone, x, files]) => {
+  fh += `<div class="zone" style="left:${x}px;top:50px">${zone}</div>`;
+  files.forEach((n, r) => {
+    const y = 130 + r * 280, id = n ? n.replace(/[^a-z0-9]/gi, '') : `${zone.replace(/\W/g, '')}${r}`;
+    fh += n ? `<div class="fcard" id="f_${id}" style="left:${x}px;top:${y}px"><div class="n">${n}</div><div class="l"></div><div class="l s"></div></div>`
+            : `<div class="fcard" id="f_${id}" style="left:${x}px;top:${y}px;opacity:0;border:2px dashed rgba(79,214,240,.6);background:rgba(79,214,240,.05)"></div>`;
+  });
+});
+$('floor').innerHTML = fh;
+
+// measure everything in world coordinates with the camera at identity
+function rect(el) { const r = el.getBoundingClientRect(); return { x: r.left, y: r.top, w: r.width, h: r.height, cx: r.left + r.width / 2, cy: r.top + r.height / 2 }; }
+const P = {
+  slot: rect($('f_releaseplanmd')), newslot: rect($('f_memoriesevents2')), sess: rect($('f_sessions2')),
+  bubble: rect($('bubble')), atext: rect($('app').querySelector('.chat')),
+  recall: rect($('pRecall')), save: rect($('pSave')), tool: rect($('pTool')), gate: rect($('gate')), model: rect($('model')),
+};
+
+// ---------- camera ----------
+const cam = { cx: 600, cy: 610, s: 1.32 };
+function applyCam() { world.style.transform = `translate(${960 - cam.cx * cam.s}px, ${540 - cam.cy * cam.s}px) scale(${cam.s})`; }
+applyCam();
+const tl = gsap.timeline({ paused: true, defaults: { ease: 'power2.inOut' } });
+const shot = (t, cx, cy, s, d = 1.4, ease = 'power3.inOut') => tl.to(cam, { cx, cy, s, duration: d, ease, onUpdate: applyCam }, t);
+
+// ---------- helpers ----------
+const fx = $('fx');
+function path(d, stroke, w, dash) {
+  const p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+  p.setAttribute('d', d); p.setAttribute('fill', 'none'); p.setAttribute('stroke', stroke); p.setAttribute('stroke-width', w);
+  p.setAttribute('stroke-linecap', 'round'); if (dash) p.setAttribute('stroke-dasharray', dash);
+  fx.appendChild(p); const L = p.getTotalLength(); p.style.strokeDasharray = dash || `${L} ${L}`; if (!dash) p.style.strokeDashoffset = L; p.style.opacity = 0; return p;
+}
+function draw(p, t, d = .6) { tl.set(p, { opacity: 1 }, t); if (!p.getAttribute('stroke-dasharray')) tl.to(p, { strokeDashoffset: 0, duration: d, ease: 'power2.out' }, t); }
+function stream(el, text, t, d) { const o = { n: 0 }; tl.to(o, { n: text.length, duration: d, ease: 'none', onUpdate: () => { el.textContent = text.slice(0, Math.round(o.n)); } }, t); }
+function step(t, i) {
+  document.querySelectorAll('#steps span').forEach((sp) => {
+    const pu = sp.classList.contains('pu') || sp.dataset.s === '3';
+    tl.set(sp, { attr: { class: (pu ? 'pu' : '') + (sp.dataset.s == i ? ' on' : '') } }, t);
+  });
+}
+function port(id, t, on = 1) { tl.to(`#${id} .litdot`, { opacity: on, duration: .25 }, t); }
+function blur(sel, t, px, op, d = .6) { tl.to(sel, { filter: `blur(${px}px)`, opacity: op, duration: d }, t); }
+const setMax = (id, t, w, d = .35) => tl.to(`#${id}`, { maxWidth: w, paddingLeft: 26, paddingRight: 26, duration: d, ease: 'back.out(1.4)' }, t);
+
+// initial state
+gsap.set(['.pill', '#scan'], { xPercent: -50, yPercent: -50 });
+gsap.set('#scan', { scale: .1 });
+tl.set('#cap', { x: P.bubble.x + P.bubble.w, y: P.bubble.cy, opacity: 0, scale: .96 }, 0);
+step(0, 0);
+
+// ---------- a · depart (0–2.6) ----------
+tl.to('#bubble', { opacity: 0, scale: .94, duration: .35 }, .3);
+tl.to('#cap', { opacity: 1, scale: .82, duration: .45, ease: 'power2.out' }, .35);
+const gx = P.gate.cx, gy = P.gate.y + 250;
+tl.to('#cap', { duration: 1.5, ease: 'power2.inOut', motionPath: { path: [{ x: P.bubble.x + P.bubble.w + 40, y: P.bubble.cy - 60 }, { x: gx + 120, y: gy - 80 }, { x: gx + 330, y: gy }], curviness: 1.2 } }, .9);
+shot(.8, 1180, 600, 1.0, 1.7);
+tl.to('#gate', { boxShadow: '0 0 0 1px rgba(7,9,13,.05), 0 40px 90px rgba(7,9,13,.12), 0 0 80px rgba(79,214,240,.35), inset 0 1px 0 #fff', duration: .4, yoyo: true, repeat: 1 }, 2.0);
+blur('#app', 2.0, 5, .7);
+
+// ---------- b · recall (2.6–5.2) ----------
+step(2.5, 1);
+port('pRecall', 2.6);
+const beam = path(`M${P.recall.x + 7} ${P.recall.cy + 10} L ${P.slot.cx} ${P.slot.cy - 30}`, 'rgba(79,214,240,.9)', 5);
+const beamGlow = path(`M${P.recall.x + 7} ${P.recall.cy + 10} L ${P.slot.cx} ${P.slot.cy - 30}`, 'rgba(79,214,240,.18)', 26);
+draw(beam, 2.7, .7); draw(beamGlow, 2.7, .7);
+shot(2.6, P.slot.cx + 120, P.slot.cy - 260, .92, 1.5);
+tl.set('#scan', { left: P.slot.cx, top: P.slot.cy }, 3.3);
+tl.to('#scan', { opacity: 1, scale: 1, duration: 1.1, ease: 'power2.out' }, 3.3);
+tl.to('#scan', { opacity: 0, duration: .5 }, 4.3);
+tl.to('#f_releaseplanmd', { borderColor: '#4FD6F0', boxShadow: '0 0 0 10px rgba(79,214,240,.18)', duration: .3 }, 3.95);
+const hitX = P.slot.cx - 330, hitY = P.slot.y - 190;
+tl.set('#hitcard', { left: hitX, top: hitY, scaleY: .4, scaleX: .9, y: 120 }, 4.4);
+tl.to('#hitcard', { opacity: 1, scaleY: 1, scaleX: 1, y: 0, duration: .6, ease: 'power3.out' }, 4.45);
+tl.to('#f_releaseplanmd', { borderStyle: 'dashed', opacity: .55, duration: .3 }, 4.5);
+tl.to('#f_releaseplanmd', { borderStyle: 'solid', borderColor: 'rgba(7,9,13,.07)', boxShadow: '0 2px 10px rgba(7,9,13,.05)', opacity: 1, duration: .5 }, 6.4);
+
+// ---------- c · attach (5.2–6.6) ----------
+shot(5.1, 1700, 640, .86, 1.4);
+tl.to([beam, beamGlow], { opacity: 0, duration: .4 }, 5.2);
+port('pRecall', 5.4, 0);
+blur('#floorWrap', 5.2, 3, .75);
+const capRight = gx + 330;
+tl.to('#hitcard', { duration: 1.0, ease: 'power2.inOut', motionPath: { path: [{ x: 0, y: -260 }, { x: capRight - hitX - 520, y: gy - hitY - 120 }], curviness: 1.1 }, scale: .45, transformOrigin: '100% 50%' }, 5.3);
+tl.to('#hitcard', { opacity: 0, duration: .2 }, 6.25);
+setMax('capMem', 6.25, 420);
+
+// ---------- d · to the model (6.7–9.0) ----------
+step(6.7, 2);
+const dockX = P.model.x + 6, dockY = P.model.cy - 60;
+tl.to('#cap', { x: dockX, y: dockY, duration: 1.1, ease: 'power2.inOut' }, 6.75);
+shot(6.7, 1860, 600, .9, 1.3);
+const vendors = ['Anthropic', 'OpenAI', 'DeepSeek', '火山方舟', '生成中…'];
+const vo = { i: 0 }; tl.to(vo, { i: vendors.length - 1, duration: 1.6, ease: 'none', onUpdate: () => { $('vendors').textContent = vendors[Math.round(vo.i)]; } }, 7.6);
+tl.fromTo('#sheen', { backgroundPosition: '0px 0px' }, { backgroundPosition: '220px 0px', duration: 9, ease: 'none' }, 7.9);
+tl.to('#model', { boxShadow: '0 40px 90px rgba(7,9,13,.25), 0 0 0 10px rgba(79,214,240,.10)', duration: .5 }, 7.8);
+
+// ---------- e · tool round trip (10.2–15.0) ----------
+step(10.1, 3);
+tl.set('#toolcall', { left: P.model.cx, top: P.model.y + P.model.h + 30, scale: .6 }, 10.2);
+tl.to('#toolcall', { opacity: 1, scale: 1, duration: .4, ease: 'back.out(1.6)' }, 10.2);
+shot(10.3, 1700, 760, .84, 1.3);
+tl.to('#toolcall', { duration: 1.1, motionPath: { path: [{ x: -420, y: 120 }, { x: -(P.model.cx - P.tool.x) + 200, y: -(P.model.y + P.model.h + 30 - P.tool.cy) }], curviness: 1.3 } }, 10.6);
+port('pTool', 11.6);
+tl.to('#toolcall', { opacity: 0, scale: .7, duration: .3 }, 11.7);
+const reach = path(`M${gx} ${P.gate.y + P.gate.h} L ${gx} 1000`, 'rgba(139,128,217,.85)', 5);
+const reachGlow = path(`M${gx} ${P.gate.y + P.gate.h} L ${gx} 1000`, 'rgba(139,128,217,.18)', 22);
+draw(reach, 11.9, .4); draw(reachGlow, 11.9, .4);
+shot(11.8, 1520, 930, .82, 1.2);
+tl.fromTo('#doc', { opacity: 0, scaleY: .5, y: 80 }, { opacity: 1, scaleY: 1, y: 0, duration: .7, ease: 'power3.out' }, 12.3);
+tl.to('#docHl', { backgroundColor: 'rgba(139,128,217,.15)', boxShadow: 'inset 3px 0 0 #8B80D9', duration: .4 }, 13.2);
+const docHl = { x: 1030 + 320, y: 1000 + 56 + 18 + 60 };
+tl.set('#result', { left: docHl.x, top: docHl.y, scale: .8 }, 13.6);
+tl.to('#result', { opacity: 1, scale: 1, duration: .3 }, 13.6);
+tl.to('#result', { duration: 1.2, motionPath: { path: [{ x: 0, y: -300 }, { x: 260, y: -560 }, { x: dockX - docHl.x - 110, y: dockY - docHl.y }], curviness: 1.2 }, scale: .8 }, 13.8);
+shot(13.7, 1800, 640, .86, 1.3);
+tl.to('#result', { opacity: 0, duration: .2 }, 14.95);
+setMax('capTool', 14.95, 440);
+tl.to([reach, reachGlow], { opacity: 0, duration: .4 }, 14.4);
+tl.to('#doc', { opacity: 0, y: 60, duration: .5 }, 14.4);
+port('pTool', 14.6, 0);
+
+// ---------- f · reply (15.2–18.4) ----------
+step(15.5, 4);
+tl.to('#cap', { opacity: 0, scale: .7, duration: .4 }, 15.3);
+const vo2 = { k: 0 }; tl.to(vo2, { k: 1, duration: .01, onUpdate: () => { $('vendors').textContent = vo2.k > .5 ? '你原来的模型' : vendors[vendors.length - 1]; } }, 16.2);
+tl.set('#reply', { left: P.model.x - 40, top: P.model.cy + 40, scale: .7 }, 15.5);
+tl.to('#reply', { opacity: 1, scale: 1, duration: .3 }, 15.5);
+tl.to('#reply', { duration: 1.5, ease: 'power2.inOut', motionPath: { path: [{ x: -(P.model.x - 40 - gx), y: -20 }, { x: -(P.model.x - 40 - (P.atext.x + 380)), y: (P.atext.y + 170) - (P.model.cy + 40) }], curviness: .9 } }, 15.7);
+shot(15.6, 640, 610, 1.22, 1.6);
+blur('#app', 15.6, 0, 1);
+tl.to('#reply', { opacity: 0, duration: .25 }, 17.15);
+tl.to('#answer', { opacity: 1, duration: .3 }, 17.0);
+stream($('atext'), '12 月 8 日。上周评审时决定推迟一周，等支付回归测试完成。', 17.2, 1.3);
+tl.set('#bubble', { opacity: 1, scale: 1 }, 17.0);
+
+// ---------- g · save back (18.6–25) ----------
+step(18.7, 5);
+shot(18.6, 1200, 1060, .6, 1.5);
+blur('#floorWrap', 18.6, 0, 1);
+const qStart = { x: P.bubble.cx, y: P.bubble.cy }, aStart = { x: P.atext.x + 380, y: P.atext.y + 200 };
+tl.set('#turnQ', { left: qStart.x, top: qStart.y }, 19.3); tl.set('#turnA', { left: aStart.x, top: aStart.y }, 19.3);
+tl.to(['#turnQ', '#turnA'], { opacity: 1, duration: .3 }, 19.3);
+port('pSave', 19.5);
+tl.to('#turnQ', { duration: 1.2, motionPath: { path: [{ x: gx - qStart.x, y: 560 - qStart.y }, { x: P.save.x - qStart.x, y: P.save.cy + 60 - qStart.y }, { x: P.sess.cx - qStart.x, y: P.sess.cy - 80 - qStart.y }], curviness: 1.1 } }, 19.5);
+tl.to('#turnA', { duration: 1.2, motionPath: { path: [{ x: gx - aStart.x, y: 620 - aStart.y }, { x: P.save.x - aStart.x, y: P.save.cy + 110 - aStart.y }, { x: P.sess.cx - aStart.x, y: P.sess.cy - 20 - aStart.y }], curviness: 1.1 } }, 19.65);
+tl.to('#f_sessions2', { opacity: 1, duration: .3 }, 20.5);
+tl.set('#f_sessions2', { innerHTML: '<div class="n" style="color:#0A7C93">gateway-0f3a</div><div class="l"></div><div class="l s"></div>' }, 20.5);
+tl.to('#f_sessions2', { borderStyle: 'solid', duration: .3 }, 21.0);
+tl.set('#timechip', { left: P.sess.cx - 230, top: P.save.cy + 120 }, 20.6);
+tl.to('#timechip', { opacity: 1, duration: .4 }, 20.6);
+// crystallize: the two lines converge into a new memory card
+const ncx = P.sess.cx, ncy = P.sess.cy - 160;
+tl.to(['#turnQ', '#turnA'], { left: ncx, top: ncy, x: 0, y: 0, scale: .5, opacity: 0, duration: .5, ease: 'power2.in' }, 20.95);
+tl.set('#newcard', { left: ncx - 300, top: ncy - 70, scale: .3 }, 21.35);
+tl.to('#newcard', { opacity: 1, scale: 1, duration: .35, ease: 'back.out(1.6)' }, 21.35);
+port('pSave', 21.6, 0);
+tl.to('#newcard', { left: P.newslot.cx - 300, top: P.newslot.cy - 80, scale: .8, duration: .8, ease: 'power3.out' }, 21.9);
+tl.to('#f_memoriesevents2', { opacity: 1, duration: .3 }, 22.3);
+tl.to('#newcard', { boxShadow: '0 0 0 12px rgba(79,214,240,.16), 0 28px 70px rgba(7,9,13,.13)', duration: .4 }, 22.6);
+tl.to(cam, { cx: '+=30', cy: '+=10', s: .575, duration: 2.4, ease: 'sine.inOut', onUpdate: applyCam }, 22.6);
+tl.to({}, { duration: 25 - tl.duration() });
+
+window.__duration = 25;
+window.__seek = (t) => { tl.seek(t, false); };
+window.__seek(0);
+</script>
+</body></html>

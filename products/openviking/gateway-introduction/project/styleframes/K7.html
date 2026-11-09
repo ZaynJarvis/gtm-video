@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+  svg.fx { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+  .floor .fcard { width: 300px; height: 128px; }
+  .floor .fcard .n { font-size: 22px; }
+  .ring { position: absolute; border-radius: 50%; }
+</style></head>
+<body>
+  <div class="hud-l">OpenViking · <b>召回</b></div>
+  <div class="hud-r">viking://user/<b>linxia</b>/memories</div>
+  <div class="corner-tag" style="z-index:5">原理示意</div>
+
+  <!-- Gate above, out of focus -->
+  <div class="near"><div class="gate" style="left:860px;top:-300px;height:400px;width:180px"></div></div>
+
+  <!-- Library floor seen from above: far rows shrink toward the top -->
+  <div class="floor-wrap" style="left:0;top:0;width:1920px;height:1080px;perspective-origin:50% -20%">
+    <div class="floor" id="floor" style="left:-300px;top:-420px;width:2520px;height:1500px;background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(255,255,255,.9))"></div>
+  </div>
+
+  <div class="port on" style="left:956px;top:84px;z-index:3;background:rgba(255,255,255,.92);padding:8px 16px 8px 10px;border-radius:999px;box-shadow:var(--shadow)"><i></i>召回 · 按新消息检索</div>
+  <svg class="fx" style="z-index:2">
+    <path d="M972 118 L 720 404" stroke="rgba(79,214,240,.9)" stroke-width="4" stroke-linecap="round"/>
+    <path d="M972 118 L 720 404" stroke="rgba(79,214,240,.18)" stroke-width="24" stroke-linecap="round"/>
+    <path d="M230 580 C 230 560, 240 540, 250 520" stroke="rgba(79,214,240,.7)" stroke-width="2.5" stroke-dasharray="4 7" fill="none"/>
+  </svg>
+
+  <!-- The hit memory, lifted upright and readable -->
+  <div class="mem hit" style="left:110px;top:400px;width:700px;z-index:4">
+    <div class="uri">viking://user/linxia/memories/events/release-plan.md</div>
+    <div class="txt">2.0 发布从 12 月 1 日推迟到 12 月 8 日</div>
+    <div class="type"><span class="chip cyan" style="height:30px;font-size:18px">事件</span></div>
+  </div>
+
+<script>
+  const names = [
+    ['memories/events', ['review-1028.md','standup-1024.md','retro-q3.md',null,'incident-0917.md']],
+    ['memories/preferences', ['deploy.md','writing.md','code-style.md','review-style.md','meeting.md']],
+    ['memories/entities', ['payment-svc.md','team-infra.md','vendor-a.md','project-x.md','linxia.md']],
+    ['resources', ['release-checklist.md','payment-runbook.md','api-guide.md','onboarding.md','arch-2.0.md']],
+  ];
+  const f = document.getElementById('floor');
+  let h = '';
+  names.forEach(([zone, files], c) => {
+    const x = 160 + c * 590;
+    h += `<div class="zone" style="left:${x}px;top:60px;font-size:34px">${zone}</div>`;
+    files.forEach((n, r) => {
+      const y = 140 + r * 250;
+      if (!n) return;
+      h += `<div class="fcard" style="left:${x}px;top:${y}px;width:470px;height:190px;padding:22px 26px"><div class="n" style="font-size:30px">${n}</div><div class="l" style="height:14px;margin-top:22px"></div><div class="l s" style="height:14px"></div></div>`;
+    });
+  });
+  // empty, lit slot the hit memory was lifted from (events column, near row)
+  h += `<div class="fcard lit" style="left:160px;top:890px;width:470px;height:190px;border-style:dashed;background:rgba(79,214,240,.06)"><div class="n" style="font-size:30px;color:#0A7C93">release-plan.md</div></div>`;
+  h += `<div class="abs" style="left:-80px;top:510px;width:950px;height:950px;border-radius:50%;border:4px solid rgba(79,214,240,.5);box-shadow:0 0 50px rgba(79,214,240,.25)"></div>`;
+  h += `<div class="abs" style="left:-330px;top:260px;width:1450px;height:1450px;border-radius:50%;border:3px solid rgba(79,214,240,.18)"></div>`;
+  f.innerHTML = h;
+</script>
+</body></html>

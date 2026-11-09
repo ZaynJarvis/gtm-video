@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><link rel="stylesheet" href="apps.css">
+<style>
+  .msg-user { max-width: 94%; font-size: 26px; }
+  .msg-bot { font-size: 26px; }
+  .stage { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; transform: scale(.86); transform-origin: 46% 52%; }
+</style></head>
+<body>
+  <div class="glow" style="left:400px;top:150px;width:1100px;height:900px;opacity:.5"></div>
+  <div class="hud-l">OpenViking · <b>企业自己的应用</b></div>
+
+  <div class="stage">
+    <!-- More apps keep arriving, each needing the same work -->
+    <div class="near">
+      <div class="ghost-win" style="left:1640px;top:110px;width:480px;height:400px"><div class="gb"><div class="org">知</div>知识助手</div></div>
+      <div class="code-card" style="left:1600px;top:420px;transform:rotate(-2deg)"><span class="k">search_memory</span>()</div>
+      <div class="code-card" style="left:1620px;top:478px;transform:rotate(1.5deg)"><span class="k">inject_context</span>()</div>
+      <div class="code-card" style="left:1596px;top:536px;transform:rotate(-1deg)"><span class="k">save_session</span>()</div>
+    </div>
+    <div class="far">
+      <div class="ghost-win" style="left:1760px;top:660px;width:480px;height:400px"><div class="gb"><div class="org">销</div>销售 Copilot</div></div>
+      <div class="code-card" style="left:1700px;top:960px;transform:rotate(2deg)"><span class="k">search_memory</span>()</div>
+    </div>
+    <div class="win lift" style="left:470px;top:250px;width:570px;height:580px">
+      <div class="win-bar"><div class="org">内</div><div class="title">研发助手</div><div class="sub">企业自研 Agent</div><div class="spacer"></div><div class="chip">周五 · 新对话</div></div>
+      <div class="rail"><i class="on"></i><i></i><i></i><i></i></div>
+      <div class="app-body">
+        <div class="chat">
+          <div class="msg-user">上次定的发布日期是哪天？</div>
+          <div class="msg-bot fail"><div class="av"></div><div>抱歉，我看不到之前的对话记录。能告诉我是哪个项目吗？</div></div>
+        </div>
+        <div class="input">输入消息…</div>
+      </div>
+    </div>
+
+    <!-- Integration work piling up next to the in-house agent -->
+    <div class="code-card" style="left:120px;top:300px;transform:rotate(-2deg)"><span class="c"># 1</span> <span class="k">search_memory</span>(query, user)</div>
+    <div class="code-card" style="left:140px;top:372px;transform:rotate(1.4deg)"><span class="c"># 2</span> <span class="k">inject_context</span>(messages)</div>
+    <div class="code-card" style="left:112px;top:444px;transform:rotate(-1.2deg)"><span class="c"># 3</span> <span class="k">save_session</span>(turn)</div>
+    <div class="code-card" style="left:150px;top:516px;transform:rotate(2deg)"><span class="c"># 4</span> <span class="k">extract_memory</span>(session)</div>
+    <div class="code-card" style="left:126px;top:588px;transform:rotate(-1.6deg)"><span class="c"># 5</span> <span class="k">retry</span> · <span class="k">timeout</span> · <span class="k">auth</span></div>
+
+    <div class="win lift" style="left:1080px;top:260px;width:600px;height:560px">
+      <div class="win-bar"><div class="org">客</div><div class="title">客服 Bot</div><div class="sub">工作流</div><div class="spacer"></div><div class="chip">周五 · 新对话</div></div>
+      <div class="app-body full">
+        <div class="flowstrip">
+          <div class="cap">流程</div>
+          <div class="flow"><div class="node">消息</div><div class="edge"></div><div class="node">意图识别</div><div class="edge"></div><div class="node llm">模型调用</div><div class="edge"></div><div class="node llm">模型调用</div><div class="edge"></div><div class="node">回复</div></div>
+          <div class="slots"><span class="cap2">接入记忆</span><div class="slot filled">✓ MCP 工具</div><div class="slot empty">自动召回</div><div class="slot empty">自动保存</div></div>
+        </div>
+        <div class="chat">
+          <div class="msg-user">上次定的发布日期是哪天？</div>
+          <div class="msg-bot fail"><div class="av"></div><div>抱歉，我看不到之前的对话记录……</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="code-card" style="left:1180px;top:150px;transform:rotate(1.8deg)"><span class="k">search_memory</span>()</div>
+    <div class="code-card" style="left:1420px;top:190px;transform:rotate(-1.5deg)"><span class="k">save_session</span>()</div>
+  </div>
+</body></html>

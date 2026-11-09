@@ -1,0 +1,1 @@
+主流 Agent 装上 OpenViking 插件，召回和沉淀全自动，换个 Agent，记忆还在。

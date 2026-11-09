@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><link rel="stylesheet" href="base.css">
+<style>
+  .center { position: absolute; left: 1320px; top: 522px; transform: translate(-50%, -50%); display: flex; flex-direction: column; align-items: center; gap: 18px; }
+  .center .halo { position: absolute; width: 420px; height: 420px; left: 50%; top: 44%; transform: translate(-50%, -50%); border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(79,214,240,.22), rgba(79,214,240,0)); }
+  .center img { width: 136px; height: 136px; position: relative; }
+  .wordmark { font: 600 34px var(--latin); letter-spacing: -.025em; color: var(--ink); position: relative; text-shadow: 0 0 10px #EEF7FA, 0 0 18px #EEF7FA, 0 0 4px #EEF7FA; }
+  svg.arcs { position: absolute; left: 0; top: 0; width: 1920px; height: 1080px; }
+  .term { position: absolute; left: 1520px; top: 790px; width: 380px; background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); padding: 16px 20px; font: 400 19px/1.75 var(--mono); color: var(--text-2); }
+  .term b { color: var(--cyan-deep); font-weight: 500; }
+  .count { position: absolute; left: 1320px; top: 978px; transform: translateX(-50%); display: flex; align-items: baseline; gap: 12px; font-size: 26px; color: var(--text-2); }
+  .count b { font: 600 52px var(--latin); color: var(--ink); letter-spacing: -.02em; }
+</style></head>
+<body>
+  <div class="glow" style="left:760px;top:60px;width:1000px;height:900px"></div>
+  <div class="glow" style="left:-200px;top:500px;width:900px;height:800px;opacity:.6"></div>
+
+  <div class="hud-l">OpenViking · <b>集成生态</b></div>
+  <div class="hud-r">openviking.ai/<b>integrations</b></div>
+
+  <svg class="arcs" id="arcs"></svg>
+  <div id="nodes"></div>
+
+  <div class="center"><div class="halo"></div><img src="../assets/ov-mark.svg"><div class="wordmark">OpenViking</div></div>
+
+
+  <div class="count"><b>14</b> 个 Agent 开箱即用</div>
+
+  <div class="big" style="left:110px;top:350px;font-size:96px">装上插件，<br><em>记忆全自动。</em></div>
+
+<script>
+  // Two elliptical rings; nodes at the back of a ring sit smaller and softer, giving 2.5D depth.
+  const C = { x: 1320, y: 480 };
+  const rings = [
+    { rx: 330, ry: 230, start: 54, items: [['Claude Code','claude-code.svg'],['Codex','codex.svg'],['Cursor','cursor.svg'],['TRAE','trae.svg'],['opencode','opencode.svg']] },
+    { rx: 500, ry: 370, start: -54, items: [['Kimi Code','kimi-code.svg'],['DeepSeek Harness','deepseek.svg'],['OpenClaw','openclaw.jpg'],['Hermes','hermes.png'],['Pi','pi.svg']] },
+  ];
+  const nodes = document.getElementById('nodes'), arcs = document.getElementById('arcs');
+  let svg = '';
+  rings.forEach((r) => r.items.forEach(([name, file], i) => {
+    const a = (r.start + i * 360 / r.items.length) * Math.PI / 180;
+    const x = C.x + r.rx * Math.cos(a), y = C.y + r.ry * Math.sin(a);
+    const depth = (y - (C.y - r.ry)) / (2 * r.ry);          // 0 = back, 1 = front
+    const s = 0.82 + depth * 0.26;
+    const blur = (1 - depth) * (r.rx > 450 ? 2.2 : 1.0);
+    const photo = /\.(png|jpg)$/.test(file) ? ' class="photo"' : '';
+    nodes.insertAdjacentHTML('beforeend',
+      `<div class="lnode" style="left:${x}px;top:${y}px;transform:translate(-50%,-50%) scale(${s});filter:blur(${blur}px);opacity:${0.72 + depth * 0.28}">
+         <div class="disc"><img src="../assets/logos/${file}"${photo}></div><div class="nm">${name}</div></div>`);
+    const mx = (x + C.x) / 2, my = (y + C.y) / 2 - 60 - 40 * (1 - depth);
+    svg += `<path d="M${x} ${y} Q${mx} ${my} ${C.x} ${C.y}" fill="none" stroke="rgba(14,154,182,${0.22 + depth * 0.25})" stroke-width="1.6"/>`;
+    svg += `<circle cx="${x}" cy="${y}" r="3" fill="rgba(79,214,240,.6)"/>`;
+  }));
+  arcs.innerHTML = svg;
+</script>
+</body></html>

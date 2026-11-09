@@ -1,0 +1,150 @@
+/* Shared stage for the OV Gateway film (shots 03–09). Extracted from shot06 V2. */
+  #world { position: absolute; left: 0; top: 0; width: 3400px; height: 2300px; transform-origin: 0 0; }
+  .wglow { position: absolute; border-radius: 50%; background: radial-gradient(closest-side, rgba(79,214,240,.15), rgba(79,214,240,0)); }
+  .msg-user, .msg-bot { font-size: 27px; }
+  .msg-user { max-width: 94%; }
+  .notice-line { font-size: 21px; color: var(--text-3); margin-bottom: 4px; }
+  .capwrap { position: absolute; left: 0; top: 0; width: 0; height: 0; }
+  .capwrap .capsule { position: absolute; right: 0; top: -32px; }
+  .capsule .seg.memseg { overflow: hidden; max-width: 0; padding: 0; }
+  .pill { position: absolute; left: 0; top: 0; height: 54px; padding: 0 22px; border-radius: 999px; display: flex; align-items: center; gap: 10px;
+    font-size: 23px; white-space: nowrap; background: #fff; box-shadow: var(--shadow-lift); }
+  .pill.purple { border: 2px solid var(--purple); color: var(--purple-deep); }
+  .pill.cyan { border: 2px solid var(--cyan); color: var(--cyan-deep); }
+  .pill.reply { border: 2px solid var(--cyan); color: var(--text); }
+  .pill.line { height: 44px; font-size: 20px; color: var(--text-2); border: 1px solid var(--line); }
+  .port { font-size: 22px; }
+  .port .litdot { position: absolute; left: 0; top: 50%; width: 14px; height: 14px; margin-top: -7px; border-radius: 50%; opacity: 0;
+    background: var(--purple); box-shadow: 0 0 0 6px rgba(139,128,217,.22), 0 0 18px rgba(139,128,217,.8); }
+  .floor .fcard { width: 520px; height: 200px; padding: 24px 28px; }
+  .floor .fcard .n { font-size: 32px; }
+  .floor .fcard .l { height: 14px; margin-top: 24px; }
+  .floor .fcard .l.s { height: 14px; margin-top: 14px; }
+  .floor .zone { font-size: 36px; }
+  .hubring { position: absolute; border-radius: 50%; }
+  .scan { position: absolute; border-radius: 50%; border: 5px solid rgba(79,214,240,.6); box-shadow: 0 0 50px rgba(79,214,240,.3); opacity: 0; }
+  svg.wfx { position: absolute; left: 0; top: 0; width: 3400px; height: 2300px; overflow: visible; pointer-events: none; }
+  .ctag { position: absolute; height: 40px; padding: 0 16px; border-radius: 999px; display: flex; align-items: center; gap: 8px; font-size: 21px; white-space: nowrap;
+    background: rgba(255,255,255,.95); box-shadow: var(--shadow); opacity: 0; }
+  .ctag.cy { color: var(--cyan-deep); } .ctag.pu { color: var(--purple-deep); }
+  .doc { position: absolute; width: 640px; background: #fff; border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow-lift); overflow: hidden; transform-origin: 50% 100%; }
+  .doc .dh { height: 56px; display: flex; align-items: center; gap: 10px; padding: 0 22px; border-bottom: 1px solid var(--line); font: 400 20px var(--mono); color: var(--cyan-deep); }
+  .doc .db { padding: 18px 24px; font-size: 25px; line-height: 1.75; color: var(--text-2); }
+  .doc .hl { display: block; margin: 0 -12px; padding: 0 12px; border-radius: 4px; color: var(--text); }
+  .steps { position: absolute; left: 64px; top: 44px; display: flex; gap: 14px; align-items: center; font-size: 22px; color: var(--text-3); }
+  .steps span.on { color: var(--cyan-deep); font-weight: 500; }
+  .steps span.on.pu { color: var(--purple-deep); }
+  .steps i { font-style: normal; color: #C3CAD0; }
+
+  /* model node that opens into a reasoning panel */
+  /* Keep the clipped model texture on its own compositor layer during camera zooms.
+     Without this, sequential Chromium captures can duplicate texture tiles outside the node. */
+  #model { place-items: initial; display: block; transform: translateZ(0); }
+  #model .compact { position: absolute; inset: 0; display: grid; place-items: center; }
+  .pc { position: absolute; left: 0; top: 0; width: 1180px; padding: 34px 40px; color: #E8EDF1; opacity: 0; }
+  .ph { display: flex; align-items: center; gap: 16px; }
+  .ph b { font: 700 32px var(--sans); color: #fff; }
+  .vchip { height: 34px; padding: 0 14px; border-radius: 999px; background: rgba(255,255,255,.08); color: #B9C3CB; font: 500 19px var(--latin); display: flex; align-items: center; }
+  .pnote { margin-left: auto; font-size: 18px; color: #7E8A94; border: 1px solid rgba(255,255,255,.12); border-radius: 999px; padding: 4px 12px; }
+  .plabel { margin-top: 26px; font-size: 18px; color: #7E8A94; letter-spacing: .04em; }
+  .rows { margin-top: 12px; display: flex; flex-direction: column; gap: 10px; }
+  .row { height: 54px; border-radius: 12px; background: rgba(255,255,255,.05); display: flex; align-items: center; gap: 16px; padding: 0 18px; font-size: 24px; color: #E8EDF1; opacity: 0; white-space: nowrap; }
+  .row .tag { flex: none; width: 104px; font-size: 18px; color: #93A0AA; }
+  .row em { font-style: normal; font-size: 18px; color: #7E8A94; margin-left: 8px; }
+  .row.cy { box-shadow: inset 3px 0 0 var(--cyan); } .row.cy .tag { color: var(--cyan); }
+  .row.pu { box-shadow: inset 3px 0 0 var(--purple); } .row.pu .tag { color: #B3AAF0; }
+  .track { position: relative; margin-top: 14px; height: 16px; border-radius: 8px; background: rgba(255,255,255,.06); }
+  .tseg { position: absolute; top: 0; height: 16px; border-radius: 8px; transform-origin: 0 50%; transform: scaleX(0); }
+  .tseg.s-in { background: #5E6B75; } .tseg.s-r { background: var(--cyan); } .tseg.s-w { background: repeating-linear-gradient(90deg, var(--purple) 0 14px, rgba(139,128,217,.35) 14px 22px); }
+  .tseg.s-g { background: #E8EDF1; }
+  .tlabels { position: relative; height: 30px; margin-top: 10px; font-size: 18px; color: #93A0AA; }
+  .tlabels span { position: absolute; top: 0; white-space: nowrap; opacity: .35; }
+  .playhead { position: absolute; top: -10px; width: 3px; height: 36px; margin-left: -1.5px; border-radius: 2px; background: #fff; box-shadow: 0 0 12px rgba(255,255,255,.7); opacity: 0; }
+  .caps { position: relative; height: 40px; margin-top: 10px; }
+  .caps div { position: absolute; left: 0; top: 0; font-size: 25px; color: #fff; opacity: 0; white-space: nowrap; }
+  .caps b { font-weight: 500; color: var(--cyan); } .caps b.pu { color: #B3AAF0; }
+  .pout { margin-top: 12px; min-height: 40px; font-size: 26px; color: #fff; }
+
+/* objects used by shots 03–05 */
+.lanetag { position: absolute; display: flex; flex-direction: column; gap: 6px; }
+.lanetag .t { font: 500 28px var(--sans); color: var(--text); }
+.lanetag .a { font: 400 21px var(--mono); color: var(--text-3); }
+.lanetag.on .t, .lanetag.on .a { color: var(--cyan-deep); }
+.kfaddr { margin-top: 12px; font: 400 17px var(--mono); color: var(--cyan-deep); background: rgba(79,214,240,.12); border-radius: 8px; padding: 6px 10px; display: inline-block; opacity: 0; }
+.editor .erow { display: block; margin: 0 -44px; padding: 0 44px; }
+.editor .sel { background: rgba(127,230,250,.25); }
+.lnode .disc img.photo { width: 84px; height: 84px; border-radius: 50%; }
+.editor .same { display: inline-flex; align-items: center; height: 38px; padding: 0 14px; margin-left: 22px; border-radius: 999px; background: rgba(255,255,255,.08); color: #8A96A0; font: 500 21px var(--sans); vertical-align: 4px; }
+.win-bar .title, .win-bar .sub { white-space: nowrap; }
+#appDay, #appNoPlug, #kfDay, #kfNoPlug { height: 30px; font-size: 17px; padding: 0 10px; }
+
+/* objects used by shots 07–09 */
+.lane { position: absolute; border: 4px dashed; border-radius: 40px; opacity: 0; }
+.lane span { position: absolute; left: 40px; bottom: 30px; font: 600 54px var(--sans); }
+
+/* the gateway console "upstairs": open-source Studio look, kept neutral (动效与界面指导 §6.1) */
+#console { position: absolute; width: 1300px; height: 820px; background: #fff; border-radius: 20px; overflow: hidden;
+  border: 1px solid #E4E4E7; box-shadow: 0 2px 4px rgba(7,9,13,.05), 0 40px 100px rgba(7,9,13,.14); color: #242426; font-family: var(--sans); }
+#console .csb { position: absolute; left: 0; top: 0; bottom: 0; width: 230px; background: #F7F7F8; border-right: 1px solid #E4E4E7; padding: 22px 16px; }
+#console .cbrand { display: flex; align-items: center; gap: 10px; font: 600 19px var(--latin); padding: 0 8px 16px; }
+#console .cbrand img { width: 22px; height: 22px; }
+#console .cgrp { font-size: 15px; color: #6B6B70; padding: 14px 8px 6px; }
+#console .cit { font-size: 18px; padding: 8px 10px; border-radius: 8px; color: #3A3A3E; }
+#console .cit.on { background: #EBEBED; font-weight: 500; color: #242426; }
+#console .cmain { position: absolute; left: 230px; right: 0; top: 0; bottom: 0; padding: 30px 36px; }
+#console .ch1 { display: flex; align-items: center; gap: 12px; font-size: 30px; font-weight: 700; }
+#console .cbeta { font-size: 15px; font-weight: 500; color: #6B6B70; border: 1px solid #E4E4E7; border-radius: 6px; padding: 2px 8px; }
+#console .crun { font-size: 16px; font-weight: 500; color: #0A7C93; background: rgba(79,214,240,.12); border-radius: 999px; padding: 4px 12px; opacity: 0; }
+#console .cdesc { margin-top: 8px; font-size: 17px; color: #6B6B70; }
+#console .caddr { margin-top: 16px; display: inline-flex; align-items: center; gap: 12px; font-size: 16px; color: #6B6B70; border: 1px solid #E4E4E7; border-radius: 10px; padding: 8px 12px; }
+#console .caddr code { font: 500 17px var(--mono); color: #242426; }
+#console .ccp { font-size: 15px; color: #242426; border-left: 1px solid #E4E4E7; padding-left: 12px; }
+#console .ctabs { margin-top: 22px; display: flex; gap: 4px; background: #F4F4F5; border-radius: 10px; padding: 4px; width: max-content; }
+#console .ctabs span { font-size: 17px; padding: 7px 16px; border-radius: 8px; color: #6B6B70; }
+#console .ctabs span.on { background: #fff; color: #242426; font-weight: 500; box-shadow: 0 1px 2px rgba(0,0,0,.06); }
+#console .cpanel { position: absolute; left: 36px; right: 36px; top: 268px; }
+#console .cbar2 { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
+#console .cbar2 p { font-size: 16px; color: #6B6B70; line-height: 1.6; max-width: 720px; }
+#console .cbtn { flex: none; background: #242426; color: #FAFAFA; font-size: 17px; font-weight: 500; border-radius: 10px; padding: 10px 18px; }
+#console .ctable { margin-top: 18px; width: 100%; border-collapse: separate; border-spacing: 0; border: 1px solid #E4E4E7; border-radius: 12px; overflow: hidden; font-size: 17px; }
+#console .ctable th { text-align: left; font-weight: 500; color: #6B6B70; background: #FAFAFA; padding: 12px 14px; border-bottom: 1px solid #E4E4E7; white-space: nowrap; }
+#console .ctable td { padding: 16px 14px; border-bottom: 1px solid #F0F0F1; white-space: nowrap; }
+#console .ctable tr:last-child td { border-bottom: 0; }
+#console .ctable code { font: 400 16px var(--mono); color: #6B6B70; }
+#console .cpill { display: inline-block; font-size: 15px; color: #3A3A3E; background: #F4F4F5; border-radius: 6px; padding: 3px 8px; margin-right: 4px; }
+#console .crv { color: #B42318; font-size: 16px; }
+#console .ckey { color: #0A7C93; font-weight: 500; display: flex; align-items: center; gap: 8px; }
+#console .ckey svg { width: 20px; height: 20px; fill: #0A7C93; stroke: #0A7C93; stroke-width: 2; }
+#console .cdlg { position: absolute; left: 380px; top: 150px; width: 640px; background: #fff; border-radius: 16px; border: 1px solid #E4E4E7;
+  box-shadow: 0 30px 80px rgba(7,9,13,.22); padding: 26px 28px; display: flex; flex-direction: column; gap: 12px; }
+#console .cdt { font-size: 24px; font-weight: 700; }
+#console .cdd { font-size: 15px; color: #6B6B70; margin-bottom: 6px; }
+#console .cfield { display: flex; align-items: center; gap: 16px; }
+#console .cfield span { width: 110px; font-size: 16px; color: #6B6B70; }
+#console .cin { flex: 1; height: 42px; border: 1px solid #DEDEE0; border-radius: 9px; padding: 0 12px; display: flex; align-items: center; font-size: 17px; }
+#console .ccur { position: absolute; width: 28px; height: 28px; left: 0; top: 0; }
+#console .ctag2 { position: absolute; right: 18px; bottom: 14px; font-size: 15px; color: #8B959C; border: 1px solid #E4E4E7; border-radius: 999px; padding: 3px 10px; }
+
+.logcard { position: absolute; width: 760px; background: #fff; border: 1px solid #E4E4E7; border-radius: 16px; box-shadow: var(--shadow-lift); padding: 20px 24px; font-family: var(--sans); }
+.logcard .lh { font-size: 20px; font-weight: 600; color: #242426; margin-bottom: 12px; }
+.logcard .lrow { display: flex; gap: 18px; font-size: 18px; color: #3A3A3E; padding: 10px 12px; background: #FAFAFA; border-radius: 10px; white-space: nowrap; }
+.logcard .lrow .ok { color: #0A7C93; }
+.logcard .ldet { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px 18px; margin-top: 12px; font-size: 16px; color: #6B6B70; }
+.logcard .ldet b { font-weight: 500; color: #3A3A3E; margin-right: 6px; }
+.logcard .lempty { margin-top: 14px; height: 54px; border: 2px dashed #C9D0D5; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; color: #8B959C; }
+
+/* shot 02: the in-house agent's integration flow, and the other apps' piles */
+.flowarrow { position: absolute; font: 600 30px var(--sans); color: #B9C2C8; opacity: 0; }
+.code-card.mini { font-size: 19px; padding: 10px 14px; }
+
+/* shot 03: a smaller config editor, so the gateway fits beside the app */
+#editor pre { font-size: 22px; padding: 26px 34px; }  /* the gateway URL is 61 characters */
+#editor .ln { width: 40px; }
+#editor .erow { margin: 0 -34px; padding: 0 34px; }
+#editor .caret { height: 26px; }
+#editor .same { height: 32px; font-size: 19px; }
+
+/* narration captions */
+#subs { position: absolute; left: 50%; bottom: 52px; transform: translateX(-50%); z-index: 50; opacity: 0;
+  padding: 10px 24px; border-radius: 12px; background: rgba(7, 9, 13, .62); color: #fff;
+  font: 500 34px/1.35 var(--sans); letter-spacing: .02em; white-space: nowrap; }

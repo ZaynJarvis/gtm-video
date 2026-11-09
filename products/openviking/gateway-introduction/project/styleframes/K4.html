@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><link rel="stylesheet" href="apps.css">
+<style>
+  .ghost-old { position: absolute; font: 400 30px var(--mono); color: rgba(201,209,217,.0); }
+  .old { position: absolute; font: 400 28px var(--mono); color: var(--text-3); text-decoration: line-through; text-decoration-color: rgba(139,149,156,.6); white-space: nowrap; }
+  .same { display: inline-flex; align-items: center; height: 38px; padding: 0 14px; margin-left: 22px; border-radius: 999px; background: rgba(255,255,255,.08); color: #8A96A0; font: 500 21px var(--sans); vertical-align: 4px; }
+</style></head>
+<body>
+  <div class="glow" style="left:700px;top:100px;width:1300px;height:1000px;opacity:.9"></div>
+
+  <!-- Everything from the previous shot falls out of focus -->
+  <div class="farther">
+    <div class="win" style="left:-80px;top:120px;width:620px;height:600px"></div>
+    <div class="code-card" style="left:60px;top:760px;transform:rotate(-2deg)"><span class="k">search_memory</span>(query, user)</div>
+    <div class="code-card" style="left:90px;top:832px;transform:rotate(1.4deg)"><span class="k">inject_context</span>(messages)</div>
+    <div class="win" style="left:1500px;top:-60px;width:600px;height:420px"></div>
+  </div>
+
+  <div class="hud-l">研发助手 · <b>模型服务配置</b></div>
+  <div class="hud-r">config/<b>llm.py</b></div>
+
+  <div class="big" style="left:110px;top:150px;font-size:96px">改<em>两项</em>设置</div>
+
+  <div class="editor" style="left:250px;top:300px;width:1560px;height:480px;transform:rotate(-1.2deg)">
+    <div class="bar"><i></i><i></i><i></i><span>config/llm.py</span></div>
+<pre><span class="ln">1</span><span class="kw">client</span> = OpenAI(
+<span class="row-new"><span class="ln">2</span>    base_url = <span class="str new">"https://gateway.openviking.volcengine.com/v1"</span>,</span><span class="row-new"><span class="ln">3</span>    api_key  = <span class="str new">"ovgw_••••7c</span><span class="caret"></span></span><span class="ln">4</span>)
+<span class="ln">5</span><span class="kw">model</span> = <span class="str">"&lt;model&gt;"</span><span class="same">不变</span></pre>
+  </div>
+  <div class="old" style="left:900px;top:262px;opacity:.75;transform:rotate(-1.2deg)">"https://api.openai.com/v1"</div>
+  <div class="old" style="left:1420px;top:214px;opacity:.45;font-size:24px;transform:rotate(-1.2deg)">"sk-••••3f9a"</div>
+</body></html>

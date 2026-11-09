@@ -1,0 +1,390 @@
+{
+  "provider": "volcengine",
+  "resource_id": "seed-tts-2.0",
+  "speaker": "zh_male_m191_uranus_bigtts",
+  "audio_params": {
+    "format": "mp3",
+    "sample_rate": 48000,
+    "bit_rate": 160000,
+    "speech_rate": -5,
+    "enable_subtitle": true
+  },
+  "request_id": "b19e93c5-b75d-4a31-b1e3-2403df566f50",
+  "log_id": "20261025105128E0E072DB7B49D92B3F40",
+  "text_sha256": "08bb57141e6b1f98aa4273bd9b3eddbc529b934ae793fa1e1fe84fcd30005797",
+  "input_characters": 76,
+  "usage": {
+    "text_words": 76
+  },
+  "bytes": 261645,
+  "final_code": 20000000,
+  "terminal_success_seen": true,
+  "stream_end": "terminal_success",
+  "sentences": [
+    {
+      "phonemes": [],
+      "text": "OpenViking 网关，换一种接法。",
+      "words": [
+        {
+          "confidence": 0.17798807,
+          "endTime": 0.805,
+          "startTime": 0.775,
+          "word": "OpenViking"
+        },
+        {
+          "confidence": 0.49676058,
+          "endTime": 0.945,
+          "startTime": 0.805,
+          "word": "网"
+        },
+        {
+          "confidence": 0.9346313,
+          "endTime": 1.255,
+          "startTime": 0.945,
+          "word": "关，"
+        },
+        {
+          "confidence": 0.9306852,
+          "endTime": 1.665,
+          "startTime": 1.395,
+          "word": "换"
+        },
+        {
+          "confidence": 0.88870263,
+          "endTime": 1.745,
+          "startTime": 1.665,
+          "word": "一"
+        },
+        {
+          "confidence": 0.9277276,
+          "endTime": 1.905,
+          "startTime": 1.745,
+          "word": "种"
+        },
+        {
+          "confidence": 0.928965,
+          "endTime": 2.115,
+          "startTime": 1.905,
+          "word": "接"
+        },
+        {
+          "confidence": 0.9494207,
+          "endTime": 2.345,
+          "startTime": 2.115,
+          "word": "法。"
+        }
+      ]
+    },
+    {
+      "phonemes": [],
+      "text": "把地址指向网关，密钥换成网关密钥。",
+      "words": [
+        {
+          "confidence": 0.3291022,
+          "endTime": 2.8550417,
+          "startTime": 2.7800417,
+          "word": "把"
+        },
+        {
+          "confidence": 0.6567262,
+          "endTime": 2.9650416,
+          "startTime": 2.8550417,
+          "word": "地"
+        },
+        {
+          "confidence": 0.8868876,
+          "endTime": 3.2050416,
+          "startTime": 2.9650416,
+          "word": "址"
+        },
+        {
+          "confidence": 0.9173925,
+          "endTime": 3.3750417,
+          "startTime": 3.2050416,
+          "word": "指"
+        },
+        {
+          "confidence": 0.9508177,
+          "endTime": 3.5250416,
+          "startTime": 3.3750417,
+          "word": "向"
+        },
+        {
+          "confidence": 0.96303165,
+          "endTime": 3.7050416,
+          "startTime": 3.5250416,
+          "word": "网"
+        },
+        {
+          "confidence": 0.9833148,
+          "endTime": 3.9850416,
+          "startTime": 3.7050416,
+          "word": "关，"
+        },
+        {
+          "confidence": 0.8467596,
+          "endTime": 4.4450417,
+          "startTime": 4.245042,
+          "word": "密"
+        },
+        {
+          "confidence": 0.8318293,
+          "endTime": 4.665042,
+          "startTime": 4.4450417,
+          "word": "钥"
+        },
+        {
+          "confidence": 0.93161523,
+          "endTime": 4.835042,
+          "startTime": 4.665042,
+          "word": "换"
+        },
+        {
+          "confidence": 0.95760506,
+          "endTime": 4.9850416,
+          "startTime": 4.835042,
+          "word": "成"
+        },
+        {
+          "confidence": 0.98278326,
+          "endTime": 5.165042,
+          "startTime": 4.9850416,
+          "word": "网"
+        },
+        {
+          "confidence": 0.97575825,
+          "endTime": 5.3150415,
+          "startTime": 5.165042,
+          "word": "关"
+        },
+        {
+          "confidence": 0.93637776,
+          "endTime": 5.5250416,
+          "startTime": 5.3150415,
+          "word": "密"
+        },
+        {
+          "confidence": 0.8844497,
+          "endTime": 5.6950417,
+          "startTime": 5.5250416,
+          "word": "钥。"
+        }
+      ]
+    },
+    {
+      "phonemes": [],
+      "text": "不装插件，不改代码。",
+      "words": [
+        {
+          "confidence": 0.90434337,
+          "endTime": 6.0750833,
+          "startTime": 6.0000834,
+          "word": "不"
+        },
+        {
+          "confidence": 0.9641776,
+          "endTime": 6.2250834,
+          "startTime": 6.0750833,
+          "word": "装"
+        },
+        {
+          "confidence": 0.914848,
+          "endTime": 6.4550834,
+          "startTime": 6.2250834,
+          "word": "插"
+        },
+        {
+          "confidence": 0.96093744,
+          "endTime": 6.6450834,
+          "startTime": 6.4550834,
+          "word": "件，"
+        },
+        {
+          "confidence": 0.9810158,
+          "endTime": 6.9550834,
+          "startTime": 6.845083,
+          "word": "不"
+        },
+        {
+          "confidence": 0.9719934,
+          "endTime": 7.1050835,
+          "startTime": 6.9550834,
+          "word": "改"
+        },
+        {
+          "confidence": 0.9052329,
+          "endTime": 7.2950835,
+          "startTime": 7.1050835,
+          "word": "代"
+        },
+        {
+          "confidence": 0.9077559,
+          "endTime": 7.4850836,
+          "startTime": 7.2950835,
+          "word": "码。"
+        }
+      ]
+    },
+    {
+      "phonemes": [],
+      "text": "OpenViking 网关，换一种接法。把地址指向网关，密钥换成网关密钥。不装插件，不改代码。同一个客户端，同一个模型，同一个问题。这一次，它答得上来。",
+      "words": []
+    },
+    {
+      "phonemes": [],
+      "text": "同一个客户端，同一个模型，同一个问题。",
+      "words": [
+        {
+          "confidence": 0.7004549,
+          "endTime": 8.135125,
+          "startTime": 7.900125,
+          "word": "同"
+        },
+        {
+          "confidence": 0.8590025,
+          "endTime": 8.215125,
+          "startTime": 8.135125,
+          "word": "一"
+        },
+        {
+          "confidence": 0.8990005,
+          "endTime": 8.335125,
+          "startTime": 8.215125,
+          "word": "个"
+        },
+        {
+          "confidence": 0.95674306,
+          "endTime": 8.515125,
+          "startTime": 8.335125,
+          "word": "客"
+        },
+        {
+          "confidence": 0.959471,
+          "endTime": 8.645125,
+          "startTime": 8.515125,
+          "word": "户"
+        },
+        {
+          "confidence": 0.9688107,
+          "endTime": 8.925125,
+          "startTime": 8.645125,
+          "word": "端，"
+        },
+        {
+          "confidence": 0.9321924,
+          "endTime": 9.285125,
+          "startTime": 9.045125,
+          "word": "同"
+        },
+        {
+          "confidence": 0.87440526,
+          "endTime": 9.355125,
+          "startTime": 9.285125,
+          "word": "一"
+        },
+        {
+          "confidence": 0.9467332,
+          "endTime": 9.455125,
+          "startTime": 9.355125,
+          "word": "个"
+        },
+        {
+          "confidence": 0.94389254,
+          "endTime": 9.625125,
+          "startTime": 9.455125,
+          "word": "模"
+        },
+        {
+          "confidence": 0.9204596,
+          "endTime": 9.975125,
+          "startTime": 9.625125,
+          "word": "型，"
+        },
+        {
+          "confidence": 0.9333563,
+          "endTime": 10.395124,
+          "startTime": 10.155125,
+          "word": "同"
+        },
+        {
+          "confidence": 0.8807208,
+          "endTime": 10.465125,
+          "startTime": 10.395124,
+          "word": "一"
+        },
+        {
+          "confidence": 0.9072355,
+          "endTime": 10.5651245,
+          "startTime": 10.465125,
+          "word": "个"
+        },
+        {
+          "confidence": 0.9845013,
+          "endTime": 10.755125,
+          "startTime": 10.5651245,
+          "word": "问"
+        },
+        {
+          "confidence": 0.9778363,
+          "endTime": 11.045125,
+          "startTime": 10.755125,
+          "word": "题。"
+        }
+      ]
+    },
+    {
+      "phonemes": [],
+      "text": "这一次，它答得上来。",
+      "words": [
+        {
+          "confidence": 0.8821631,
+          "endTime": 11.465167,
+          "startTime": 11.295167,
+          "word": "这"
+        },
+        {
+          "confidence": 0.90055835,
+          "endTime": 11.545167,
+          "startTime": 11.465167,
+          "word": "一"
+        },
+        {
+          "confidence": 0.97917426,
+          "endTime": 11.845167,
+          "startTime": 11.545167,
+          "word": "次，"
+        },
+        {
+          "confidence": 0.50873846,
+          "endTime": 12.115167,
+          "startTime": 12.035167,
+          "word": "它"
+        },
+        {
+          "confidence": 0.31832308,
+          "endTime": 12.175167,
+          "startTime": 12.115167,
+          "word": "答"
+        },
+        {
+          "confidence": 0.16332792,
+          "endTime": 12.235167,
+          "startTime": 12.175167,
+          "word": "得"
+        },
+        {
+          "confidence": 0.14416078,
+          "endTime": 12.295167,
+          "startTime": 12.235167,
+          "word": "上"
+        },
+        {
+          "confidence": 0.35961097,
+          "endTime": 12.355166,
+          "startTime": 12.295167,
+          "word": "来。"
+        }
+      ]
+    }
+  ]
+}

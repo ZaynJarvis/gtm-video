@@ -1,0 +1,7 @@
+{
+  "_doc": "Edit points between beats. Each span [tl_start, tl_end, out_dur] squeezes that stretch of the shot timeline into out_dur seconds with a smooth speed ramp (normal speed at both ends). No narration is placed inside any span. Used by render-shot.mjs (frames) and audio/sfxlib.py + audio/mix.py (sound).",
+  "seq01-02": { "dur": 27, "spans": [[8.2, 10.9, 0.8], [26.0, 27.0, 0.3]] },
+  "seq03-05": { "dur": 35, "spans": [[9.9, 10.8, 0.45], [17.6, 18.9, 0.4], [33.1, 35.0, 1.1]] },
+  "shot06":   { "dur": 26, "spans": [[23.6, 26.0, 0.4]] },
+  "seq07-09": { "dur": 39, "spans": [[10.2, 11.0, 0.3], [27.6, 28.6, 0.3], [28.6, 30.0, 0.8], [37.5, 39.0, 1.0]] }
+}

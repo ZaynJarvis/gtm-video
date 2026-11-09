@@ -1,0 +1,432 @@
+{
+  "provider": "volcengine",
+  "resource_id": "seed-tts-2.0",
+  "speaker": "zh_male_gaolengchenwen_uranus_bigtts",
+  "audio_params": {
+    "format": "mp3",
+    "sample_rate": 48000,
+    "bit_rate": 160000,
+    "speech_rate": 5,
+    "enable_subtitle": true
+  },
+  "request_id": "3bd4bb73-302e-4ae0-b153-453e11444593",
+  "log_id": "202610251304260856E37B85F3807FCE20",
+  "text_sha256": "b64c2073eb198d40af70574e1cf6bf228d32fb3f79caf8ce0fc14fa76b0947df",
+  "input_characters": 84,
+  "usage": {
+    "text_words": 84
+  },
+  "bytes": 267405,
+  "final_code": 20000000,
+  "terminal_success_seen": true,
+  "stream_end": "terminal_success",
+  "sentences": [
+    {
+      "phonemes": [],
+      "text": "OpenViking 网关是一个模型代理，位于你的应用和模型之间。",
+      "words": [
+        {
+          "confidence": 0.26364642,
+          "endTime": 0.655,
+          "startTime": 0.625,
+          "word": "OpenViking"
+        },
+        {
+          "confidence": 0.8987957,
+          "endTime": 0.815,
+          "startTime": 0.655,
+          "word": "网"
+        },
+        {
+          "confidence": 0.93608594,
+          "endTime": 1.075,
+          "startTime": 0.815,
+          "word": "关"
+        },
+        {
+          "confidence": 0.8348871,
+          "endTime": 1.295,
+          "startTime": 1.075,
+          "word": "是"
+        },
+        {
+          "confidence": 0.8718263,
+          "endTime": 1.345,
+          "startTime": 1.295,
+          "word": "一"
+        },
+        {
+          "confidence": 0.9475015,
+          "endTime": 1.465,
+          "startTime": 1.345,
+          "word": "个"
+        },
+        {
+          "confidence": 0.97436297,
+          "endTime": 1.595,
+          "startTime": 1.465,
+          "word": "模"
+        },
+        {
+          "confidence": 0.9390886,
+          "endTime": 1.735,
+          "startTime": 1.595,
+          "word": "型"
+        },
+        {
+          "confidence": 0.9734397,
+          "endTime": 1.905,
+          "startTime": 1.735,
+          "word": "代"
+        },
+        {
+          "confidence": 0.95667154,
+          "endTime": 2.085,
+          "startTime": 1.905,
+          "word": "理，"
+        },
+        {
+          "confidence": 0.8036606,
+          "endTime": 2.605,
+          "startTime": 2.455,
+          "word": "位"
+        },
+        {
+          "confidence": 0.80137134,
+          "endTime": 2.685,
+          "startTime": 2.605,
+          "word": "于"
+        },
+        {
+          "confidence": 0.95057386,
+          "endTime": 2.805,
+          "startTime": 2.685,
+          "word": "你"
+        },
+        {
+          "confidence": 0.9446694,
+          "endTime": 2.955,
+          "startTime": 2.805,
+          "word": "的"
+        },
+        {
+          "confidence": 0.8562294,
+          "endTime": 3.095,
+          "startTime": 2.955,
+          "word": "应"
+        },
+        {
+          "confidence": 0.8706385,
+          "endTime": 3.275,
+          "startTime": 3.095,
+          "word": "用"
+        },
+        {
+          "confidence": 0.92041063,
+          "endTime": 3.425,
+          "startTime": 3.275,
+          "word": "和"
+        },
+        {
+          "confidence": 0.9586674,
+          "endTime": 3.545,
+          "startTime": 3.425,
+          "word": "模"
+        },
+        {
+          "confidence": 0.90068734,
+          "endTime": 3.705,
+          "startTime": 3.545,
+          "word": "型"
+        },
+        {
+          "confidence": 0.9612619,
+          "endTime": 3.825,
+          "startTime": 3.705,
+          "word": "之"
+        },
+        {
+          "confidence": 0.9427877,
+          "endTime": 4.045,
+          "startTime": 3.825,
+          "word": "间。"
+        }
+      ]
+    },
+    {
+      "phonemes": [],
+      "text": "插件要装进每个 Agent；",
+      "words": [
+        {
+          "confidence": 0.86934656,
+          "endTime": 4.995042,
+          "startTime": 4.7750416,
+          "word": "插"
+        },
+        {
+          "confidence": 0.7917174,
+          "endTime": 5.1550417,
+          "startTime": 4.995042,
+          "word": "件"
+        },
+        {
+          "confidence": 0.94059724,
+          "endTime": 5.285042,
+          "startTime": 5.1550417,
+          "word": "要"
+        },
+        {
+          "confidence": 0.9242636,
+          "endTime": 5.4650416,
+          "startTime": 5.285042,
+          "word": "装"
+        },
+        {
+          "confidence": 0.8536462,
+          "endTime": 5.5950418,
+          "startTime": 5.4650416,
+          "word": "进"
+        },
+        {
+          "confidence": 0.9566337,
+          "endTime": 5.7750416,
+          "startTime": 5.5950418,
+          "word": "每"
+        },
+        {
+          "confidence": 0.93282384,
+          "endTime": 5.895042,
+          "startTime": 5.7750416,
+          "word": "个"
+        },
+        {
+          "confidence": 0.74976075,
+          "endTime": 6.3450418,
+          "startTime": 5.895042,
+          "word": "Agent；"
+        }
+      ]
+    },
+    {
+      "phonemes": [],
+      "text": "网关只守在通往模型的路上——每个应用经过这里，",
+      "words": [
+        {
+          "confidence": 0.7834847,
+          "endTime": 7.0550838,
+          "startTime": 6.8800836,
+          "word": "网"
+        },
+        {
+          "confidence": 0.9649402,
+          "endTime": 7.245084,
+          "startTime": 7.0550838,
+          "word": "关"
+        },
+        {
+          "confidence": 0.8696884,
+          "endTime": 7.4050837,
+          "startTime": 7.245084,
+          "word": "只"
+        },
+        {
+          "confidence": 0.91317177,
+          "endTime": 7.5950837,
+          "startTime": 7.4050837,
+          "word": "守"
+        },
+        {
+          "confidence": 0.96848,
+          "endTime": 7.7150836,
+          "startTime": 7.5950837,
+          "word": "在"
+        },
+        {
+          "confidence": 0.9513174,
+          "endTime": 7.8650837,
+          "startTime": 7.7150836,
+          "word": "通"
+        },
+        {
+          "confidence": 0.89394814,
+          "endTime": 7.9750834,
+          "startTime": 7.8650837,
+          "word": "往"
+        },
+        {
+          "confidence": 0.961964,
+          "endTime": 8.115084,
+          "startTime": 7.9750834,
+          "word": "模"
+        },
+        {
+          "confidence": 0.9128376,
+          "endTime": 8.255083,
+          "startTime": 8.115084,
+          "word": "型"
+        },
+        {
+          "confidence": 0.8833952,
+          "endTime": 8.335084,
+          "startTime": 8.255083,
+          "word": "的"
+        },
+        {
+          "confidence": 0.96401906,
+          "endTime": 8.465084,
+          "startTime": 8.335084,
+          "word": "路"
+        },
+        {
+          "confidence": 0.81322867,
+          "endTime": 8.615084,
+          "startTime": 8.465084,
+          "word": "上"
+        },
+        {
+          "confidence": 0.38100773,
+          "endTime": 8.645083,
+          "startTime": 8.615084,
+          "word": "—"
+        },
+        {
+          "confidence": 0.2580031,
+          "endTime": 8.705084,
+          "startTime": 8.675083,
+          "word": "—"
+        },
+        {
+          "confidence": 0.9616279,
+          "endTime": 9.495084,
+          "startTime": 9.305083,
+          "word": "每"
+        },
+        {
+          "confidence": 0.90950763,
+          "endTime": 9.655084,
+          "startTime": 9.495084,
+          "word": "个"
+        },
+        {
+          "confidence": 0.7163753,
+          "endTime": 9.765083,
+          "startTime": 9.655084,
+          "word": "应"
+        },
+        {
+          "confidence": 0.764686,
+          "endTime": 9.915084,
+          "startTime": 9.765083,
+          "word": "用"
+        },
+        {
+          "confidence": 0.9187589,
+          "endTime": 10.0650835,
+          "startTime": 9.915084,
+          "word": "经"
+        },
+        {
+          "confidence": 0.95647264,
+          "endTime": 10.195084,
+          "startTime": 10.0650835,
+          "word": "过"
+        },
+        {
+          "confidence": 0.95059806,
+          "endTime": 10.355083,
+          "startTime": 10.195084,
+          "word": "这"
+        },
+        {
+          "confidence": 0.95226747,
+          "endTime": 10.555083,
+          "startTime": 10.355083,
+          "word": "里，"
+        }
+      ]
+    },
+    {
+      "phonemes": [],
+      "text": "OpenViking 网关是一个模型代理，位于你的应用和模型之间。插件要装进每个 Agent；网关只守在通往模型的路上——每个应用经过这里，都自动带上记忆，也留下记忆。",
+      "words": []
+    },
+    {
+      "phonemes": [],
+      "text": "都自动带上记忆，也留下记忆。",
+      "words": [
+        {
+          "confidence": 0.82621056,
+          "endTime": 10.915125,
+          "startTime": 10.760125,
+          "word": "都"
+        },
+        {
+          "confidence": 0.85193354,
+          "endTime": 11.075125,
+          "startTime": 10.915125,
+          "word": "自"
+        },
+        {
+          "confidence": 0.8951568,
+          "endTime": 11.185125,
+          "startTime": 11.075125,
+          "word": "动"
+        },
+        {
+          "confidence": 0.9406064,
+          "endTime": 11.295125,
+          "startTime": 11.185125,
+          "word": "带"
+        },
+        {
+          "confidence": 0.9450541,
+          "endTime": 11.425125,
+          "startTime": 11.295125,
+          "word": "上"
+        },
+        {
+          "confidence": 0.8676921,
+          "endTime": 11.605125,
+          "startTime": 11.425125,
+          "word": "记"
+        },
+        {
+          "confidence": 0.9152236,
+          "endTime": 11.785125,
+          "startTime": 11.605125,
+          "word": "忆，"
+        },
+        {
+          "confidence": 0.7324731,
+          "endTime": 12.355125,
+          "startTime": 12.245125,
+          "word": "也"
+        },
+        {
+          "confidence": 0.9378695,
+          "endTime": 12.495125,
+          "startTime": 12.355125,
+          "word": "留"
+        },
+        {
+          "confidence": 0.95117414,
+          "endTime": 12.645125,
+          "startTime": 12.495125,
+          "word": "下"
+        },
+        {
+          "confidence": 0.8383421,
+          "endTime": 12.805125,
+          "startTime": 12.645125,
+          "word": "记"
+        },
+        {
+          "confidence": 0.836969,
+          "endTime": 12.965125,
+          "startTime": 12.805125,
+          "word": "忆。"
+        }
+      ]
+    }
+  ]
+}
