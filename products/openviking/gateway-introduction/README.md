@@ -14,7 +14,7 @@
 
 ```sh
 cd products/openviking/gateway-introduction/project
-npm ci
+npm ci --include=dev
 npx playwright install chromium --only-shell
 OUT=OV-Gateway-preview-v8.mp4 sh tools/build-film.sh
 ```
@@ -41,7 +41,7 @@ Linux 如缺少浏览器系统依赖，可在构建环境中使用 `npx playwrig
 
 提交源码、配置、原始旁白、时间戳、素材和依赖锁文件。不提交 `node_modules/`、`project/renders/`、任何 MP4、可重建的音效/混音 WAV、拼接旁白预览以及运行缓存；规则见 [.gitignore](.gitignore)。
 
-只看静帧可运行 `npm run frames`；动画检查可运行 `sh tools/check-stills.sh`。生成文件仍留在本地供 review。
+以下命令均在 `project/` 下执行。历史设计样帧可运行 `npm run frames`，其中部分产品文案早于当前成片；当前动画静帧检查可运行 `sh tools/check-stills.sh`。生成文件仍留在本地供 review。
 
 ## 画面修订与回归检查
 

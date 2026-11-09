@@ -1,6 +1,8 @@
 # 制作工程
 
-样帧与后续动画共用这里的视觉系统。HTML/CSS 由 Playwright 截图成 PNG，不依赖 HyperFrames；进入动画阶段后，同一批组件接入 GSAP 时间线。
+当前工程为内容 V7、画面修订 V8，状态及完整安装步骤见[视频 README](../README.md)。HTML/CSS 由 Playwright 截图，GSAP 控制动画时间线。
+
+`styleframes/K1–K9.html` 是历史设计样帧，部分地址、密钥前缀和文案早于当前成片，不应作为当前产品口径或新项目接入模板。当前动画位于 `shots/`，发布信息集中在 `shots/launch.js`；修改它不会更新历史样帧。
 
 | 位置 | 内容 |
 |---|---|
@@ -39,10 +41,6 @@ node render-frames.mjs K6 K7   # 指定几张
 | `editmap.mjs`、`audio/editmap.py` | 同一套时间映射的 JS / Python 实现：出帧按它取时间，音效与旁白按它落位 |
 | `audio/mix.py` | 统一混音：`python3 audio/mix.py seq01-02`。各段旁白的切分与落位写在文件里，按剪辑点换算到输出时间；音效被配音侧链压低，整体 -16 LUFS |
 | `tools/build-film.sh` | 一条命令：四段音效 → 混音 → 出帧（按剪辑点）→ 编码 → 拼成全片 |
-| `renders/seq01-02/seq01-02-v1.mp4` | 01–02 序列 V1 |
-| `renders/seq03-05/seq03-05-v3.mp4` | 03–05 序列 V3（修正 05 镜请求胶囊；V1、V2 保留） |
-| `renders/seq07-09/seq07-09-v1.mp4` | 07–09 序列 V1 |
-| `renders/OV-Gateway-full-v7.mp4` | **全片 V7**（01–09，带口播字幕；正式网关地址、`ov-` 密钥，旁白改说 API Key）；V6–V1 保留作对照 |
 | `tools/make_captions.py` → `shots/captions.js` | 口播字幕：从 TTS 字级时间戳按标点断行，落位与 `audio/mix.py` 的旁白分段一致，所以也跟着剪辑点走；各页面用 `addCaptions()` 烧进画面 |
 | `renders/<序列>/<序列>-edit.mp4` | 每段按剪辑点出的成片，全片由这四段拼成 |
 
@@ -52,12 +50,13 @@ node render-frames.mjs K6 K7   # 指定几张
 | `shots/shot06.html` | 06 镜“跟着一条消息走”：一张 3400×2300 的世界舞台 + 相机，GSAP 时间线驱动，`window.__seek(t)` 可定位到任意时刻 |
 | `render-shot.mjs` | `node render-shot.mjs shot06 stills 4.9 14.6` 出指定时刻静帧；`node render-shot.mjs shot06 frames` 按 30 fps 出全部帧 |
 | `audio/sfx_shot06.py` | 06 镜音效床（房间底噪 + 关键事件音），时间点与 `tl06.js` 一致 |
-| `renders/shot06/shot06-v2.mp4` | 样片 V2：26 秒，1080p30，H.264 + AAC；`shots/shot06-v1.html` 与 `shot06-v1.mp4` 为上一版 |
 
-重出全片（约 5 分钟）：
+重出全片（耗时取决于运行环境）：
 
 ```bash
-OUT=OV-Gateway-full-v7.mp4 sh tools/build-film.sh
+OUT=OV-Gateway-preview-v8.mp4 sh tools/build-film.sh
 ```
+
+输出到 `renders/OV-Gateway-preview-v8.mp4`。`renders/` 全部为本地生成产物，历史成片不随仓库提供。
 
 静帧检查用的是时间轴时间（`node render-shot.mjs seq07-09 stills 21.5`），不受剪辑点影响。
