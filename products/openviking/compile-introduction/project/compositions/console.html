@@ -1056,177 +1056,236 @@
     }
     .chat {
       position: absolute;
-      left: 16px;
-      right: 16px;
-      top: 74px;
+      left: 0;
+      right: 0;
+      top: 64px;
+      bottom: 194px;
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(transparent 0, #000 22px);
+      mask-image: linear-gradient(transparent 0, #000 22px);
     }
-    .ubub {
-      margin-left: 40px;
-      background: #f2f4f7;
-      border-radius: 16px 16px 4px 16px;
-      padding: 12px 14px;
-      font-size: 16px;
-      line-height: 1.6;
+    #c-chatin {
+      padding: 8px 18px 0;
     }
-    .ubub .mini {
+    .usrc {
       display: flex;
+      flex-direction: column;
+      align-items: flex-end;
       gap: 6px;
-      margin-top: 8px;
     }
-    .ubub .mini span {
-      font-size: 13px;
-      background: #fff;
-      border-radius: 6px;
-      padding: 2px 8px;
-      color: #4b5260;
+    .usrc span {
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 6px;
+      font-size: 14px;
+      color: #374151;
+      background: #f2f3f6;
+      border-radius: 10px;
+      padding: 5px 10px;
     }
-    .ubub .mini .ic {
-      width: 13px;
-      height: 13px;
+    .usrc .ic {
+      width: 15px;
+      height: 15px;
+      color: #6b7280;
+    }
+    .ubub {
+      margin: 8px 0 0 34px;
+      background: #f6efea;
+      border-radius: 14px;
+      padding: 11px 14px;
+      font-size: 16px;
+      line-height: 1.6;
     }
     .bwho {
       margin-top: 18px;
       display: flex;
       align-items: center;
-      gap: 8px;
-      font-size: 15px;
-      color: #6b7280;
+      gap: 7px;
+      font-size: 16px;
+      color: #4b5260;
     }
-    .blogo {
-      width: 28px;
-      height: 28px;
-      border-radius: 8px;
-      background: #f2f4f7;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .ov-markbox {
-      position: relative;
-      width: 15px;
-      height: 18px;
-      overflow: hidden;
-      display: block;
-    }
-    .ov-markbox img {
-      position: absolute;
-      left: -2.27px;
-      top: -2.79px;
-      height: 24.79px;
-      width: auto;
-      max-width: none;
-    }
-    .bcard {
+    .bmsg {
       margin-top: 10px;
-      border: 1px solid #e6e8ef;
-      border-radius: 14px;
-      padding: 14px 16px;
-      background: #fff;
-      box-shadow: 0 6px 20px rgba(40, 50, 90, 0.06);
+      font-size: 16px;
+      line-height: 1.65;
+      color: #1f2329;
     }
-    .bcard .tt {
+    .btool {
+      margin-top: 10px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 7px;
+      font-size: 15px;
+      color: #374151;
+    }
+    .btool .ic {
+      width: 17px;
+      height: 17px;
+    }
+    .fcard {
+      margin-top: 16px;
+      border-radius: 16px;
+      background: #fff;
+      border: 1px solid #eceef3;
+      box-shadow: 0 10px 30px rgba(40, 50, 90, 0.1);
+      padding: 16px 16px 14px;
+    }
+    .fcard .ft {
       font-size: 18px;
       font-weight: 600;
     }
-    .bcard .tt .ic {
-      color: #e8453c;
+    .fcard .fl {
+      margin-top: 12px;
+      font-size: 14px;
+      color: #737985;
     }
-    .stbadge {
+    .fsel {
+      position: relative;
+      margin-top: 6px;
+      height: 40px;
+      border: 1px solid #e3e6ec;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 10px;
+      font-size: 14.5px;
+      color: #1f2329;
+      white-space: nowrap;
+      background: #fff;
+    }
+    .fsel > .ic {
+      width: 17px;
+      height: 17px;
+      color: #4b5260;
+    }
+    .fsel .dn {
       margin-left: auto;
+      width: 15px;
+      height: 15px;
+    }
+    .fvst {
       display: grid;
-      font-size: 13px;
-      font-weight: 500;
+      overflow: hidden;
     }
-    .stbadge > span {
+    .fvst > span {
       grid-area: 1 / 1;
-      border-radius: 6px;
-      padding: 3px 8px;
-      text-align: center;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
-    .stbadge .run {
-      color: #2f55d4;
-      background: #e9efff;
+    .ph2 {
+      color: #a3a8b2;
     }
-    .stbadge .ok {
-      color: #15803d;
-      background: #e7f7ec;
+    .fopts {
+      position: absolute;
+      left: -1px;
+      right: -1px;
+      top: 44px;
+      z-index: 5;
+      background: #fff;
+      border: 1px solid #e3e6ec;
+      border-radius: 10px;
+      box-shadow: 0 12px 30px rgba(30, 40, 90, 0.16);
+      padding: 4px;
+      opacity: 0;
     }
-    .steps {
-      margin-top: 10px;
-    }
-    .step {
+    .fo {
       height: 36px;
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-size: 16px;
-      color: #374151;
-      white-space: nowrap;
+      gap: 8px;
+      padding: 0 8px;
+      border-radius: 7px;
+      font-size: 14px;
     }
-    .sico {
-      position: relative;
-      width: 20px;
-      height: 20px;
-      flex: none;
+    .fo .ic {
+      width: 16px;
+      height: 16px;
+      color: #4b5260;
     }
-    .sico > * {
-      position: absolute;
-      inset: 0;
+    .fo span {
+      margin-left: auto;
+      font-size: 12.5px;
+      color: #828893;
     }
-    .spin {
-      border-radius: 50%;
-      border: 2.5px solid #dde3ff;
-      border-top-color: #4f6bff;
-    }
-    .wait {
-      border-radius: 50%;
-      border: 2px solid #e3e6ec;
-    }
-    .okc {
-      border-radius: 50%;
-      background: #22c55e;
-      color: #fff;
+    .frow {
       display: flex;
+      gap: 8px;
       align-items: center;
-      justify-content: center;
     }
-    .okc .ic {
-      width: 13px;
-      height: 13px;
+    .frow .fsel {
+      flex: 1;
     }
-    .okc .ic svg {
-      stroke-width: 3;
-    }
-    .pbar {
-      margin-top: 10px;
-      height: 6px;
-      border-radius: 3px;
-      background: #eef0f5;
-      overflow: hidden;
-    }
-    .pbar > div {
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, #FF8A3D, #FF4D4D);
-      transform-origin: 0 50%;
-    }
-    .bres {
-      margin-top: 12px;
-      font-size: 15px;
-      color: #374151;
+    .ftog {
+      margin-top: 6px;
       display: flex;
       align-items: center;
       gap: 6px;
+      font-size: 14px;
+      white-space: nowrap;
     }
-    .bres b {
-      color: #dc6a0c;
+    .tg {
+      position: relative;
+      width: 32px;
+      height: 18px;
+      border-radius: 9px;
+      background: linear-gradient(90deg, #FF8A3D, #FF4D4D);
+    }
+    .tg i {
+      position: absolute;
+      right: 2px;
+      top: 2px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #fff;
+    }
+    .fbtns {
+      margin-top: 14px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+    .fbtn {
+      height: 36px;
+      padding: 0 18px;
+      border-radius: 9px;
+      display: grid;
+      place-items: center;
+      font-size: 15px;
+    }
+    .fbtn > span {
+      grid-area: 1 / 1;
+    }
+    .fbtn.c {
+      border: 1px solid #e3e6ec;
+      color: #4b5260;
+    }
+    .fbtn.ok {
+      background: #1f2329;
+      color: #fff;
+      font-weight: 500;
+    }
+    .bstart {
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 16px;
       font-weight: 600;
+      color: #e8453c;
+    }
+    .bstart .sub {
+      font-weight: 400;
+      font-size: 14px;
+      color: #737985;
+    }
+    .dotp {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #FF8A3D, #FF4D4D);
+      box-shadow: 0 0 0 4px rgba(255, 90, 70, 0.15);
     }
     /* dialog */
     #c-backdrop {
@@ -1687,31 +1746,40 @@
               <div class="s">连接你的资料、记忆与上下文，<br />让每一份数据都成为可用的知识</div>
             </div>
             <div class="chat" id="c-chat">
-              <div class="ubub" id="c-ubub">
-                将选中的目录中的文件整理成 Wiki，保留来源和文档之间的关联
-                <div class="mini">
-                  <span><i class="ic" data-i="folder"></i>产品文档</span><span><i class="ic" data-i="folder"></i>会议纪要</span><span><i class="ic" data-i="folder"></i>客服工单</span>
+              <div id="c-chatin">
+                <div class="usrc" id="c-usrc">
+                  <span><i class="ic" data-i="folder"></i>viking://resources/产品文档/</span>
+                  <span><i class="ic" data-i="folder"></i>viking://resources/会议纪要/</span>
+                  <span><i class="ic" data-i="folder"></i>viking://resources/客服工单/</span>
                 </div>
-              </div>
-              <div class="bwho" id="c-bwho">
-                <div class="blogo">
-                  <span class="ov-markbox"><img id="c-botmark" src="assets/brand/brand-lockup-light.svg" alt="" data-layout-allow-overflow /></span>
+                <div class="ubub" id="c-ubub">将选中的目录中的文件整理成 Wiki，保留来源和文档之间的关联</div>
+                <div class="bwho" id="c-bwho"><i class="ic" data-i="cmtc"></i>VikingBot</div>
+                <div class="bmsg" id="c-b1">我先查看 产品文档、会议纪要、客服工单 中的全部资料。</div>
+                <div class="btool" id="c-b2"><i class="ic" data-i="wrench"></i>已调用工具 <span>openviking_tree</span></div>
+                <div class="bmsg" id="c-b3">共读取 128 份资料，准备按「知识 Wiki」整理。需要选用对应的编译 Skill，该 Skill 会定义整理方式、文档结构以及检查规则。</div>
+                <div class="fcard" id="c-form">
+                  <div class="ft">选择编译 Wiki 的 Skill</div>
+                  <div class="fl">skill 目录</div>
+                  <div class="fsel" id="c-fsel" style="z-index: 6">
+                    <i class="ic" data-i="folder"></i>
+                    <div class="fvst"><span id="c-fv0" class="ph2">请选择 Skill</span><span id="c-fv1" style="opacity: 0">viking://system/skills/llm-wiki/SKI…</span></div>
+                    <i class="ic dn" data-i="chevD"></i>
+                    <div class="fopts" id="c-fopts" data-layout-allow-overlap>
+                      <div class="fo" id="c-fo1"><i class="ic" data-i="book"></i>llm-wiki/SKILL.md<span>知识 Wiki</span></div>
+                      <div class="fo"><i class="ic" data-i="report"></i>daily-report/SKILL.md<span>日报</span></div>
+                      <div class="fo"><i class="ic" data-i="users"></i>team-playbook/SKILL.md<span>经验总结</span></div>
+                    </div>
+                  </div>
+                  <div class="fl">目标目录</div>
+                  <div class="fsel"><i class="ic" data-i="folder"></i><div class="fvst"><span>viking://resources/产品知识 Wiki/</span></div></div>
+                  <div class="fl">更新策略</div>
+                  <div class="frow">
+                    <div class="fsel"><i class="ic" data-i="history"></i><div class="fvst"><span>定时更新 · 每天 09:00</span></div><i class="ic dn" data-i="chevD"></i></div>
+                    <div class="ftog"><span class="tg"><i></i></span>增量编译</div>
+                  </div>
+                  <div class="fbtns"><div class="fbtn c">取消</div><div class="fbtn ok" id="c-fok"><span id="c-fok0">确认</span><span id="c-fok1" style="opacity: 0">已确认</span></div></div>
                 </div>
-                VikingBot
-              </div>
-              <div class="bcard" id="c-bcard">
-                <div class="tt">
-                  <i class="ic" data-i="compile"></i>Compile · 产品知识 Wiki
-                  <div class="stbadge"><span class="run" id="c-run">运行中</span><span class="ok" id="c-done" style="opacity: 0">已完成</span></div>
-                </div>
-                <div class="steps">
-                  <div class="step"><div class="sico"><div class="wait"></div><div class="spin s-sp"></div><div class="okc s-ok"><i class="ic" data-i="check"></i></div></div>读取 3 个来源目录 · 128 个文件</div>
-                  <div class="step"><div class="sico"><div class="wait"></div><div class="spin s-sp"></div><div class="okc s-ok"><i class="ic" data-i="check"></i></div></div>抽取实体与概念</div>
-                  <div class="step"><div class="sico"><div class="wait"></div><div class="spin s-sp"></div><div class="okc s-ok"><i class="ic" data-i="check"></i></div></div>合并跨来源内容，检测冲突</div>
-                  <div class="step"><div class="sico"><div class="wait"></div><div class="spin s-sp"></div><div class="okc s-ok"><i class="ic" data-i="check"></i></div></div>写入 resources/产品知识 Wiki</div>
-                </div>
-                <div class="pbar"><div id="c-pbar"></div></div>
-                <div class="bres" id="c-bres"><i class="ic" data-i="book" style="color: #ff6b4a; width: 17px"></i>生成 42 个页面 · <b>2 处冲突待确认</b></div>
+                <div class="bstart" id="c-start"><span class="dotp"></span>开始编译<span class="sub">结果将写入 产品知识 Wiki</span></div>
               </div>
             </div>
             <div class="chips" data-layout-allow-overflow>
@@ -1826,6 +1894,8 @@
         layers: '<path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/>',
         filter: '<path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/>',
         ticket: '<path d="M3 8a2 2 0 0 0 2-2h14a2 2 0 0 0 2 2v2a2 2 0 0 0 0 4v2a2 2 0 0 0-2 2H5a2 2 0 0 0-2-2v-2a2 2 0 0 0 0-4z"/><path d="M14 6v12" stroke-dasharray="2 2"/>',
+        cmtc: '<path d="M4 12a8 8 0 1 1 3.2 6.4L4 19.5l1-3.4A8 8 0 0 1 4 12z"/>',
+        wrench: '<path d="M14.5 4.5a4.5 4.5 0 0 0 5 6.2l-9.3 9.3a2 2 0 0 1-2.8-2.8l9.3-9.3a4.5 4.5 0 0 1-2.2-3.4z"/>',
         compile: '<path d="M4 6h7M4 12h5M4 18h7"/><path d="M14 8l4 4-4 4"/><path d="M20 4v16"/>',
       };
       document.querySelectorAll('[data-composition-id="console"] .ic[data-i]').forEach((el) => {
@@ -1864,6 +1934,9 @@
         tab2: P("#c-tab2", 0.5, 0.55),
         cr1: P("#c-cr1", 0.4, 0.5),
         edit: P("#c-edit"),
+        fsel: P("#c-fsel", 0.5, 0.5),
+        fo1: P("#c-fo1", 0.35, 0.5),
+        fok: P("#c-fok", 0.5, 0.55),
       };
 
       const detH = $("#c-det .dgrid").offsetHeight; // static layout, measured once
@@ -1898,13 +1971,11 @@
 
       // ---------- initial states ----------
       gsap.set("#c-chat", { opacity: 0 });
-      gsap.set(["#c-ubub", "#c-bwho", "#c-bcard", "#c-bres"], { opacity: 0 });
+      gsap.set(["#c-usrc", "#c-ubub", "#c-bwho", "#c-b1", "#c-b2", "#c-b3", "#c-form", "#c-start"], { opacity: 0 });
       gsap.set(".dc", { opacity: 0, scale: 0.7 });
       gsap.set("#c-typed", { opacity: 1 });
       gsap.set(".tc", { opacity: 0 });
       gsap.set(".wr", { opacity: 0, x: -16 });
-      gsap.set(".s-sp, .s-ok", { opacity: 0 });
-      gsap.set("#c-pbar", { scaleX: 0 });
       gsap.set("#c-dlg", { opacity: 0, scale: 0.94, transformOrigin: "50% 50%" });
       gsap.set(".ia", { opacity: 0, y: 10 });
       gsap.set([".ks", ".ka", "#c-cr1", "#c-cr2"], { opacity: 0, y: 14 });
@@ -1956,27 +2027,6 @@
       tl.to("#c-ph", { opacity: 1, duration: 0.2 }, 10.0);
       tl.to("#c-chip-act", { opacity: 0, duration: 0.2 }, 10.0);
       tl.set("#c-chat", { opacity: 1 }, 9.9);
-      tl.fromTo("#c-ubub", { opacity: 0, y: 30, scale: 0.96 }, { opacity: 1, y: 0, scale: 1, duration: 0.45, ease: "expo.out", transformOrigin: "100% 100%" }, 9.95);
-      tl.fromTo("#c-bwho", { opacity: 0 }, { opacity: 1, duration: 0.25 }, 10.35);
-      tl.fromTo("#c-bcard", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 10.45);
-      tl.to(cur, { x: 1980, y: 1100, duration: 0.7, ease: "power2.in" }, 10.1);
-      tl.to(cam, Object.assign({ duration: 0.8, ease: "power2.inOut" }, camTo(1643, 470, 1.38, 1600, 470)), 10.05);
-      capIn("#c-cap4", 10.3, 13.0);
-
-      // compile steps
-      const sp = $$(".s-sp"), ok = $$(".s-ok");
-      const stepT = [10.7, 11.5, 12.4, 13.4, 14.3];
-      sp.forEach((el, i) => {
-        tl.set(el, { opacity: 1 }, stepT[i]);
-        tl.fromTo(el, { rotation: 0 }, { rotation: 360 * 3, duration: stepT[i + 1] - stepT[i], ease: "none" }, stepT[i]);
-        tl.set(el, { opacity: 0 }, stepT[i + 1]);
-        tl.fromTo(ok[i], { opacity: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.2, ease: "expo.out" }, stepT[i + 1]);
-      });
-      tl.to("#c-pbar", { scaleX: 1, duration: stepT[4] - stepT[0], ease: "power1.inOut" }, stepT[0]);
-      tl.set("#c-run", { opacity: 0 }, 14.35);
-      tl.fromTo("#c-done", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 14.35);
-      tl.fromTo("#c-bres", { opacity: 0, y: 6 }, { opacity: 1, y: 0, duration: 0.3, ease: "expo.out" }, 14.4);
-
       // ---------- wiki appears in the tree ----------
       tl.to(cam, Object.assign({ duration: 0.8, ease: "power2.inOut" }, camTo(330, 800, 1.42, 700, 470)), 12.6);
       capIn("#c-cap5", 13.25, 15.3);
@@ -2050,10 +2100,47 @@
       // exit: the window recedes
       tl.to("#c-win", { scale: 0.62, x: -380, filter: "blur(6px)", opacity: 0, duration: 0.9, ease: "power3.in" }, 31.0);
 
+      // conversation hold: VikingBot asks for compile parameters before compiling starts
+      const CONV = 4.2;
       // voiceover holds: [stage time, hold seconds]; everything at or after a hold point shifts later
-      const HOLDS = [[1.15, 1.75], [4.28, 0.35], [15.2, 0.6], [27.6, 0.6], [30.55, 0.5]];
+      const HOLDS = [[1.15, 1.75], [4.28, 0.35], [10.5, CONV], [15.2, 0.6], [27.6, 0.6], [30.55, 0.5]];
       const W = (t) => HOLDS.reduce((a, h) => a + (t >= h[0] - 1e-6 ? h[1] : 0), t);
       tl.getChildren(false, true, true).forEach((c) => c.startTime(W(c.startTime())));
+
+      // ---------- VikingBot conversation (final timeline seconds, authored after the hold remap) ----------
+      // send click lands at 11.85; compile starts at 16.3 (narration line 06 begins with it)
+      const SCR = Math.max(0, $("#c-chatin").offsetHeight - $("#c-chat").offsetHeight + 12);
+      tl.to(".chips", { opacity: 0, duration: 0.2 }, 11.95);
+      tl.to(cam, Object.assign({ duration: 0.8, ease: "power2.inOut" }, camTo(1643, 560, 1.38, 1600, 520)), 11.95);
+      tl.fromTo("#c-usrc", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }, 12.0);
+      tl.fromTo("#c-ubub", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 12.08);
+      tl.to(cur, Object.assign({ duration: 0.8, ease: "power2.inOut" }, tip({ x: 1700, y: 900 })), 12.2);
+      tl.fromTo("#c-bwho", { opacity: 0 }, { opacity: 1, duration: 0.25 }, 12.55);
+      tl.fromTo("#c-b1", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }, 12.7);
+      tl.fromTo("#c-b2", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }, 13.15);
+      tl.fromTo("#c-b3", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }, 13.55);
+      // form card arrives; chat scrolls up once (short, eased, whole pixels)
+      tl.to("#c-chatin", { y: -SCR, duration: 0.55, ease: "power3.inOut", snap: "y" }, 14.05);
+      tl.fromTo("#c-form", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 14.15);
+      const up = (p) => ({ x: p.x, y: p.y - SCR });
+      moveTo(up(pt.fsel), 14.35, 0.55);
+      click(14.95, "#c-fsel");
+      tl.fromTo("#c-fopts", { opacity: 0, y: -6 }, { opacity: 1, y: 0, duration: 0.18, ease: "power2.out" }, 15.0);
+      tl.to("#c-fo1", { backgroundColor: "#fff1ea", duration: 0.12 }, 15.35);
+      moveTo(up(pt.fo1), 15.1, 0.35);
+      click(15.5);
+      tl.to("#c-fopts", { opacity: 0, duration: 0.15 }, 15.58);
+      tl.set("#c-fv0", { opacity: 0 }, 15.6);
+      tl.fromTo("#c-fv1", { opacity: 0 }, { opacity: 1, duration: 0.18 }, 15.6);
+      moveTo(up(pt.fok), 15.65, 0.5);
+      click(16.2, "#c-fok");
+      tl.set("#c-fok0", { opacity: 0 }, 16.27);
+      tl.set("#c-fok1", { opacity: 1 }, 16.27);
+      tl.to("#c-fok", { backgroundColor: "#9aa0ab", duration: 0.2 }, 16.27);
+      tl.fromTo("#c-start", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.35, ease: "expo.out" }, 16.35);
+      tl.fromTo(".dotp", { scale: 0.4 }, { scale: 1, duration: 0.4, ease: "back.out(3)" }, 16.35);
+      tl.to(cur, { x: 1980, y: 1100, duration: 0.7, ease: "power2.in" }, 16.55);
+      capIn("#c-cap4", 16.4, 19.3);
 
       window.__timelines["console"] = tl;
     })();

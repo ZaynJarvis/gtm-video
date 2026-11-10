@@ -1,6 +1,6 @@
 # OpenViking Compile 介绍片
 
-上下文编译（Compile）能力的中文产品介绍视频，HyperFrames（HTML/CSS → 视频）工程。1920×1080、30 fps，约 63.7 秒，带旁白、配乐和音效。
+上下文编译（Compile）能力的中文产品介绍视频，HyperFrames（HTML/CSS → 视频）工程。1920×1080、30 fps，约 67.9 秒，带旁白、配乐和音效。
 
 - 版本：V4（2026-11-09），需求方 富嘉杰，review 刘智恒。
 - 成片：https://blog.openviking.ai/video/openviking-compile.mp4 （不入库）
@@ -15,7 +15,7 @@
 |---|---|
 | 0–6s | 零散资料聚合成结构化 Wiki，标题 OpenViking Compile |
 | 6–16s | 控制台：选 Wiki、写需求、勾选产品文档 / 会议纪要 / 客服工单 |
-| 16–27s | 编译过程，生成 concept / entity / index.md |
+| 16–31s | VikingBot 对话：查看资料、调用 openviking_tree，表单选择编译 Skill、目标目录、更新策略，确认后开始编译；Wiki 写回上下文树 |
 | 27–43s | 冲突检测与看板：冲突列表，展开“退款时效”冲突详情并填写修复方案解决 |
 | 43–57s | 换 Skill 产出日报、团队经验；定时更新、增量编译、版本管理 |
 | 57–64s | 结尾卡 |
