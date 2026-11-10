@@ -279,6 +279,18 @@
       white-space: nowrap;
       color: #2b3038;
     }
+    .ov-li.wrap {
+      height: auto;
+      min-height: 40px;
+      white-space: normal;
+      text-wrap: balance;
+      line-height: 1.35;
+      padding: 6px 0;
+      align-items: flex-start;
+    }
+    .ov-li.wrap::before {
+      margin-top: 10px;
+    }
     .ov-li::before {
       content: "";
       width: 7px;
@@ -354,7 +366,9 @@
       font-size: 19px;
       color: #6b7280;
       margin-top: 8px;
-      white-space: nowrap;
+      line-height: 1.35;
+      white-space: normal;
+      text-wrap: balance;
     }
     .of-m {
       position: absolute;
@@ -474,7 +488,7 @@
             <div class="ov-li"><b>Enterprise seat upgrades</b><span class="n">21×</span></div>
             <div class="ov-li"><b>Data export</b><span class="n">12×</span></div>
             <div class="ov-sec">Reusable practice</div>
-            <div class="ov-li">Check the order date, then answer per the 7-day policy</div>
+            <div class="ov-li wrap">Check the order date, then apply the 7-day policy</div>
             <div class="ov-src">Sources: support-tickets · team-notes · sessions</div>
           </div>
         </div>
@@ -490,7 +504,7 @@
         </svg>
       </div>
       <div class="of-t">Scheduled Updates</div>
-      <div class="of-d">Runs on schedule; when sources change, the Wiki follows</div>
+      <div class="of-d">Runs on a schedule; the Wiki tracks source changes</div>
       <div class="of-m">
         <span class="pillg on"><span class="dotg"></span>Daily 09:00</span>
         <span class="pillg">Next run · 11-10 09:00</span>

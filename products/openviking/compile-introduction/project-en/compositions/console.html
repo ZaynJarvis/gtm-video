@@ -977,6 +977,8 @@
       background: #f2f3f8;
       border-radius: 8px;
       font-size: 14px;
+      white-space: nowrap;
+      flex: none;
       color: #374151;
     }
     .dchip .ic {
@@ -1752,11 +1754,11 @@
                   <span><i class="ic" data-i="folder"></i>viking://resources/meeting-notes/</span>
                   <span><i class="ic" data-i="folder"></i>viking://resources/support-tickets/</span>
                 </div>
-                <div class="ubub" id="c-ubub">Organize the files in the selected folders into a Wiki, keeping links between sources and docs</div>
+                <div class="ubub" id="c-ubub">Organize the selected folders into a Wiki, keeping links between sources and docs</div>
                 <div class="bwho" id="c-bwho"><i class="ic" data-i="cmtc"></i>VikingBot</div>
                 <div class="bmsg" id="c-b1">Let me first look through everything in product‑docs, meeting‑notes and support‑tickets.</div>
                 <div class="btool" id="c-b2"><i class="ic" data-i="wrench"></i>Called tool <span>openviking_tree</span></div>
-                <div class="bmsg" id="c-b3">Read 128 files, ready to organize them as a knowledge Wiki. Pick a compile Skill: it defines how content is organized, the page structure, and the checks.</div>
+                <div class="bmsg" id="c-b3">Read 128 files. Pick a compile Skill: it sets how the Wiki is organized, its page structure and checks.</div>
                 <div class="fcard" id="c-form">
                   <div class="ft">Choose a Skill to compile the Wiki</div>
                   <div class="fl">Skill path</div>
@@ -1774,7 +1776,7 @@
                   <div class="fsel"><i class="ic" data-i="folder"></i><div class="fvst"><span>viking://resources/product-wiki/</span></div></div>
                   <div class="fl">Update policy</div>
                   <div class="frow">
-                    <div class="fsel"><i class="ic" data-i="history"></i><div class="fvst"><span>Scheduled · daily 09:00</span></div><i class="ic dn" data-i="chevD"></i></div>
+                    <div class="fsel"><i class="ic" data-i="history"></i><div class="fvst"><span>Scheduled · daily 9:00</span></div><i class="ic dn" data-i="chevD"></i></div>
                     <div class="ftog"><span class="tg"><i></i></span>Incremental</div>
                   </div>
                   <div class="fbtns"><div class="fbtn c">Cancel</div><div class="fbtn ok" id="c-fok"><span id="c-fok0">Confirm</span><span id="c-fok1" style="opacity: 0">Confirmed</span></div></div>
@@ -1791,13 +1793,13 @@
             <div class="inbox">
               <div class="focus" id="c-focus"></div>
               <div class="dchips">
-                <div class="dchip dc"><i class="ic" data-i="folder"></i>product-docs<i class="ic x" data-i="x"></i></div>
-                <div class="dchip dc"><i class="ic" data-i="folder"></i>meeting-notes<i class="ic x" data-i="x"></i></div>
-                <div class="dchip dc"><i class="ic" data-i="folder"></i>support-tickets<i class="ic x" data-i="x"></i></div>
+                <div class="dchip dc"><i class="ic" data-i="folder"></i>product-docs</div>
+                <div class="dchip dc"><i class="ic" data-i="folder"></i>meeting-notes</div>
+                <div class="dchip dc"><i class="ic" data-i="folder"></i>support-tickets</div>
               </div>
               <div class="intext">
                 <div class="ph" id="c-ph">Message, @ to reference context…</div>
-                <div id="c-typed">Organize the files in the selected folders into a Wiki, keeping links between sources and docs</div>
+                <div id="c-typed">Organize the selected folders into a Wiki, keeping links between sources and docs</div>
               </div>
               <div class="inbar">
                 <div class="ib"><i class="ic" data-i="plus"></i></div>
