@@ -1540,7 +1540,6 @@
                 </div>
                 <div class="stats">
                   <div class="stat ks"><i class="ic" data-i="layers"></i><div class="v"><span>v12</span></div><div class="l">当前版本</div></div>
-                  <div class="stat ks"><i class="ic" data-i="file"></i><div class="v"><span>42</span></div><div class="l">Wiki 页面</div></div>
                   <div class="stat ks"><i class="ic" data-i="folder"></i><div class="v"><span>128</span></div><div class="l">来源文件</div></div>
                   <div class="stat ks warnc">
                     <i class="ic" data-i="warn"></i>
@@ -1939,9 +1938,9 @@
 
       // open conflict, adopt one source
       tl.to(cur, Object.assign({ duration: 0.7, ease: "power2.inOut" }, tip(pt.cr1)), 22.7);
-      click(23.5);
+      click(23.5, "#c-cr1");
       tl.to("#c-cr1-hl", { opacity: 1, duration: 0.15 }, 23.55);
-      tl.to("#c-det", { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 23.6);
+      tl.fromTo("#c-det", { opacity: 0, y: -10, clipPath: "inset(0% 0% 100% 0% round 14px)" }, { opacity: 1, y: 0, clipPath: "inset(0% 0% 0% 0% round 14px)", duration: 0.6, ease: "power3.out", immediateRender: false }, 23.7);
       capIn("#c-cap8", 24.6, 27.4);
       tl.to(cur, Object.assign({ duration: 0.7, ease: "power2.inOut" }, tip(pt.adopt)), 24.4);
       click(25.3, "#c-adopt");
