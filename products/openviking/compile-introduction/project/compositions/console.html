@@ -630,14 +630,80 @@
     .crow {
       position: relative;
       margin: 0 24px 12px;
-      height: 92px;
       background: #fff;
       border: 1px solid #eceef3;
       border-radius: 12px;
+    }
+    .crow .rw {
+      height: 90px;
       display: flex;
       align-items: center;
       padding: 0 18px;
       gap: 16px;
+    }
+    .acts {
+      flex: none;
+      display: flex;
+      gap: 10px;
+      margin-left: 6px;
+    }
+    .abtn {
+      width: 36px;
+      height: 36px;
+      border-radius: 9px;
+      background: #f3f4f7;
+      color: #4b5260;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .abtn.dim {
+      color: #b4b9c3;
+    }
+    .abtn .ic {
+      width: 18px;
+      height: 18px;
+    }
+    .cdet {
+      height: 0;
+      overflow: hidden;
+    }
+    .dgrid {
+      margin: 0 18px;
+      border-top: 1px solid #f0f1f4;
+      padding: 14px 0 16px;
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      row-gap: 10px;
+      font-size: 15px;
+      line-height: 23px;
+    }
+    .dgrid .k {
+      color: #8a909c;
+    }
+    .dgrid .v {
+      color: #1f2329;
+      display: grid;
+      justify-items: start;
+    }
+    .dgrid .v > span {
+      grid-area: 1 / 1;
+    }
+    .dgrid .inp {
+      position: relative;
+      padding: 0 10px;
+      margin-left: -10px;
+    }
+    .dgrid .inp i.box {
+      position: absolute;
+      inset: -3px -2px;
+      border: 1.5px solid #ff6b4a;
+      border-radius: 7px;
+      box-shadow: 0 0 0 3px rgba(255, 107, 74, 0.12);
+      opacity: 0;
+    }
+    .dgrid .fixv {
+      color: #16794a;
     }
     .crow .hl {
       position: absolute;
@@ -1539,8 +1605,6 @@
                   <div class="cron"><span class="dot-g"></span>定时更新 · 每天 09:00</div>
                 </div>
                 <div class="stats">
-                  <div class="stat ks"><i class="ic" data-i="layers"></i><div class="v"><span>v12</span></div><div class="l">当前版本</div></div>
-                  <div class="stat ks"><i class="ic" data-i="folder"></i><div class="v"><span>128</span></div><div class="l">来源文件</div></div>
                   <div class="stat ks warnc">
                     <i class="ic" data-i="warn"></i>
                     <div class="v"><span id="c-k-2">2</span><span id="c-k-1" style="opacity: 0">1</span></div>
@@ -1550,41 +1614,51 @@
                 <div class="ksec ka">全部冲突<span class="flt"><i class="ic" data-i="filter" style="width: 17px"></i>严重程度 全部<i class="ic" data-i="chevD" style="width: 15px"></i></span></div>
                 <div class="crow" id="c-cr1">
                   <div class="hl" id="c-cr1-hl"></div>
-                  <div class="st">
-                    <span class="pend" id="c-cr1-p"><i class="ic" data-i="warn" style="width: 18px"></i>待确认</span>
-                    <span class="done" id="c-cr1-d" style="opacity: 0"><i class="ic" data-i="checkc" style="width: 18px"></i>已解决</span>
+                  <div class="rw">
+                    <div class="st">
+                      <span class="pend" id="c-cr1-p"><i class="ic" data-i="warn" style="width: 18px"></i>待确认</span>
+                      <span class="done" id="c-cr1-d" style="opacity: 0"><i class="ic" data-i="checkc" style="width: 18px"></i>已解决</span>
+                    </div>
+                    <div class="ctext">
+                      <div class="a">退款时效说明不一致</div>
+                      <div class="b">产品文档写 7 天内可退款，客服工单按 15 天办理</div>
+                    </div>
+                    <div class="cpath mono"><i class="ic" data-i="folder" style="width: 17px"></i>viking://resources/产品…</div>
+                    <span class="sev r">严重</span>
+                    <div class="acts">
+                      <div class="abtn" id="c-edit"><i class="ic" data-i="edit"></i></div>
+                      <div class="abtn dim"><i class="ic" data-i="cmt"></i></div>
+                    </div>
                   </div>
-                  <div class="ctext">
-                    <div class="a">退款时效说明不一致</div>
-                    <div class="b">产品文档写 7 天内可退款，客服工单按 15 天办理</div>
+                  <div class="cdet" id="c-det">
+                    <div class="dgrid">
+                      <div class="k">原因</div>
+                      <div class="v"><span>产品文档/退款说明.md 写明购买后 7 天内可全额退款，客服工单 #4821 按 15 天内无理由退款办理，<br />同一退款场景下时效不一致，属于面向客户的政策类事实冲突，severity 高。</span></div>
+                      <div class="k">发生时间</div>
+                      <div class="v"><span class="mono">2026-11-09T09:00:12.000Z</span></div>
+                      <div class="k">修复时间</div>
+                      <div class="v"><span id="c-ft0">—</span><span class="mono fixv" id="c-ft1" style="opacity: 0">2026-11-09T10:24:05.000Z</span></div>
+                      <div class="k">修复方案</div>
+                      <div class="v"><span id="c-fp0">—</span><span class="inp" id="c-fp1"><i class="box" id="c-fp-box"></i><span id="c-fp-t" class="fixv" style="display: inline-block">以产品文档 7 天为准，客服话术同步更新</span></span></div>
+                      <div class="k">修复依据</div>
+                      <div class="v"><span id="c-fb0">—</span><span class="fixv" id="c-fb1" style="opacity: 0">产品文档/退款说明.md 为现行退款政策（2026-10 版）</span></div>
+                    </div>
                   </div>
-                  <div class="cpath mono"><i class="ic" data-i="folder" style="width: 17px"></i>concept/退款政策.md</div>
-                  <span class="sev r">严重</span>
                 </div>
                 <div class="crow" id="c-cr2">
-                  <div class="st">
-                    <span class="pend"><i class="ic" data-i="warn" style="width: 18px"></i>待确认</span>
-                  </div>
-                  <div class="ctext">
-                    <div class="a">企业版席位上限不一致</div>
-                    <div class="b">11-05 周会已上调至 500 席，定价页仍写 200 席</div>
-                  </div>
-                  <div class="cpath mono"><i class="ic" data-i="folder" style="width: 17px"></i>concept/企业版席位….md</div>
-                  <span class="sev y">一般</span>
-                </div>
-                <div class="detail" id="c-det">
-                  <div class="dt">冲突详情 · 退款时效说明不一致</div>
-                  <div class="cols">
-                    <div class="src">
-                      <div class="okfill" id="c-ok"></div>
-                      <div class="s1"><i class="ic" data-i="folder" style="width: 15px"></i>产品文档 / 退款说明.md</div>
-                      <div class="s2">购买后 <b>7 天内</b>可申请全额退款</div>
-                      <div class="adopt" id="c-adopt"><i class="ic" data-i="check" style="width: 15px"></i>采用此说法</div>
+                  <div class="rw">
+                    <div class="st">
+                      <span class="pend"><i class="ic" data-i="warn" style="width: 18px"></i>待确认</span>
                     </div>
-                    <div class="src">
-                      <div class="s1"><i class="ic" data-i="ticket" style="width: 15px"></i>客服工单 / #4821 退款咨询</div>
-                      <div class="s2">已按 <b>15 天内</b>无理由退款办理</div>
-                      <div class="adopt"><i class="ic" data-i="check" style="width: 15px"></i>采用此说法</div>
+                    <div class="ctext">
+                      <div class="a">企业版席位上限不一致</div>
+                      <div class="b">11-05 周会已上调至 500 席，定价页仍写 200 席</div>
+                    </div>
+                    <div class="cpath mono"><i class="ic" data-i="folder" style="width: 17px"></i>viking://resources/产品…</div>
+                    <span class="sev y">中等</span>
+                    <div class="acts">
+                      <div class="abtn"><i class="ic" data-i="edit"></i></div>
+                      <div class="abtn dim"><i class="ic" data-i="cmt"></i></div>
                     </div>
                   </div>
                 </div>
@@ -1706,7 +1780,7 @@
       <div class="cap" id="c-cap6">零散的资料，变成了<em>互相链接的 Wiki</em></div>
       <div class="cap" id="c-cap7">还能自动发现<em>跨来源的冲突</em></div>
       <div class="cap" id="c-cap8">在看板里<em>确认冲突</em>，结果写回 Wiki</div>
-      <div class="cap" id="c-cap9"><em>版本、页面、冲突</em>，看板里一目了然</div>
+      <div class="cap" id="c-cap9"><em>哪里有冲突、为什么冲突</em>，看板里一目了然</div>
     </div>
   </div>
 
@@ -1735,6 +1809,7 @@
         history: '<path d="M3.5 12a8.5 8.5 0 1 0 2.8-6.3"/><path d="M3.5 4v4.5H8M12 7.5V12l3 2"/>',
         copy: '<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/>',
         edit: '<path d="M4 20h4L19 9l-4-4L4 16z"/>',
+        cmt: '<path d="M5 5h14v10H11l-4 3.5V15H5z"/>',
         bot: '<rect x="4" y="8" width="16" height="11" rx="4"/><path d="M12 4v4M9 13h.01M15 13h.01"/>',
         terminal: '<rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7 9l3 3-3 3M12.5 15H17"/>',
         chatplus: '<path d="M4 5h16v11H9l-5 4z"/><path d="M12 8v5M9.5 10.5h5"/>',
@@ -1788,9 +1863,10 @@
         idx: P("#c-r-idx", 0.32, 0.5),
         tab2: P("#c-tab2", 0.5, 0.55),
         cr1: P("#c-cr1", 0.4, 0.5),
-        adopt: P("#c-adopt", 0.5, 0.55),
+        edit: P("#c-edit"),
       };
 
+      const detH = $("#c-det .dgrid").offsetHeight; // static layout, measured once
       const tl = gsap.timeline({ paused: true });
 
       // camera helper: put stage point (fx,fy) at screen (sx,sy) with scale s
@@ -1832,7 +1908,7 @@
       gsap.set("#c-dlg", { opacity: 0, scale: 0.94, transformOrigin: "50% 50%" });
       gsap.set(".ia", { opacity: 0, y: 10 });
       gsap.set([".ks", ".ka", "#c-cr1", "#c-cr2"], { opacity: 0, y: 14 });
-      gsap.set("#c-det", { opacity: 0, y: 16 });
+      gsap.set("#c-fp-t", { clipPath: "inset(0% 100% 0% 0%)" });
 
       // ---------- 0: console arrives ----------
       tl.fromTo("#c-win", { scale: 1.035, filter: "blur(10px)", transformOrigin: "50% 50%" }, { scale: 1, filter: "blur(0px)", duration: 0.8, ease: "expo.out" }, 0);
@@ -1936,24 +2012,34 @@
       tl.fromTo(".warn", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out", stagger: 0.1 }, 21.6);
       capIn("#c-cap7", 21.3, 24.4);
 
-      // open conflict, adopt one source
+      // open conflict inline, then resolve it via the edit action
       tl.to(cur, Object.assign({ duration: 0.7, ease: "power2.inOut" }, tip(pt.cr1)), 22.7);
       click(23.5, "#c-cr1");
       tl.to("#c-cr1-hl", { opacity: 1, duration: 0.15 }, 23.55);
-      tl.fromTo("#c-det", { opacity: 0, y: -10, clipPath: "inset(0% 0% 100% 0% round 14px)" }, { opacity: 1, y: 0, clipPath: "inset(0% 0% 0% 0% round 14px)", duration: 0.6, ease: "power3.out", immediateRender: false }, 23.7);
+      tl.fromTo("#c-det", { height: 0 }, { height: detH, duration: 0.55, ease: "power3.out", immediateRender: false }, 23.62);
+      tl.fromTo("#c-det .dgrid > *", { opacity: 0, y: -6 }, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out", stagger: 0.025, immediateRender: false }, 23.72);
       capIn("#c-cap8", 24.6, 27.4);
-      tl.to(cur, Object.assign({ duration: 0.7, ease: "power2.inOut" }, tip(pt.adopt)), 24.4);
-      click(25.3, "#c-adopt");
-      tl.to("#c-ok", { opacity: 1, duration: 0.2 }, 25.35);
-      tl.set("#c-cr1-p", { opacity: 0 }, 25.5);
-      tl.fromTo("#c-cr1-d", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.25, ease: "expo.out" }, 25.5);
-      tl.set("#c-k-2", { opacity: 0 }, 25.6);
-      tl.fromTo("#c-k-1", { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.3, ease: "expo.out" }, 25.6);
-      tl.to("#c-r-c1 .warn", { opacity: 0, duration: 0.25 }, 25.7);
+      tl.to(cur, Object.assign({ duration: 0.65, ease: "power2.inOut" }, tip(pt.edit)), 24.25);
+      click(24.95, "#c-edit");
+      tl.to("#c-edit", { backgroundColor: "#ffe9e2", color: "#e8453c", duration: 0.15 }, 25.0);
+      tl.set("#c-fp0", { opacity: 0 }, 25.02);
+      tl.fromTo("#c-fp-box", { opacity: 0 }, { opacity: 1, duration: 0.15 }, 25.02);
+      tl.fromTo("#c-fp-t", { clipPath: "inset(0% 100% 0% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.5, ease: "steps(18)", immediateRender: false }, 25.08);
+      tl.to("#c-fp-box", { opacity: 0, duration: 0.2 }, 25.68);
+      tl.to("#c-edit", { backgroundColor: "#f3f4f7", color: "#4b5260", duration: 0.2 }, 25.68);
+      tl.set("#c-ft0", { opacity: 0 }, 25.7);
+      tl.fromTo("#c-ft1", { opacity: 0, y: 4 }, { opacity: 1, y: 0, duration: 0.25, ease: "expo.out" }, 25.7);
+      tl.set("#c-fb0", { opacity: 0 }, 25.78);
+      tl.fromTo("#c-fb1", { opacity: 0, y: 4 }, { opacity: 1, y: 0, duration: 0.25, ease: "expo.out" }, 25.78);
+      tl.set("#c-cr1-p", { opacity: 0 }, 25.82);
+      tl.fromTo("#c-cr1-d", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.25, ease: "expo.out" }, 25.82);
+      tl.set("#c-k-2", { opacity: 0 }, 25.9);
+      tl.fromTo("#c-k-1", { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 0.3, ease: "expo.out" }, 25.9);
+      tl.to("#c-r-c1 .warn", { opacity: 0, duration: 0.25 }, 25.95);
       tl.to("#c-cr1-hl", { opacity: 0, duration: 0.3 }, 26.2);
 
       // pull back: the whole workspace
-      tl.to(cur, { x: 1980, y: 1100, duration: 0.8, ease: "power2.in" }, 26.0);
+      tl.to(cur, { x: 1980, y: 1100, duration: 0.6, ease: "power2.in" }, 26.0);
       tl.to(cur, { opacity: 0, duration: 0.15 }, 26.65); // parked cursor would show once the camera pulls back
       // to the overview by a short fade, not a camera move (moving/scaling text stutters); framing then stays static
       tl.to(cam, { opacity: 0, duration: 0.25, ease: "power1.in" }, 26.6);
