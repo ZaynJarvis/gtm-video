@@ -28,3 +28,11 @@
 cd products/openviking/compile-introduction/project
 npx --yes hyperframes@0.9.8 render --crf 20
 ```
+
+## English version (`project-en/`)
+
+Separate HyperFrames project; the Chinese build in `project/` is untouched.
+
+- Final cut: https://blog.openviking.ai/video/openviking-compile-en.mp4 (not checked in), about 73.1 s.
+- Narration: Doubao seed-tts-2.0 with voice `en_male_tim_uranus_bigtts`. Generated one paragraph at a time at the default rate (no speech_rate speed-up), then sliced into lines at word timestamps (`tools/doubao_tts_en.py`, `tools/slice_en.py`) and normalized to about −16 LUFS. Script: `voiceover-en/lines.json`.
+- On-screen text was translated with `tools/en_map.py` + `tools/en_apply.py`. The English narration runs longer, so each composition adds `EN_HOLDS` and `tools/en_timing.py` shifts the root timing to match.
